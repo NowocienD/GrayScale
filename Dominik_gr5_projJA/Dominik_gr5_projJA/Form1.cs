@@ -44,10 +44,8 @@ namespace Dominik_gr5_projJA
 
         private void StartBTN_Click(object sender, EventArgs e)
         {
-
             threadsService.threadsNo = processorCount;
             threadsService.dataToProcess = imageService.ImageDivider(imageToProcess, processorCount);
-
             threadsService.Spliter(new ImageProcessor().processingMethod);
 
             int startTime, endTime;
