@@ -2,7 +2,7 @@
 
 namespace ColorToGrayScale
 {
-    static public class ToGrayScaleCSharp
+    public static class ToGrayScaleCSharp
     {
         public static Color Process(Color color)
         {
@@ -12,6 +12,5 @@ namespace ColorToGrayScale
                 grayScaleColor,
                 grayScaleColor);
         }
-
     }
 }

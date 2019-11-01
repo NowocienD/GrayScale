@@ -2,10 +2,12 @@
 
 namespace ColorToGrayScale
 {
-    class ThreadService<T> : IThreadsService<T>
+    public class ThreadService<T> : IThreadsService<T>
     {
         private Thread[] threads;
+
         public int threadsNo { get; set; }
+
         public T[] dataToProcess { get; set; }
 
         public void Spliter(ParameterizedThreadStart func)
@@ -17,6 +19,7 @@ namespace ColorToGrayScale
                 threads[i] = new Thread(func);
             }
         }
+
         public void StartProcessing()
         {
             for (int i = 0; i < threadsNo; i++)

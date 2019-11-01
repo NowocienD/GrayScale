@@ -6,11 +6,13 @@ namespace ColorToGrayScale
 {
     public partial class MainForm : Form
     {
-        private Bitmap imageToProcess;
-        private int processorCount;
-
         private readonly IImageService imageService;
+
         private readonly IThreadsService<Bitmap> threadsService;
+
+        private Bitmap imageToProcess;
+
+        private int processorCount;
 
         public MainForm(
             IImageService _imageService,
@@ -28,7 +30,7 @@ namespace ColorToGrayScale
             label_Threads.Text = processorCount.ToString();
         }
 
-        private void trackBar_Threads_Scroll(object sender, EventArgs e)
+        private void TrackBar_Threads_Scroll(object sender, EventArgs e)
         {
             processorCount = trackBar_Threads.Value;
             label_Threads.Text = processorCount.ToString();
@@ -49,12 +51,14 @@ namespace ColorToGrayScale
             threadsService.Spliter(new ImageProcessor().processingMethod);
 
             int startTime, endTime;
-            startTime = Environment.TickCount & Int32.MaxValue;
+            startTime = Environment.TickCount;
             threadsService.StartProcessing();
-            while (!threadsService.isDone()) ;
-            endTime = Environment.TickCount & Int32.MaxValue;
+            while (!threadsService.isDone())
+            { 
+            }
+            endTime = Environment.TickCount;
 
-            label_time.Text = (endTime - startTime).ToString();
+            label_time.Text = (endTime - startTime).ToString() + " ms";
             pictureBox_modified.Image = imageService.JoinIntoBigOne(threadsService.dataToProcess);
         }
     }

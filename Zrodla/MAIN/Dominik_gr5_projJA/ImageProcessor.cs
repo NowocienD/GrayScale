@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace ColorToGrayScale
 {
-    class ImageProcessor
+    public class ImageProcessor
     {
         public void processingMethod(Object obj)
         {

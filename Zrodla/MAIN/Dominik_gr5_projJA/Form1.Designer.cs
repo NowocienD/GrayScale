@@ -85,7 +85,7 @@
             this.trackBar_Threads.Size = new System.Drawing.Size(396, 45);
             this.trackBar_Threads.TabIndex = 1;
             this.trackBar_Threads.Value = 1;
-            this.trackBar_Threads.Scroll += new System.EventHandler(this.trackBar_Threads_Scroll);
+            this.trackBar_Threads.Scroll += new System.EventHandler(this.TrackBar_Threads_Scroll);
             // 
             // pictureBox_original
             // 

@@ -2,7 +2,7 @@
 
 namespace ColorToGrayScale
 {
-    class ImageService : IImageService
+    public class ImageService : IImageService
     {
         public Bitmap[] ImageDivider(Bitmap imageToProcess, int threadsNo)
         {
