@@ -42,13 +42,20 @@ namespace Dominik_gr5_projJA
 
         private void StartBTN_Click(object sender, EventArgs e)
         {
+            int start, stop;
+
             ImageProcessor imp = new ImageProcessor(processorCount, imageToProcess, true);
             imp.ImageDivider();
             imp.threadsSpliter();
+
+            start = Environment.TickCount & Int32.MaxValue;
             imp.Start();
             while (!imp.checkIfDone()) ;
+            stop = Environment.TickCount & Int32.MaxValue;
 
             imp.JoinIntoBigOne();
+
+            label_time.Text = (stop - start).ToString();
 
             pictureBox1.Image = imp.imageDTO;
         }
