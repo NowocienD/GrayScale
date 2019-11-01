@@ -21,7 +21,10 @@ namespace Dominik_gr5_projJA
             Bootstrap(); 
             Application.Run( container.GetInstance<Form1>() );
         }
-
+        /// <summary>
+        /// Metoda zarządająca kontenerem usług 
+        /// Próba implementacji dependency injection w aplikacji Windows Forms
+        /// </summary>
         private static void Bootstrap()
         {
             container = new Container();
