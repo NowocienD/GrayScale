@@ -85,6 +85,7 @@
             this.trackBar_Threads.Size = new System.Drawing.Size(396, 45);
             this.trackBar_Threads.TabIndex = 1;
             this.trackBar_Threads.Value = 1;
+            this.trackBar_Threads.Scroll += new System.EventHandler(this.trackBar_Threads_Scroll);
             // 
             // pictureBox1
             // 
@@ -157,6 +158,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_Threads)).EndInit();

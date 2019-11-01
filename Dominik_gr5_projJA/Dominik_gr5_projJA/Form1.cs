@@ -16,5 +16,17 @@ namespace Dominik_gr5_projJA
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            int processorCount = System.Environment.ProcessorCount;
+            trackBar_Threads.Value = processorCount;
+            label_Threads.Text = processorCount.ToString();
+        }
+
+        private void trackBar_Threads_Scroll(object sender, EventArgs e)
+        {
+            label_Threads.Text = trackBar_Threads.Value.ToString();
+        }
     }
 }
