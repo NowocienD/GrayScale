@@ -32,16 +32,18 @@
             this.radioButton_dotNet = new System.Windows.Forms.RadioButton();
             this.radioButton_ASM = new System.Windows.Forms.RadioButton();
             this.trackBar_Threads = new System.Windows.Forms.TrackBar();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_original = new System.Windows.Forms.PictureBox();
             this.PhotoBTN = new System.Windows.Forms.Button();
             this.StartBTN = new System.Windows.Forms.Button();
             this.label_Threads = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label_time = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox_modified = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_Threads)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_original)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_modified)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -88,15 +90,15 @@
             this.trackBar_Threads.Value = 1;
             this.trackBar_Threads.Scroll += new System.EventHandler(this.trackBar_Threads_Scroll);
             // 
-            // pictureBox1
+            // pictureBox_original
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(196, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(396, 264);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox_original.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_original.Location = new System.Drawing.Point(13, 12);
+            this.pictureBox_original.Name = "pictureBox_original";
+            this.pictureBox_original.Size = new System.Drawing.Size(380, 264);
+            this.pictureBox_original.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox_original.TabIndex = 2;
+            this.pictureBox_original.TabStop = false;
             // 
             // PhotoBTN
             // 
@@ -110,7 +112,7 @@
             // 
             // StartBTN
             // 
-            this.StartBTN.Location = new System.Drawing.Point(608, 332);
+            this.StartBTN.Location = new System.Drawing.Point(54, 387);
             this.StartBTN.Name = "StartBTN";
             this.StartBTN.Size = new System.Drawing.Size(127, 37);
             this.StartBTN.TabIndex = 4;
@@ -131,7 +133,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(672, 48);
+            this.label1.Location = new System.Drawing.Point(665, 371);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 17);
             this.label1.TabIndex = 6;
@@ -141,7 +143,7 @@
             // 
             this.label_time.AutoSize = true;
             this.label_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_time.Location = new System.Drawing.Point(672, 84);
+            this.label_time.Location = new System.Drawing.Point(672, 403);
             this.label_time.Name = "label_time";
             this.label_time.Size = new System.Drawing.Size(36, 17);
             this.label_time.TabIndex = 7;
@@ -151,17 +153,28 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // pictureBox_modified
+            // 
+            this.pictureBox_modified.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_modified.Location = new System.Drawing.Point(408, 12);
+            this.pictureBox_modified.Name = "pictureBox_modified";
+            this.pictureBox_modified.Size = new System.Drawing.Size(380, 264);
+            this.pictureBox_modified.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox_modified.TabIndex = 8;
+            this.pictureBox_modified.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox_modified);
             this.Controls.Add(this.label_time);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label_Threads);
             this.Controls.Add(this.StartBTN);
             this.Controls.Add(this.PhotoBTN);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox_original);
             this.Controls.Add(this.trackBar_Threads);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
@@ -170,7 +183,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_Threads)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_original)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_modified)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,13 +196,14 @@
         private System.Windows.Forms.RadioButton radioButton_dotNet;
         private System.Windows.Forms.RadioButton radioButton_ASM;
         private System.Windows.Forms.TrackBar trackBar_Threads;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox_original;
         private System.Windows.Forms.Button PhotoBTN;
         private System.Windows.Forms.Button StartBTN;
         private System.Windows.Forms.Label label_Threads;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_time;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.PictureBox pictureBox_modified;
     }
 }
 

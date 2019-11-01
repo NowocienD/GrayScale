@@ -36,7 +36,7 @@ namespace Dominik_gr5_projJA
         {
             openFileDialog1.ShowDialog();
             Image imageToProcess = Image.FromFile(openFileDialog1.FileName);
-            pictureBox1.Image = imageToProcess;
+            pictureBox_original.Image = imageToProcess;
             this.imageToProcess = new Bitmap(imageToProcess);
         }
 
@@ -56,8 +56,7 @@ namespace Dominik_gr5_projJA
             imp.JoinIntoBigOne();
 
             label_time.Text = (stop - start).ToString();
-
-            pictureBox1.Image = imp.imageDTO;
+            pictureBox_modified.Image = imp.imageDTO;
         }
     }
 }
