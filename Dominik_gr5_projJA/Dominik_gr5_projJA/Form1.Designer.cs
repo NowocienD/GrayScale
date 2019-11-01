@@ -38,6 +38,7 @@
             this.label_Threads = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label_time = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_Threads)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -104,6 +105,7 @@
             this.PhotoBTN.TabIndex = 3;
             this.PhotoBTN.Text = "Wybierz zdjęcie";
             this.PhotoBTN.UseVisualStyleBackColor = true;
+            this.PhotoBTN.Click += new System.EventHandler(this.PhotoBTN_Click);
             // 
             // StartBTN
             // 
@@ -143,6 +145,10 @@
             this.label_time.TabIndex = 7;
             this.label_time.Text = "0:00";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,6 +186,7 @@
         private System.Windows.Forms.Label label_Threads;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_time;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
