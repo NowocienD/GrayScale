@@ -29,7 +29,8 @@ namespace Dominik_gr5_projJA
             container = new Container();
             container.Register<Form1>();
 
-            container.Register<IImageService, ImageService > ();
+            container.Register<IImageService, ImageService>();
+            container.Register<IThreadsService, ThreadService>();
         }
     }
 }

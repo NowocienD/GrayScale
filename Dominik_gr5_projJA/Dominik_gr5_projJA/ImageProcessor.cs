@@ -10,29 +10,6 @@ namespace Dominik_gr5_projJA
 {
     class ImageProcessor
     {
-        private int threadsNo;
-        private Bitmap imageToProcess;
-        public Bitmap[] smallerImagesToProcess;
-        private Thread[] threads;
-
-        public Bitmap imageDTO { get; internal set; }
-
-        public ImageProcessor(int threadsNo, Bitmap img, bool dllSelect)
-        {
-            this.threadsNo = threadsNo;
-            this.imageToProcess = img;
-            threads = new Thread[threadsNo];
-        }
-
-        public void threadsSpliter()
-        {
-            for (int i = 0; i < threadsNo; i++)
-            {
-                threads[i] = new Thread(new ParameterizedThreadStart(processingMethod));
-            }
-        }
-
-
         public void processingMethod(Object obj)
         {
             Bitmap image = (Bitmap)obj;
@@ -47,26 +24,6 @@ namespace Dominik_gr5_projJA
                         y, 
                         color);
                 }
-        }
-
-        public void Start()
-        {
-            for (int i = 0; i < threadsNo; i++)
-            {
-                threads[i].Start(smallerImagesToProcess[i]);
-            }
-        }
-
-        public bool checkIfDone()
-        {
-            foreach (Thread t in threads)
-            {
-                if (t.ThreadState != ThreadState.Stopped)
-                {
-                    return false;
-                }
-            }
-            return true;
         }
     }
 }

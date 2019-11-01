@@ -16,11 +16,15 @@ namespace Dominik_gr5_projJA
         private int processorCount;
 
         private readonly IImageService imageService;
+        private readonly IThreadsService threadsService;
 
-        public Form1(IImageService _imageService)
+        public Form1(
+            IImageService _imageService,
+            IThreadsService _threadsService)
         {
             InitializeComponent();
             imageService = _imageService;
+            threadsService = _threadsService;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -46,24 +50,20 @@ namespace Dominik_gr5_projJA
 
         private void StartBTN_Click(object sender, EventArgs e)
         {
-            int start, stop;
 
-            ImageProcessor imp = new ImageProcessor(processorCount, imageToProcess, true);
+
+            threadsService.Spliter(processorCount, new ImageProcessor().processingMethod);
+
             Bitmap[] b = imageService.ImageDivider(imageToProcess, processorCount);
-            imp.smallerImagesToProcess = b; 
 
-            imp.threadsSpliter();
+            int startTime, endTime;
+            startTime = Environment.TickCount & Int32.MaxValue;
+            threadsService.StartProcessing(b);
+            while (!threadsService.isDone()) ;
+            endTime = Environment.TickCount & Int32.MaxValue;
 
-            start = Environment.TickCount & Int32.MaxValue;
-            imp.Start();
-            while (!imp.checkIfDone()) ;
-            stop = Environment.TickCount & Int32.MaxValue;
-
-            Bitmap btm = imageService.JoinIntoBigOne(b);
-
-            label_time.Text = (stop - start).ToString();
-
-            pictureBox_modified.Image = btm;
+            label_time.Text = (endTime - startTime).ToString();
+            pictureBox_modified.Image = imageService.JoinIntoBigOne(b);
         }
     }
 }
