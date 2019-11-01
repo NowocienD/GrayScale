@@ -116,6 +116,7 @@
             this.StartBTN.TabIndex = 4;
             this.StartBTN.Text = "Start";
             this.StartBTN.UseVisualStyleBackColor = true;
+            this.StartBTN.Click += new System.EventHandler(this.StartBTN_Click);
             // 
             // label_Threads
             // 

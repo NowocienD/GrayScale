@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,6 +38,19 @@ namespace Dominik_gr5_projJA
             Image imageToProcess = Image.FromFile(openFileDialog1.FileName);
             pictureBox1.Image = imageToProcess;
             this.imageToProcess = new Bitmap(imageToProcess);
+        }
+
+        private void StartBTN_Click(object sender, EventArgs e)
+        {
+            ImageProcessor imp = new ImageProcessor(50, imageToProcess, true);
+            imp.ImageDivider();
+            imp.threadsSpliter();
+            imp.Start();
+            while (!imp.checkIfDone()) ;
+
+            imp.JoinIntoBigOne();
+
+            pictureBox1.Image = imp.imageDTO;
         }
     }
 }
