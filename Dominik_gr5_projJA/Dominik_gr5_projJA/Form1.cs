@@ -12,7 +12,7 @@ namespace Dominik_gr5_projJA
 {
     public partial class Form1 : Form
     {
-        private Image imageToProcess; 
+        private Bitmap imageToProcess; 
         public Form1()
         {
             InitializeComponent();
@@ -33,8 +33,9 @@ namespace Dominik_gr5_projJA
         private void PhotoBTN_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
-            imageToProcess = Image.FromFile(openFileDialog1.FileName);
+            Image imageToProcess = Image.FromFile(openFileDialog1.FileName);
             pictureBox1.Image = imageToProcess;
+            this.imageToProcess = new Bitmap(imageToProcess);
         }
     }
 }
