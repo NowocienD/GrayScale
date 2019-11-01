@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Drawing;
 using System.Windows.Forms;
 using SimpleInjector;
 
@@ -30,7 +28,7 @@ namespace Dominik_gr5_projJA
             container.Register<Form1>();
 
             container.Register<IImageService, ImageService>();
-            container.Register<IThreadsService, ThreadService>();
+            container.Register<IThreadsService<Bitmap>, ThreadService<Bitmap>>();
         }
     }
 }

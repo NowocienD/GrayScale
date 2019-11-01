@@ -8,15 +8,14 @@ using System.Drawing;
 
 namespace Dominik_gr5_projJA
 {
-    class ThreadService : IThreadsService
+    class ThreadService<T> : IThreadsService<T>
     {
         private Thread[] threads;
-        private int threadsNo;
-        public Bitmap[] smallImagesToProcess;
+        public int threadsNo { get; set; }
+        public T[] dataToProcess { get; set; }
 
-        public void Spliter(int threadsNo, ParameterizedThreadStart func)
+        public void Spliter(ParameterizedThreadStart func)
         {
-            this.threadsNo = threadsNo;
             threads = new Thread[threadsNo];
 
             for (int i = 0; i < threadsNo; i++)
@@ -24,11 +23,11 @@ namespace Dominik_gr5_projJA
                 threads[i] = new Thread(func);
             }
         }
-        public void StartProcessing(Bitmap[] smallerImagesToProcess)
+        public void StartProcessing()
         {
             for (int i = 0; i < threadsNo; i++)
             {
-                threads[i].Start(smallerImagesToProcess[i]);
+                threads[i].Start(dataToProcess[i]);
             }
         }
 

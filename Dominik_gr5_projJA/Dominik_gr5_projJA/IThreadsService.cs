@@ -9,10 +9,12 @@ using System.Threading;
 
 namespace Dominik_gr5_projJA
 {
-    public interface IThreadsService
+    public interface IThreadsService<T>
     {
-        void Spliter(int threadsNo, ParameterizedThreadStart func);
-        void StartProcessing(Bitmap[] smallerImagesToProcess);
+        int threadsNo { get; set; }
+        T[] dataToProcess { get; set; }
+        void Spliter(ParameterizedThreadStart func);
+        void StartProcessing();
         bool isDone();
     }
 }

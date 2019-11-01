@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Dominik_gr5_projJA
@@ -16,11 +10,11 @@ namespace Dominik_gr5_projJA
         private int processorCount;
 
         private readonly IImageService imageService;
-        private readonly IThreadsService threadsService;
+        private readonly IThreadsService<Bitmap> threadsService;
 
         public Form1(
             IImageService _imageService,
-            IThreadsService _threadsService)
+            IThreadsService<Bitmap> _threadsService)
         {
             InitializeComponent();
             imageService = _imageService;
@@ -51,19 +45,19 @@ namespace Dominik_gr5_projJA
         private void StartBTN_Click(object sender, EventArgs e)
         {
 
+            threadsService.threadsNo = processorCount;
+            threadsService.dataToProcess = imageService.ImageDivider(imageToProcess, processorCount);
 
-            threadsService.Spliter(processorCount, new ImageProcessor().processingMethod);
-
-            Bitmap[] b = imageService.ImageDivider(imageToProcess, processorCount);
+            threadsService.Spliter(new ImageProcessor().processingMethod);
 
             int startTime, endTime;
             startTime = Environment.TickCount & Int32.MaxValue;
-            threadsService.StartProcessing(b);
+            threadsService.StartProcessing();
             while (!threadsService.isDone()) ;
             endTime = Environment.TickCount & Int32.MaxValue;
 
             label_time.Text = (endTime - startTime).ToString();
-            pictureBox_modified.Image = imageService.JoinIntoBigOne(b);
+            pictureBox_modified.Image = imageService.JoinIntoBigOne(threadsService.dataToProcess);
         }
     }
 }
