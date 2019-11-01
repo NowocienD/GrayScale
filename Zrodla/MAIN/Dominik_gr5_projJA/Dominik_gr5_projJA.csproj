@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{BBBAF888-0803-409D-9950-F7B3B769281A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Dominik_gr5_projJA</RootNamespace>
-    <AssemblyName>Dominik_gr5_projJA</AssemblyName>
+    <RootNamespace>ColorToGrayScale</RootNamespace>
+    <AssemblyName>Dominik Nowocien projektJA</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -15,7 +15,7 @@
   </PropertyGroup>
     <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <DocumentationFile>../Dokumentacja/GrayScaleAppDocumentation.XML</DocumentationFile>
+    <DocumentationFile>../../../Dokumentacja/AutoGenDoc.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>

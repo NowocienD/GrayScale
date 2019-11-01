@@ -1,4 +1,4 @@
-﻿namespace Dominik_gr5_projJA
+﻿namespace ColorToGrayScale
 {
     partial class Form1
     {

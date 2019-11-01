@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Dominik_gr5_projJA
+namespace ColorToGrayScale
 {
     public partial class Form1 : Form
     {

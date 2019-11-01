@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace Dominik_gr5_projJA
+namespace ColorToGrayScale
 {
     static public class ToGrayScaleCSharp
     {

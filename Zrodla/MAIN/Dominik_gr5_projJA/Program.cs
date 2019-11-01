@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using SimpleInjector;
 
-namespace Dominik_gr5_projJA
+namespace ColorToGrayScale
 {
     static class Program
     {

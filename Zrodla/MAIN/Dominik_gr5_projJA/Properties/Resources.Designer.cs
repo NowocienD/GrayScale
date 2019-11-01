@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Dominik_gr5_projJA.Properties
+namespace ColorToGrayScale.Properties
 {
 
 

@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Threading;
 
 
-namespace Dominik_gr5_projJA
+namespace ColorToGrayScale
 {
     public interface IThreadsService<T>
     {

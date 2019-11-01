@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Threading;
 
-namespace Dominik_gr5_projJA
+namespace ColorToGrayScale
 {
     class ImageProcessor
     {

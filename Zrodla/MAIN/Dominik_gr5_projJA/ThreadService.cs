@@ -1,7 +1,7 @@
 ﻿
 using System.Threading;
 
-namespace Dominik_gr5_projJA
+namespace ColorToGrayScale
 {
     class ThreadService<T> : IThreadsService<T>
     {
