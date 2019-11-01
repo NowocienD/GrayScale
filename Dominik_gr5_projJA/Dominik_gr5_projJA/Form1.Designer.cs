@@ -96,7 +96,7 @@
             this.pictureBox_original.Location = new System.Drawing.Point(13, 12);
             this.pictureBox_original.Name = "pictureBox_original";
             this.pictureBox_original.Size = new System.Drawing.Size(380, 264);
-            this.pictureBox_original.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox_original.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_original.TabIndex = 2;
             this.pictureBox_original.TabStop = false;
             // 
@@ -159,7 +159,7 @@
             this.pictureBox_modified.Location = new System.Drawing.Point(408, 12);
             this.pictureBox_modified.Name = "pictureBox_modified";
             this.pictureBox_modified.Size = new System.Drawing.Size(380, 264);
-            this.pictureBox_modified.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox_modified.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_modified.TabIndex = 8;
             this.pictureBox_modified.TabStop = false;
             // 
