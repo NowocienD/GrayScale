@@ -42,7 +42,7 @@ namespace Dominik_gr5_projJA
 
         private void StartBTN_Click(object sender, EventArgs e)
         {
-            ImageProcessor imp = new ImageProcessor(50, imageToProcess, true);
+            ImageProcessor imp = new ImageProcessor(processorCount, imageToProcess, true);
             imp.ImageDivider();
             imp.threadsSpliter();
             imp.Start();
