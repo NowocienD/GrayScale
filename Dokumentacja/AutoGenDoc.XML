@@ -4,18 +4,13 @@
         <name>Dominik Nowocien projektJA</name>
     </assembly>
     <members>
-        <member name="F:ColorToGrayScale.Form1.components">
-            <summary>
-            Wymagana zmienna projektanta.
-            </summary>
-        </member>
-        <member name="M:ColorToGrayScale.Form1.Dispose(System.Boolean)">
+        <member name="M:ColorToGrayScale.MainForm.Dispose(System.Boolean)">
             <summary>
             Wyczyść wszystkie używane zasoby.
             </summary>
             <param name="disposing">prawda, jeżeli zarządzane zasoby powinny zostać zlikwidowane; Fałsz w przeciwnym wypadku.</param>
         </member>
-        <member name="M:ColorToGrayScale.Form1.InitializeComponent">
+        <member name="M:ColorToGrayScale.MainForm.InitializeComponent">
             <summary>
             Metoda wymagana do obsługi projektanta — nie należy modyfikować
             jej zawartości w edytorze kodu.

@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace ColorToGrayScale
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private Bitmap imageToProcess;
         private int processorCount;
@@ -12,7 +12,7 @@ namespace ColorToGrayScale
         private readonly IImageService imageService;
         private readonly IThreadsService<Bitmap> threadsService;
 
-        public Form1(
+        public MainForm(
             IImageService _imageService,
             IThreadsService<Bitmap> _threadsService)
         {

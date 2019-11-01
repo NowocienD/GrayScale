@@ -19,7 +19,7 @@ namespace ColorToGrayScale
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Bootstrap(); 
-            Application.Run( container.GetInstance<Form1>() );
+            Application.Run( container.GetInstance<MainForm>() );
         }
         /// <summary>
         /// Metoda zarządająca kontenerem usług 
@@ -28,7 +28,7 @@ namespace ColorToGrayScale
         private static void Bootstrap()
         {
             container = new Container();
-            container.Register<Form1>();
+            container.Register<MainForm>();
 
             container.Register<IImageService, ImageService>();
             container.Register<IThreadsService<Bitmap>, ThreadService<Bitmap>>();

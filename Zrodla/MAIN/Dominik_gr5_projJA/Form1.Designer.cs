@@ -1,10 +1,7 @@
 ﻿namespace ColorToGrayScale
 {
-    partial class Form1
+    partial class MainForm
     {
-        /// <summary>
-        /// Wymagana zmienna projektanta.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
