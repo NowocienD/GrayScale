@@ -55,9 +55,10 @@ namespace Dominik_gr5_projJA
             }
         }
 
-        public void processingMethod(Object im)
+        public void processingMethod(Object obj)
         {
-            Bitmap image = (Bitmap)im;
+            Bitmap image = (Bitmap)obj;
+
             for (int y = 0; y < image.Height; y++)
                 for (int x = 0; x < image.Width; x++)
                 {
@@ -81,8 +82,12 @@ namespace Dominik_gr5_projJA
         public bool checkIfDone()
         {
             foreach (Thread t in threads)
+            {
                 if (t.ThreadState != ThreadState.Stopped)
+                {
                     return false;
+                }
+            }
             return true;
         }
 
@@ -106,6 +111,7 @@ namespace Dominik_gr5_projJA
                 graphic.DrawImage(
                     image,
                     rectangle);
+
                 offset += image.Width;
             }
         }
