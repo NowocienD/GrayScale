@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +12,8 @@ namespace Dominik_gr5_projJA
 {
     public partial class Form1 : Form
     {
-        private Bitmap imageToProcess; 
+        private Bitmap imageToProcess;
+        private int processorCount;
         public Form1()
         {
             InitializeComponent();
@@ -20,14 +21,15 @@ namespace Dominik_gr5_projJA
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            int processorCount = System.Environment.ProcessorCount;
+            this.processorCount = System.Environment.ProcessorCount;
             trackBar_Threads.Value = processorCount;
             label_Threads.Text = processorCount.ToString();
         }
 
         private void trackBar_Threads_Scroll(object sender, EventArgs e)
         {
-            label_Threads.Text = trackBar_Threads.Value.ToString();
+            processorCount = trackBar_Threads.Value;
+            label_Threads.Text = processorCount.ToString();
         }
 
         private void PhotoBTN_Click(object sender, EventArgs e)
