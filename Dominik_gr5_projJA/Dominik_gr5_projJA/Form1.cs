@@ -14,9 +14,13 @@ namespace Dominik_gr5_projJA
     {
         private Bitmap imageToProcess;
         private int processorCount;
-        public Form1()
+
+        private readonly IImageService imageService;
+
+        public Form1(IImageService _imageService)
         {
             InitializeComponent();
+            imageService = _imageService;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -45,7 +49,9 @@ namespace Dominik_gr5_projJA
             int start, stop;
 
             ImageProcessor imp = new ImageProcessor(processorCount, imageToProcess, true);
-            imp.ImageDivider();
+            Bitmap[] b = imageService.ImageDivider(imageToProcess, processorCount);
+            imp.smallerImagesToProcess = b; 
+
             imp.threadsSpliter();
 
             start = Environment.TickCount & Int32.MaxValue;
@@ -53,10 +59,11 @@ namespace Dominik_gr5_projJA
             while (!imp.checkIfDone()) ;
             stop = Environment.TickCount & Int32.MaxValue;
 
-            imp.JoinIntoBigOne();
+            Bitmap btm = imageService.JoinIntoBigOne(b);
 
             label_time.Text = (stop - start).ToString();
-            pictureBox_modified.Image = imp.imageDTO;
+
+            pictureBox_modified.Image = btm;
         }
     }
 }

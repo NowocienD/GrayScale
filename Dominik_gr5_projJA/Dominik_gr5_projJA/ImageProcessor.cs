@@ -12,7 +12,7 @@ namespace Dominik_gr5_projJA
     {
         private int threadsNo;
         private Bitmap imageToProcess;
-        private Bitmap[] smallerImagesToProcess;
+        public Bitmap[] smallerImagesToProcess;
         private Thread[] threads;
 
         public Bitmap imageDTO { get; internal set; }
@@ -22,7 +22,6 @@ namespace Dominik_gr5_projJA
             this.threadsNo = threadsNo;
             this.imageToProcess = img;
             threads = new Thread[threadsNo];
-            smallerImagesToProcess = new Bitmap[threadsNo];
         }
 
         public void threadsSpliter()
@@ -33,27 +32,6 @@ namespace Dominik_gr5_projJA
             }
         }
 
-        public void ImageDivider()
-        {
-            int offset = imageToProcess.Width / threadsNo;
-            int startWidht = 0;
-            int height = imageToProcess.Height;
-
-            System.Drawing.Imaging.PixelFormat format = imageToProcess.PixelFormat;
-
-            for (int i = 0; i < threadsNo; i++)
-            {
-                Rectangle rect = new Rectangle(
-                        startWidht,
-                        0,
-                        offset,
-                        height);
-
-                smallerImagesToProcess[i] = imageToProcess.Clone(rect, format);
-
-                startWidht += offset;
-            }
-        }
 
         public void processingMethod(Object obj)
         {
@@ -89,31 +67,6 @@ namespace Dominik_gr5_projJA
                 }
             }
             return true;
-        }
-
-        public void JoinIntoBigOne()
-        {
-            Rectangle rect = new Rectangle(
-                    0,
-                    0,
-                    imageToProcess.Width,
-                    imageToProcess.Height);
-
-            imageDTO = imageToProcess.Clone(rect, imageToProcess.PixelFormat);
-
-            Graphics graphic = Graphics.FromImage(imageDTO);
-            
-            int offset = 0;
-            foreach (Bitmap image in smallerImagesToProcess)
-            {
-                Rectangle rectangle = new Rectangle(offset, 0, image.Width, image.Height);
-
-                graphic.DrawImage(
-                    image,
-                    rectangle);
-
-                offset += image.Width;
-            }
         }
     }
 }
