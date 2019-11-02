@@ -1,0 +1,2 @@
+LIBRARY C_DLL
+EXPORTS ColorChange
