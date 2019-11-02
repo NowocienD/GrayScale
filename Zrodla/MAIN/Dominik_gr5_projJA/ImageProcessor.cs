@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Drawing;
+using System.Runtime.InteropServices;
 
 namespace ColorToGrayScale
 {
     public class ImageProcessor
     {
+        [DllImport(@"C:\Users\Dominik\source\repos\C_DLL\x64\Release\C_DLL.dll")]
+        public static extern int ColorChange(int r, int g, int b);
+
         public void processingMethod(Object obj)
         {
             Bitmap image = (Bitmap)obj;
@@ -13,9 +17,11 @@ namespace ColorToGrayScale
             {
                 for (int x = 0; x < image.Width; x++)
                 {
-                    Color color = ToGrayScaleCSharp.Process(image.GetPixel(x, y));
+                    Color oldColor = image.GetPixel(x, y);
+                    int colorS = ColorChange(oldColor.R, oldColor.G, oldColor.B);
+                    Color newColor = Color.FromArgb(colorS, colorS, colorS);
 
-                    image.SetPixel(x, y, color);
+                    image.SetPixel(x, y, newColor);
                 }
             }
         }
