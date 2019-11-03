@@ -35,7 +35,7 @@
             this.label_Threads = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label_time = new System.Windows.Forms.Label();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox_modified = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_Threads)).BeginInit();
@@ -149,7 +149,7 @@
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog.FileName = "openFileDialog1";
             // 
             // pictureBox_modified
             // 
@@ -200,7 +200,7 @@
         private System.Windows.Forms.Label label_Threads;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_time;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.PictureBox pictureBox_modified;
     }
 }

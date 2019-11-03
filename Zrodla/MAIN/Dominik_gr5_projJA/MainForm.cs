@@ -45,16 +45,16 @@ namespace ColorToGrayScale
 
         private void PhotoBTN_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
+            openFileDialog.ShowDialog();
             try
             {
-                this.imageToProcess = new Bitmap(Image.FromFile(openFileDialog1.FileName));
+                this.imageToProcess = new Bitmap(Image.FromFile(openFileDialog.FileName));
                 pictureBox_original.Image = imageToProcess;
                 StartBTN.Enabled = true;
             }
             catch (Exception exception)
             {
-                MessageBox.Show("Błąd łądowania zdjęcia \n" + exception.Message);
+                MessageBox.Show("Błąd łądowania zdjęcia \n\n" + exception.Message);
             }
         }
 
@@ -62,13 +62,11 @@ namespace ColorToGrayScale
         {
             threadsService.threadsNo = processorCount;
             threadsService.dataToProcess = imageService.ImageDivider(imageToProcess, processorCount);
-            threadsService.Spliter(new ImageProcessor().processingMethod);
+            threadsService.Func = new ImageProcessor().processingMethod;
 
             timeCounter.Start();
             threadsService.StartProcessing();
-            while (!threadsService.isDone())
-            { 
-            }
+            while (!threadsService.IsDone());
             timeCounter.Stop();
 
             label_time.Text = timeCounter.Time.ToString() + " ms";
