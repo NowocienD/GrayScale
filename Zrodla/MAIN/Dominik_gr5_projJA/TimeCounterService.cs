@@ -12,7 +12,11 @@ namespace ColorToGrayScale
 
         private int stopTime;
 
-        public int Time { get => stopTime - startTime; internal set => Time = value; }
+        public int Time 
+        { 
+            get => stopTime - startTime; 
+            internal set => Time = value; 
+        }
 
         public void Start()
         {
