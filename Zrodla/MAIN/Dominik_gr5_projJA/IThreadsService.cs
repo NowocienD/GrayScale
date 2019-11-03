@@ -4,11 +4,11 @@ namespace ColorToGrayScale
 {
     public interface IThreadsService<T>
     {
-        int threadsNo { set; }
+        int ThreadsNo { set; }
 
-        T[] dataToProcess { get; set; }
+        T[] DataToProcess { get; set; }
 
-        ParameterizedThreadStart Func { set; }
+        ParameterizedThreadStart ProcessingFunction { set; }
 
         void StartProcessing();
 

@@ -6,19 +6,19 @@ namespace ColorToGrayScale
     {
         private Thread[] threads;
 
-        public int threadsNo { internal get; set; }
+        public int ThreadsNo { internal get; set; }
 
-        public T[] dataToProcess { get; set; }
+        public T[] DataToProcess { get; set; }
 
-        public ParameterizedThreadStart Func { internal get; set; }
+        public ParameterizedThreadStart ProcessingFunction { internal get; set; }
 
         public void StartProcessing()
         {
-            threads = new Thread[threadsNo];
-            for (int i = 0; i < threadsNo; i++)
+            threads = new Thread[ThreadsNo];
+            for (int i = 0; i < ThreadsNo; i++)
             {
-                threads[i] = new Thread(Func);
-                threads[i].Start(dataToProcess[i]);
+                threads[i] = new Thread(ProcessingFunction);
+                threads[i].Start(DataToProcess[i]);
             }
         }
 

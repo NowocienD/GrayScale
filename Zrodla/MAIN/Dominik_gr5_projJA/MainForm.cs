@@ -34,11 +34,11 @@ namespace ColorToGrayScale
             trackBar_Threads.Value = processorCount;
             label_Threads.Text = processorCount.ToString();
             
-            #if DEBUG
+#if DEBUG
             this.imageToProcess = new Bitmap(Image.FromFile(@"C:\Users\Dominik\Pictures\rose-blue-flower-rose-blooms-67636.jpeg"));
             pictureBox_original.Image = imageToProcess;            
             StartBTN.Enabled = true;            
-            #endif
+#endif
         }
 
         private void TrackBar_Threads_Scroll(object sender, EventArgs e)
@@ -64,9 +64,9 @@ namespace ColorToGrayScale
 
         private void StartBTN_Click(object sender, EventArgs e)
         {
-            threadsService.threadsNo = processorCount;
-            threadsService.dataToProcess = imageService.ImageDivider(imageToProcess, processorCount);
-            threadsService.Func = new ImageProcessor().processingMethod;
+            threadsService.ThreadsNo = processorCount;
+            threadsService.DataToProcess = imageService.ImageDivider(imageToProcess, processorCount);
+            threadsService.ProcessingFunction = new ImageProcessor().processingMethod;
 
             timeCounter.Start();
             threadsService.StartProcessing();
@@ -74,7 +74,7 @@ namespace ColorToGrayScale
             timeCounter.Stop();
 
             label_time.Text = timeCounter.Time.ToString() + " ms";
-            pictureBox_modified.Image = imageService.JoinIntoBigOne(threadsService.dataToProcess);
+            pictureBox_modified.Image = imageService.JoinIntoBigOne(threadsService.DataToProcess);
         }
     }
 }

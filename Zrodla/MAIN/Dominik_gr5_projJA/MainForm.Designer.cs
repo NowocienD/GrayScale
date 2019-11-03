@@ -57,6 +57,7 @@
             // radioButton_dotNet
             // 
             this.radioButton_dotNet.AutoSize = true;
+            this.radioButton_dotNet.Checked = true;
             this.radioButton_dotNet.Location = new System.Drawing.Point(287, 31);
             this.radioButton_dotNet.Name = "radioButton_dotNet";
             this.radioButton_dotNet.Size = new System.Drawing.Size(61, 17);
@@ -72,7 +73,6 @@
             this.radioButton_ASM.Name = "radioButton_ASM";
             this.radioButton_ASM.Size = new System.Drawing.Size(67, 17);
             this.radioButton_ASM.TabIndex = 0;
-            this.radioButton_ASM.TabStop = true;
             this.radioButton_ASM.Text = "asm DLL";
             this.radioButton_ASM.UseVisualStyleBackColor = true;
             // 
@@ -147,7 +147,7 @@
             this.label_time.TabIndex = 7;
             this.label_time.Text = "0:00";
             // 
-            // openFileDialog1
+            // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
