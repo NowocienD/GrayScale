@@ -32,9 +32,13 @@ namespace ColorToGrayScale
         {
             this.processorCount = Environment.ProcessorCount;
             trackBar_Threads.Value = processorCount;
-            label_Threads.Text = processorCount.ToString(); 
+            label_Threads.Text = processorCount.ToString();
+            
+            #if DEBUG
             this.imageToProcess = new Bitmap(Image.FromFile(@"C:\Users\Dominik\Pictures\rose-blue-flower-rose-blooms-67636.jpeg"));
-            pictureBox_original.Image = imageToProcess;
+            pictureBox_original.Image = imageToProcess;            
+            StartBTN.Enabled = true;            
+            #endif
         }
 
         private void TrackBar_Threads_Scroll(object sender, EventArgs e)
