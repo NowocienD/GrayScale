@@ -33,6 +33,10 @@ namespace ColorToGrayScale
             container.Register<IImageService, ImageService>();
             container.Register<IThreadsService<Bitmap>, ThreadService<Bitmap>>();
             container.Register<ITimeCounterService, TimeCounterService>();
+
+            container.Register<IDllService, DllService>();
+            container.Register<IAsmDll, AsmDll>();
+            container.Register<ICppDll, CppDll>();
         }
     }
 }

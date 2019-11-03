@@ -13,6 +13,8 @@ namespace ColorToGrayScale
 
         private readonly ITimeCounterService timeCounter;
 
+        private readonly IDllService dllService;
+
         private Bitmap imageToProcess;
 
         private int processorCount;
@@ -20,12 +22,14 @@ namespace ColorToGrayScale
         public MainForm(
             IImageService _imageService,
             IThreadsService<Bitmap> _threadsService,
-            ITimeCounterService _timeCounterService)
+            ITimeCounterService _timeCounterService,
+            IDllService _dllService)
         {
             InitializeComponent();
             imageService = _imageService;
             threadsService = _threadsService;
             this.timeCounter = _timeCounterService;
+            this.dllService = _dllService;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -66,7 +70,7 @@ namespace ColorToGrayScale
         {
             threadsService.ThreadsNo = processorCount;
             threadsService.DataToProcess = imageService.ImageDivider(imageToProcess, processorCount);
-            threadsService.ProcessingFunction = new ImageProcessor().processingMethod;
+            threadsService.ProcessingFunction = dllService.ProcessUsingCPP;
 
             timeCounter.Start();
             threadsService.StartProcessing();
