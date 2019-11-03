@@ -109,6 +109,7 @@
             // 
             // StartBTN
             // 
+            this.StartBTN.Enabled = false;
             this.StartBTN.Location = new System.Drawing.Point(54, 387);
             this.StartBTN.Name = "StartBTN";
             this.StartBTN.Size = new System.Drawing.Size(127, 37);
@@ -160,7 +161,7 @@
             this.pictureBox_modified.TabIndex = 8;
             this.pictureBox_modified.TabStop = false;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -174,9 +175,9 @@
             this.Controls.Add(this.pictureBox_original);
             this.Controls.Add(this.trackBar_Threads);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Dominik Nowocień JA proj";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_Threads)).EndInit();

@@ -28,9 +28,9 @@ namespace ColorToGrayScale
             this.timeCounter = _timeCounterService;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
-            this.processorCount = System.Environment.ProcessorCount;
+            this.processorCount = Environment.ProcessorCount;
             trackBar_Threads.Value = processorCount;
             label_Threads.Text = processorCount.ToString(); 
             this.imageToProcess = new Bitmap(Image.FromFile(@"C:\Users\Dominik\Pictures\rose-blue-flower-rose-blooms-67636.jpeg"));
@@ -46,9 +46,16 @@ namespace ColorToGrayScale
         private void PhotoBTN_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
-            Image imageToProcess = Image.FromFile(openFileDialog1.FileName);
-            pictureBox_original.Image = imageToProcess;
-            this.imageToProcess = new Bitmap(imageToProcess);
+            try
+            {
+                this.imageToProcess = new Bitmap(Image.FromFile(openFileDialog1.FileName));
+                pictureBox_original.Image = imageToProcess;
+                StartBTN.Enabled = true;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Błąd łądowania zdjęcia \n" + exception.Message);
+            }
         }
 
         private void StartBTN_Click(object sender, EventArgs e)
