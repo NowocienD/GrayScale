@@ -11,17 +11,21 @@ namespace ColorToGrayScale
 
         private readonly IThreadsService<Bitmap> threadsService;
 
+        private readonly ITimeCounterService timeCounter;
+
         private Bitmap imageToProcess;
 
         private int processorCount;
 
         public MainForm(
             IImageService _imageService,
-            IThreadsService<Bitmap> _threadsService)
+            IThreadsService<Bitmap> _threadsService,
+            ITimeCounterService _timeCounterService)
         {
             InitializeComponent();
             imageService = _imageService;
             threadsService = _threadsService;
+            this.timeCounter = _timeCounterService;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -49,19 +53,18 @@ namespace ColorToGrayScale
 
         private void StartBTN_Click(object sender, EventArgs e)
         {
-           threadsService.threadsNo = processorCount;
+            threadsService.threadsNo = processorCount;
             threadsService.dataToProcess = imageService.ImageDivider(imageToProcess, processorCount);
             threadsService.Spliter(new ImageProcessor().processingMethod);
 
-            int startTime, endTime;
-            startTime = Environment.TickCount;
+            timeCounter.Start();
             threadsService.StartProcessing();
             while (!threadsService.isDone())
             { 
             }
-            endTime = Environment.TickCount;
+            timeCounter.Stop();
 
-            label_time.Text = (endTime - startTime).ToString() + " ms";
+            label_time.Text = timeCounter.Time.ToString() + " ms";
             pictureBox_modified.Image = imageService.JoinIntoBigOne(threadsService.dataToProcess);
         }
     }
