@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace ColorToGrayScale
 {
@@ -27,7 +28,9 @@ namespace ColorToGrayScale
         {
             this.processorCount = System.Environment.ProcessorCount;
             trackBar_Threads.Value = processorCount;
-            label_Threads.Text = processorCount.ToString();
+            label_Threads.Text = processorCount.ToString(); 
+            this.imageToProcess = new Bitmap(Image.FromFile(@"C:\Users\Dominik\Pictures\rose-blue-flower-rose-blooms-67636.jpeg"));
+            pictureBox_original.Image = imageToProcess;
         }
 
         private void TrackBar_Threads_Scroll(object sender, EventArgs e)
@@ -46,7 +49,7 @@ namespace ColorToGrayScale
 
         private void StartBTN_Click(object sender, EventArgs e)
         {
-            threadsService.threadsNo = processorCount;
+           threadsService.threadsNo = processorCount;
             threadsService.dataToProcess = imageService.ImageDivider(imageToProcess, processorCount);
             threadsService.Spliter(new ImageProcessor().processingMethod);
 
