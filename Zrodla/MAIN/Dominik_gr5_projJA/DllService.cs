@@ -17,18 +17,14 @@ namespace ColorToGrayScale
             this.asmDll = asmDll;
         }
 
-        public void ProcessUsingASM(Object obj)
+        public void ProcessUsingASM(Object image)
         {
-            Bitmap image = (Bitmap)obj;
-            asmDll.ChangeColorToGrayScale(image);
+            asmDll.ChangeColorToGrayScale((Bitmap)image);
         }
 
-        public void ProcessUsingCPP(Object obj)
+        public void ProcessUsingCPP(Object image)
         {
-            Bitmap image = (Bitmap)obj;
-            cppDll.ChangeColorToGrayScale(image);
-
-
+            cppDll.ChangeColorToGrayScale((Bitmap)image);
         }
     }
 }
