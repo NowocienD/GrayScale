@@ -1,0 +1,2 @@
+LIBRARY ASM_DLL
+EXPORTS ColorChange
