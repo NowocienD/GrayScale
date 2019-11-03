@@ -68,9 +68,21 @@ namespace ColorToGrayScale
 
         private void StartBTN_Click(object sender, EventArgs e)
         {
+            if (radioButton_ASM.Checked == true)
+            {
+                threadsService.ProcessingFunction = dllService.ProcessUsingASM;
+            }
+            else if (radioButton_dotNet.Checked == true)
+            {
+                threadsService.ProcessingFunction = dllService.ProcessUsingCPP;
+            }
+            else
+            {
+                throw new Exception();
+            }
+
             threadsService.ThreadsNo = processorCount;
             threadsService.DataToProcess = imageService.ImageDivider(imageToProcess, processorCount);
-            threadsService.ProcessingFunction = dllService.ProcessUsingCPP;
 
             timeCounter.Start();
             threadsService.StartProcessing();
