@@ -82,8 +82,8 @@ namespace ColorToGrayScale
             }
 
             threadsService.ThreadsNo = processorCount;
-            threadsService.DataToProcess = imageService.ImageDivider(imageToProcess, processorCount);
-
+            threadsService.DataToProcess = imageService.ImageDivider(imageToProcess);
+                        
             timeCounter.Start();
             threadsService.StartProcessing();
             while (!threadsService.IsDone());

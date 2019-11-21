@@ -15,11 +15,38 @@ namespace ColorToGrayScale
         public void StartProcessing()
         {
             threads = new Thread[ThreadsNo];
+
             for (int i = 0; i < ThreadsNo; i++)
             {
                 threads[i] = new Thread(ProcessingFunction);
                 threads[i].Start(DataToProcess[i]);
             }
+            int count = ThreadsNo;
+
+            while (count < DataToProcess.Length)
+            {
+                int i;
+                do
+                {
+                    i = WhichIsFree(); 
+                } while (i < 0);
+
+                threads[i] = new Thread(ProcessingFunction);
+                threads[i].Start(DataToProcess[count]);
+                count++;
+            }
+        }
+
+        private int WhichIsFree()
+        {
+            for (int i = 0; i < ThreadsNo; i++)
+            {
+                if (threads[i].ThreadState == ThreadState.Stopped)
+                {
+                    return i;
+                }
+            }
+            return -1;
         }
 
         public bool IsDone()

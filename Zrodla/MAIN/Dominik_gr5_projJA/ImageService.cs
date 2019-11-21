@@ -4,28 +4,29 @@ namespace ColorToGrayScale
 {
     public class ImageService : IImageService
     {
-        public Bitmap[] ImageDivider(Bitmap imageToProcess, int threadsNo)
-        {
-            Bitmap[] smallerImagesToProcess;
-            smallerImagesToProcess = new Bitmap[threadsNo];
+        private int partsToDivide = 1;
 
-            int offset = imageToProcess.Width / threadsNo;
+        public Bitmap[] ImageDivider(Bitmap imageToProcess)
+        {
             int startWidht = 0;
+            int width = imageToProcess.Width;
             int height = imageToProcess.Height;
+
+            Bitmap[] smallerImagesToProcess = new Bitmap[width / partsToDivide];
 
             System.Drawing.Imaging.PixelFormat format = imageToProcess.PixelFormat;
 
-            for (int i = 0; i < threadsNo; i++)
+            for (int i = 0; i < width / partsToDivide; i++)
             {
                 Rectangle rect = new Rectangle(
                         startWidht,
                         0,
-                        offset,
+                        partsToDivide,
                         height);
 
                 smallerImagesToProcess[i] = imageToProcess.Clone(rect, format);
 
-                startWidht += offset;
+                startWidht += partsToDivide;
             }
 
             return smallerImagesToProcess;
@@ -33,20 +34,10 @@ namespace ColorToGrayScale
 
         public Bitmap JoinIntoBigOne(Bitmap[] smallImagesToProcess)
         {
-            int width = 0;
+            int width = smallImagesToProcess.Length * partsToDivide;
             int height = smallImagesToProcess[0].Height;
-            foreach (Bitmap item in smallImagesToProcess)
-            {
-                width += item.Width;
-            }
 
-            Rectangle rect = new Rectangle(
-                    0,
-                    0,
-                    width,
-                    height);
-
-            Bitmap imageDTO = new Bitmap(width, height); // imageToProcess.Clone(rect, pxFormat);
+            Bitmap imageDTO = new Bitmap(width, height);
 
             Graphics graphic = Graphics.FromImage(imageDTO);
 
@@ -59,7 +50,7 @@ namespace ColorToGrayScale
                     image,
                     rectangle);
 
-                offset += image.Width;
+                offset += partsToDivide;
             }
 
             return imageDTO;

@@ -23,7 +23,7 @@
             Celem jest pozniejsze szybsze przetwarzanie obrazu.
             </summary>
         </member>
-        <member name="M:ColorToGrayScale.IImageService.ImageDivider(System.Drawing.Bitmap,System.Int32)">
+        <member name="M:ColorToGrayScale.IImageService.ImageDivider(System.Drawing.Bitmap)">
             <summary>
             Metoda dzieląca obraz na n mniejszych
             Umożlia pozniejsze jego przetwarzanie na większej ilości wątków

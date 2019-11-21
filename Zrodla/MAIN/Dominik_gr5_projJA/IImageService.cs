@@ -16,7 +16,7 @@ namespace ColorToGrayScale
         /// <param name="imageToProcess">Obraz do przetworzenia</param>
         /// <param name="threadsNo">Liczba wątków na których będzie wykonywana operacja przetwarzania obrazu</param>
         /// <returns>Tablica z podzielonym obrazem na n częsci</returns>
-        Bitmap[] ImageDivider(Bitmap imageToProcess, int threadsNo);
+        Bitmap[] ImageDivider(Bitmap imageToProcess);
 
         /// <summary>
         /// Metoda łącząca wiele mniejszych przetworzonych obrazów w jeden cały
