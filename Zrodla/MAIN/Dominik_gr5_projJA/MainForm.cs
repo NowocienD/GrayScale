@@ -19,6 +19,8 @@ namespace ColorToGrayScale
 
         private int processorCount;
 
+        private Bitmap[] dividedImage;
+
         public MainForm(
             IImageService _imageService,
             IThreadsService<Bitmap> _threadsService,
@@ -57,6 +59,7 @@ namespace ColorToGrayScale
             try
             {
                 this.imageToProcess = new Bitmap(Image.FromFile(openFileDialog.FileName));
+                dividedImage = imageService.ImageDivider(imageToProcess);
                 pictureBox_original.Image = imageToProcess;
                 StartBTN.Enabled = true;
             }
@@ -82,11 +85,11 @@ namespace ColorToGrayScale
             }
 
             threadsService.ThreadsNo = processorCount;
-            threadsService.DataToProcess = imageService.ImageDivider(imageToProcess);
+            threadsService.DataToProcess = dividedImage;
                         
             timeCounter.Start();
             threadsService.StartProcessing();
-            while (!threadsService.IsDone());
+            while (!threadsService.IsDone() || threadsService.MainThread.ThreadState == System.Threading.ThreadState.Running);
             timeCounter.Stop();
 
             label_time.Text = timeCounter.Time.ToString() + " ms";

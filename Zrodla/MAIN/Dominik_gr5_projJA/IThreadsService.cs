@@ -13,5 +13,7 @@ namespace ColorToGrayScale
         void StartProcessing();
 
         bool IsDone();
+        
+        Thread MainThread { get; set; }
     }
 }

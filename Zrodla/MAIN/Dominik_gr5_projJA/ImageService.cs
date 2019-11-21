@@ -4,7 +4,7 @@ namespace ColorToGrayScale
 {
     public class ImageService : IImageService
     {
-        private int partsToDivide = 1;
+        private int WidthOfSmallerPart = 1;
 
         public Bitmap[] ImageDivider(Bitmap imageToProcess)
         {
@@ -12,21 +12,21 @@ namespace ColorToGrayScale
             int width = imageToProcess.Width;
             int height = imageToProcess.Height;
 
-            Bitmap[] smallerImagesToProcess = new Bitmap[width / partsToDivide];
+            Bitmap[] smallerImagesToProcess = new Bitmap[width / WidthOfSmallerPart];
 
             System.Drawing.Imaging.PixelFormat format = imageToProcess.PixelFormat;
 
-            for (int i = 0; i < width / partsToDivide; i++)
+            for (int i = 0; i < width / WidthOfSmallerPart; i++)
             {
                 Rectangle rect = new Rectangle(
                         startWidht,
                         0,
-                        partsToDivide,
+                        WidthOfSmallerPart,
                         height);
 
                 smallerImagesToProcess[i] = imageToProcess.Clone(rect, format);
 
-                startWidht += partsToDivide;
+                startWidht += WidthOfSmallerPart;
             }
 
             return smallerImagesToProcess;
@@ -34,7 +34,7 @@ namespace ColorToGrayScale
 
         public Bitmap JoinIntoBigOne(Bitmap[] smallImagesToProcess)
         {
-            int width = smallImagesToProcess.Length * partsToDivide;
+            int width = smallImagesToProcess.Length * WidthOfSmallerPart;
             int height = smallImagesToProcess[0].Height;
 
             Bitmap imageDTO = new Bitmap(width, height);
@@ -50,7 +50,7 @@ namespace ColorToGrayScale
                     image,
                     rectangle);
 
-                offset += partsToDivide;
+                offset += WidthOfSmallerPart;
             }
 
             return imageDTO;
