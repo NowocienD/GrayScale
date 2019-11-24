@@ -80,7 +80,7 @@ namespace ColorToGrayScale
             }
             else if (radioButton_dotNet.Checked == true)
             {
-                threadsService.ProcessingFunction = dllService.ProcessUsingCPP;
+                threadsService.ProcessingFunction = dllService.ProcessUsingASM;
             }
             else
             {

@@ -4,14 +4,14 @@ namespace ColorToGrayScale
 {
     public class ImageService : IImageService
     {
-        private int size = 32;
+        private int size = 16;
         private int height;
         private int width;
 
         public Bitmap[] ImageDivider(Bitmap imageToProcess)
         {
             width = imageToProcess.Width;
-            height = imageToProcess.Height - size;
+            height = imageToProcess.Height;// - size;
 
             int numberOfVerticalParts = height / size;
 
@@ -21,13 +21,14 @@ namespace ColorToGrayScale
             }
 
             int partsNumber = width * numberOfVerticalParts;
+            //numberOfVerticalParts++;
 
             Bitmap[] smallerImagesToProcess = new Bitmap[width * numberOfVerticalParts];
 
             System.Drawing.Imaging.PixelFormat format = imageToProcess.PixelFormat;
 
             int counter = 0;
-            for (int x = 0; x < width ; x++)
+            for (int x = 0; x < width; x++)
             {
                 for (int y = 0; y < height; y += size)
                 {
