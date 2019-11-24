@@ -146,6 +146,7 @@
   <ItemGroup>
     <Compile Include="AsmDll.cs" />
     <Compile Include="CppDll.cs" />
+    <Compile Include="DllService.cs" />
     <Compile Include="IAsmDll.cs" />
     <Compile Include="ICppDll.cs" />
     <Compile Include="IDllService.cs" />
@@ -155,7 +156,6 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DllService.cs" />
     <Compile Include="IImageService.cs" />
     <Compile Include="ImageService.cs" />
     <Compile Include="IThreadsService.cs" />
