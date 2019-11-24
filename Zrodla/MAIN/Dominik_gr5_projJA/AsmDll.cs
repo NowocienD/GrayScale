@@ -29,6 +29,30 @@ namespace ColorToGrayScale
         public void ChangeColorToGrayScale(Bitmap image)
         {
             const int size = 16;
+
+            byte[] newColorArrayRed = new byte[size];
+            byte[] newColorArrayGreen = new byte[size];
+            byte[] newColorArrayBlue = new byte[size];
+
+            for (int i = 0; i < size; i++)
+            {
+                Color oldColor = image.GetPixel(0, 0 + i);
+                newColorArrayRed[i] = oldColor.R;
+                newColorArrayGreen[i] = oldColor.G;
+                newColorArrayBlue[i] = oldColor.B;
+            }
+
+            ColorChange(newColorArrayRed, newColorArrayGreen, newColorArrayBlue);
+
+            for (int i = 0; i < size; i++)
+            {
+                image.SetPixel(0, 0 + i, Color.FromArgb(newColorArrayRed[i], newColorArrayGreen[i], newColorArrayBlue[i]));
+            }
+        }
+
+        public void ChangeColorToGrayScale22(Bitmap image)
+        {
+            const int size = 16;
             //Bitmap image = (Bitmap)img;
             for (int x = 0; x < image.Width; x++)
             {

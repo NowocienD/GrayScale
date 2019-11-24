@@ -36,7 +36,7 @@ namespace ColorToGrayScale
             {
                 WhichIsFree();
             }
-f        }
+         }
 
         private void WhichIsFree()
         {

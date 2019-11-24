@@ -4,29 +4,42 @@ namespace ColorToGrayScale
 {
     public class ImageService : IImageService
     {
-        private int WidthOfSmallerPart = 1;
+        private int size = 32;
+        private int height;
+        private int width;
 
         public Bitmap[] ImageDivider(Bitmap imageToProcess)
         {
-            int startWidht = 0;
-            int width = imageToProcess.Width;
-            int height = imageToProcess.Height;
+            width = imageToProcess.Width;
+            height = imageToProcess.Height - size;
 
-            Bitmap[] smallerImagesToProcess = new Bitmap[width / WidthOfSmallerPart];
+            int numberOfVerticalParts = height / size;
+
+            if (height % size != 0)
+            {
+                //numberOfVerticalParts++;
+            }
+
+            int partsNumber = width * numberOfVerticalParts;
+
+            Bitmap[] smallerImagesToProcess = new Bitmap[width * numberOfVerticalParts];
 
             System.Drawing.Imaging.PixelFormat format = imageToProcess.PixelFormat;
 
-            for (int i = 0; i < width / WidthOfSmallerPart; i++)
+            int counter = 0;
+            for (int x = 0; x < width ; x++)
             {
-                Rectangle rect = new Rectangle(
-                        startWidht,
-                        0,
-                        WidthOfSmallerPart,
-                        height);
+                for (int y = 0; y < height; y += size)
+                {
+                    Rectangle rect = new Rectangle(
+                            x,
+                            y,
+                            1,
+                            size);
 
-                smallerImagesToProcess[i] = imageToProcess.Clone(rect, format);
-
-                startWidht += WidthOfSmallerPart;
+                    smallerImagesToProcess[counter] = imageToProcess.Clone(rect, format);
+                    counter++;
+                }
             }
 
             return smallerImagesToProcess;
@@ -34,26 +47,30 @@ namespace ColorToGrayScale
 
         public Bitmap JoinIntoBigOne(Bitmap[] smallImagesToProcess)
         {
-            int width = smallImagesToProcess.Length * WidthOfSmallerPart;
-            int height = smallImagesToProcess[0].Height;
+            Bitmap image = new Bitmap(width, height);
 
-            Bitmap imageDTO = new Bitmap(width, height);
+            Graphics graphic = Graphics.FromImage(image);
 
-            Graphics graphic = Graphics.FromImage(imageDTO);
-
-            int offset = 0;
-            foreach (Bitmap image in smallImagesToProcess)
+            int counter = 0;
+            for (int x = 0; x < width; x++)
             {
-                Rectangle rectangle = new Rectangle(offset, 0, image.Width, image.Height);
+                for (int y = 0; y < height; y += size)
 
-                graphic.DrawImage(
-                    image,
-                    rectangle);
+                {
+                    Rectangle rectangle = new Rectangle(
+                        x,
+                        y,
+                        1,
+                        size);
 
-                offset += WidthOfSmallerPart;
+                    graphic.DrawImage(
+                        smallImagesToProcess[counter],
+                        rectangle);
+                    counter++;
+                }
             }
 
-            return imageDTO;
+            return image;
         }
     }
 }

@@ -56,12 +56,15 @@ namespace ColorToGrayScale
         private void PhotoBTN_Click(object sender, EventArgs e)
         {
             openFileDialog.ShowDialog();
-            try
-            {
+            //try
+            //{
                 this.imageToProcess = new Bitmap(Image.FromFile(openFileDialog.FileName));
                 dividedImage = imageService.ImageDivider(imageToProcess);
                 pictureBox_original.Image = imageToProcess;
                 StartBTN.Enabled = true;
+
+            pictureBox_modified.Image = imageService.JoinIntoBigOne(dividedImage);
+            try { 
             }
             catch (Exception exception)
             {
