@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace ColorToGrayScale
 {
-    public class AsmDll : IAsmDll
+    public class AsmDll : IDll
     {
-        public delegate void ProcessingMethodDelegate(byte[] r, byte[] g, byte[] b);
+        //public delegate void ProcessingMethodDelegate(byte[] r, byte[] g, byte[] b);
 
         public ProcessingMethodDelegate ProcessingMethod { internal get; set; }
 

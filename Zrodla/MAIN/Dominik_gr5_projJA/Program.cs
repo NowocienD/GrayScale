@@ -35,7 +35,7 @@ namespace ColorToGrayScale
             container.Register<ITimeCounterService, TimeCounterService>();
 
             container.Register<IDllService, DllService>();
-            container.Register<IAsmDll, AsmDll>();
+            container.Register<IDll, AsmDll>();
             container.Register<ICppDll, CppDll>();
         }
     }

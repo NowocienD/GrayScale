@@ -7,11 +7,11 @@ namespace ColorToGrayScale
     {
         private readonly ICppDll cppDll;
 
-        private readonly IAsmDll asmDll;
+        private readonly IDll asmDll;
 
         public DllService(
             ICppDll cppDll,
-            IAsmDll asmDll)
+            IDll asmDll)
         {
             this.cppDll = cppDll;
             this.asmDll = asmDll;

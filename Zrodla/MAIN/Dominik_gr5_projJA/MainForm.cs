@@ -15,7 +15,7 @@ namespace ColorToGrayScale
 
         private readonly IDllService dllService;
 
-        private readonly IAsmDll asmDll;
+        private readonly IDll asmDll;
 
         private Bitmap imageToProcess;
 
@@ -28,7 +28,7 @@ namespace ColorToGrayScale
             IThreadsService _threadsService,
             ITimeCounterService _timeCounterService,
             IDllService _dllService,
-            IAsmDll asmDll)
+            IDll asmDll)
         {
             InitializeComponent();
             imageService = _imageService;
