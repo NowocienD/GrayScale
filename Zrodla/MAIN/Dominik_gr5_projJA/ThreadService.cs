@@ -33,6 +33,7 @@ namespace ColorToGrayScale
 
         public void StartProcessing()
         {
+            count = 0;
             threads = new Thread[ThreadsNo];
             for (int i = 0; i < ThreadsNo; i++)
             {
