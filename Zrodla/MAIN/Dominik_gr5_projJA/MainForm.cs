@@ -23,6 +23,10 @@ namespace ColorToGrayScale
 
         public delegate void EndOfThreads();
 
+        public delegate void EndOfLoadingPicture();
+
+        public delegate void EndOfJoiningSmallerPictures();
+
         public MainForm(
             IImageService _imageService,
             IThreadsService<Bitmap> _threadsService,
@@ -41,12 +45,6 @@ namespace ColorToGrayScale
             this.processorCount = Environment.ProcessorCount;
             trackBar_Threads.Value = processorCount;
             label_Threads.Text = processorCount.ToString();
-            
-#if DEBUG
-            this.imageToProcess = new Bitmap(Image.FromFile(@"C:\Users\Dominik\Pictures\rose-blue-flower-rose-blooms-67636.jpeg"));
-            pictureBox_original.Image = imageToProcess;            
-            StartBTN.Enabled = true;            
-#endif
         }
 
         private void TrackBar_Threads_Scroll(object sender, EventArgs e)
@@ -65,7 +63,7 @@ namespace ColorToGrayScale
                 pictureBox_original.Image = imageToProcess;
                 StartBTN.Enabled = true;
 
-            pictureBox_modified.Image = imageService.JoinIntoBigOne(dividedImage);
+                pictureBox_modified.Image = imageToProcess;
            // try { 
             }
             catch (Exception exception)
@@ -74,14 +72,13 @@ namespace ColorToGrayScale
             }
         }
 
-        private void updatePhoto()
+        private void UpdateModifiedPhoto()
         {
             timeCounter.Stop();
 
             if (label_time.InvokeRequired)
             {
-                var d = new EndOfThreads(updatePhoto);
-                label_time.Invoke(d);
+                label_time.Invoke(new EndOfThreads(UpdateModifiedPhoto));
             }
             else
             {
@@ -89,11 +86,20 @@ namespace ColorToGrayScale
             }
 
             pictureBox_modified.Image = imageService.JoinIntoBigOne(threadsService.DataToProcess);
+            StartBTN.Enabled = true;
+        }
+
+        private void ShowOriginalPhoto()
+        {
+            pictureBox_original.Image = imageToProcess;
+            pictureBox_modified.Image = imageToProcess;
+            StartBTN.Enabled = true;
         }
 
         private void StartBTN_Click(object sender, EventArgs e)
         {
             label_time.Text = string.Empty;
+            StartBTN.Enabled = false;
 
             if (radioButton_ASM.Checked == true)
             {
@@ -108,7 +114,7 @@ namespace ColorToGrayScale
                 throw new Exception();
             }
 
-            threadsService.endOfThreads = new EndOfThreads(updatePhoto);
+            threadsService.endOfThreads = new EndOfThreads(UpdateModifiedPhoto);
             threadsService.ThreadsNo = processorCount;
             threadsService.DataToProcess = dividedImage;
                         
