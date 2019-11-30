@@ -21,6 +21,8 @@ namespace ColorToGrayScale
 
         private Bitmap[] dividedImage;
 
+        public delegate void EndOfThreads();
+
         public MainForm(
             IImageService _imageService,
             IThreadsService<Bitmap> _threadsService,
@@ -56,15 +58,15 @@ namespace ColorToGrayScale
         private void PhotoBTN_Click(object sender, EventArgs e)
         {
             openFileDialog.ShowDialog();
-            //try
-            //{
+            try
+            {
                 this.imageToProcess = new Bitmap(Image.FromFile(openFileDialog.FileName));
                 dividedImage = imageService.ImageDivider(imageToProcess);
                 pictureBox_original.Image = imageToProcess;
                 StartBTN.Enabled = true;
 
             pictureBox_modified.Image = imageService.JoinIntoBigOne(dividedImage);
-            try { 
+           // try { 
             }
             catch (Exception exception)
             {
@@ -72,8 +74,27 @@ namespace ColorToGrayScale
             }
         }
 
+        private void updatePhoto()
+        {
+            timeCounter.Stop();
+
+            if (label_time.InvokeRequired)
+            {
+                var d = new EndOfThreads(updatePhoto);
+                label_time.Invoke(d);
+            }
+            else
+            {
+                label_time.Text = timeCounter.Time.ToString() + " ms";
+            }
+
+            pictureBox_modified.Image = imageService.JoinIntoBigOne(threadsService.DataToProcess);
+        }
+
         private void StartBTN_Click(object sender, EventArgs e)
         {
+            label_time.Text = string.Empty;
+
             if (radioButton_ASM.Checked == true)
             {
                 threadsService.ProcessingFunction = dllService.ProcessUsingASM;
@@ -87,16 +108,12 @@ namespace ColorToGrayScale
                 throw new Exception();
             }
 
+            threadsService.endOfThreads = new EndOfThreads(updatePhoto);
             threadsService.ThreadsNo = processorCount;
             threadsService.DataToProcess = dividedImage;
                         
             timeCounter.Start();
             threadsService.StartProcessing();
-            while (!threadsService.IsDone() || threadsService.MainThread.ThreadState == System.Threading.ThreadState.Running);
-            timeCounter.Stop();
-
-            label_time.Text = timeCounter.Time.ToString() + " ms";
-            pictureBox_modified.Image = imageService.JoinIntoBigOne(threadsService.DataToProcess);
         }
     }
 }

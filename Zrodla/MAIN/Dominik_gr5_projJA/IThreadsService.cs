@@ -1,4 +1,5 @@
 ﻿using System.Threading;
+using static ColorToGrayScale.MainForm;
 
 namespace ColorToGrayScale
 {
@@ -13,7 +14,7 @@ namespace ColorToGrayScale
         void StartProcessing();
 
         bool IsDone();
-        
-        Thread MainThread { get; set; }
+
+        EndOfThreads endOfThreads { set; }
     }
 }

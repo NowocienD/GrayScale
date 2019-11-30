@@ -26,15 +26,21 @@ namespace ColorToGrayScale
             }
         }
 
-        public void ChangeColorToGrayScale(Bitmap image)
+        public void ChangeColorToGrayScale(Bitmap[] image)
         {
-            abc pixels = new abc();
+            int i = ThreadService<Bitmap>.GetI();
 
-            pixels.Set(image);
-            
-            ColorChange(pixels.R, pixels.G, pixels.B);
+            while (i < image.Length) 
+            {                 
+                PixelPackage pixels = new PixelPackage();
+                pixels.Set(image[i]);
 
-            image = pixels.Get();
+                ColorChange(pixels.R, pixels.G, pixels.B);
+
+                image[i] = pixels.Get();
+
+                i = ThreadService<Bitmap>.GetI();
+            } 
         }
 
         public void ChangeColorToGrayScale22(Bitmap image)

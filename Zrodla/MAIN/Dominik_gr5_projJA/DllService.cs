@@ -19,7 +19,7 @@ namespace ColorToGrayScale
 
         public void ProcessUsingASM(Object image)
         {
-            asmDll.ChangeColorToGrayScale((Bitmap)image);
+            asmDll.ChangeColorToGrayScale((Bitmap[])image);
         }
 
         public void ProcessUsingCPP(Object image)

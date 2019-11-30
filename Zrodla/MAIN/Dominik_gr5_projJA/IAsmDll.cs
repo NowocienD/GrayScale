@@ -9,6 +9,6 @@ namespace ColorToGrayScale
 {
     public interface IAsmDll
     {
-        void ChangeColorToGrayScale(Bitmap image);
+        void ChangeColorToGrayScale(Bitmap[] image);
     }
 }

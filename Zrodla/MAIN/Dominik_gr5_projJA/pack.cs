@@ -22,7 +22,7 @@ namespace ColorToGrayScale
         public byte[] Blue { get; set; }
     }
 
-    public class abc
+    public class PixelPackage
     {
         private const int Size = 16;
 
