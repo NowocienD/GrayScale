@@ -11,17 +11,23 @@ namespace ColorToGrayScale
         public Bitmap[] ImageDivider(Bitmap imageToProcess)
         {
             width = imageToProcess.Width;
-            height = imageToProcess.Height;// - size;
+            height = imageToProcess.Height;
 
             int numberOfVerticalParts = height / size;
 
             if (height % size != 0)
             {
-                //numberOfVerticalParts++;
+                height = size * numberOfVerticalParts;
+                imageToProcess = imageToProcess.Clone(
+                    new Rectangle(
+                        0,
+                        0,
+                        width,
+                        height),
+                    imageToProcess.PixelFormat);
             }
 
             int partsNumber = width * numberOfVerticalParts;
-            //numberOfVerticalParts++;
 
             Bitmap[] smallerImagesToProcess = new Bitmap[width * numberOfVerticalParts];
 
@@ -56,7 +62,6 @@ namespace ColorToGrayScale
             for (int x = 0; x < width; x++)
             {
                 for (int y = 0; y < height; y += size)
-
                 {
                     Rectangle rectangle = new Rectangle(
                         x,
@@ -70,7 +75,6 @@ namespace ColorToGrayScale
                     counter++;
                 }
             }
-
             return image;
         }
     }
