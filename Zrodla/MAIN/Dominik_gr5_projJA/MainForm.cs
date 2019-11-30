@@ -13,10 +13,6 @@ namespace ColorToGrayScale
 
         private readonly ITimeCounterService timeCounter;
 
-        private readonly IDllService dllService;
-
-        private readonly IDll asmDll;
-
         private Bitmap imageToProcess;
 
         private int processorCount;
@@ -26,16 +22,12 @@ namespace ColorToGrayScale
         public MainForm(
             IImageService _imageService,
             IThreadsService _threadsService,
-            ITimeCounterService _timeCounterService,
-            IDllService _dllService,
-            IDll asmDll)
+            ITimeCounterService _timeCounterService)
         {
             InitializeComponent();
             imageService = _imageService;
             threadsService = _threadsService;
             this.timeCounter = _timeCounterService;
-            this.dllService = _dllService;
-            this.asmDll = asmDll;
         }
 
         public delegate void EndOfThreads();
@@ -91,24 +83,25 @@ namespace ColorToGrayScale
         {
             label_time.Text = string.Empty;
             StartBTN.Enabled = false;
+            IDll chosenDll;
 
-            //if (radioButton_ASM.Checked == true)
-            //{
-            //}
-            //else if (radioButton_dotNet.Checked == true)
-            //{
-            //    threadsService.ProcessingFunction = dllService.ProcessUsingASM;
-            //}
-            //else
-            //{
-            //    throw new Exception();
-            //}
+            if (radioButton_ASM.Checked == true)
+            {
+                chosenDll = new AsmDll();
+            }
+            else if (radioButton_dotNet.Checked == true)
+            {
+                //chosemDll = new CppDll();
+                chosenDll = new AsmDll();
+            }
+            else
+            {
+                throw new Exception();
+            }
 
-
-            asmDll.ProcessingMethod = AsmDll.ColorChange;
-            threadsService.ProcessingFunction = asmDll.ChangeColorToGrayScale;
-
-
+            chosenDll.ProcessingMethod = chosenDll.ColorChanger;
+            
+            threadsService.ProcessingFunction = chosenDll.ChangeColorToGrayScale;
             threadsService.EndOfThreads = new EndOfThreads(UpdateModifiedPhoto);
             threadsService.ThreadsNo = processorCount;
             threadsService.DataToProcess = dividedImage;

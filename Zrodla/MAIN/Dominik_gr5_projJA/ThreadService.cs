@@ -44,7 +44,7 @@ namespace ColorToGrayScale
 
             Thread main = new Thread(t =>
             {
-                while (!IsDone()) 
+                while (!IsDone())
                 {
                 }
                 EndOfThreads();

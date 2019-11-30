@@ -10,18 +10,17 @@ namespace ColorToGrayScale
 {
     public class AsmDll : IDll
     {
-        //public delegate void ProcessingMethodDelegate(byte[] r, byte[] g, byte[] b);
-
         public ProcessingMethodDelegate ProcessingMethod { internal get; set; }
 
+        public void ColorChanger(byte[] r, byte[] g, byte[] b) => ColorChange(r, g, b);
+
         [DllImport(@"C:\Users\qwertyuiop\source\repos\asm_dll_2017\x64\Release\asm_dll_2017.dll")]
-        public static extern void ColorChange(byte[] r, byte[] g, byte[] b);
+        private static extern void ColorChange(byte[] r, byte[] g, byte[] b);
 
         public void ChangeColorToGrayScale(object data)
         {
             Bitmap[] image = (Bitmap[])data;
 
-            //ProcessingMethod = ColorChange;
             int i = ThreadService.GetI();
 
             while (i < image.Length) 

@@ -8,51 +8,33 @@ using System.Runtime.InteropServices;
 
 namespace ColorToGrayScale
 {
-    public class CppDll : ICppDll
+    public class CppDll : IDll
     {
+        public ProcessingMethodDelegate ProcessingMethod { internal get; set; }
+
+        public void ColorChanger(byte[] r, byte[] g, byte[] b) => ColorChange(r, g, b);
+
         [DllImport(@"C:\Users\qwertyuiop\Desktop\repo\Zrodla\DLL_C\x64\Release\C_DLL.dll")]
-        public static extern int ColorChange(byte[] r, byte[] g, byte[] b);
+        private static extern void ColorChange(byte[] r, byte[] g, byte[] b);
 
-        public void ChangeColorToGrayScale(Bitmap image)
+        public void ChangeColorToGrayScale(object data)
         {
-            for (int x = 0; x < image.Width; x++)
+            Bitmap[] image = (Bitmap[])data;
+
+            int i = ThreadService.GetI();
+
+            while (i < image.Length)
             {
-                for (int y = 0; y < image.Height; y++)
-                {
-                    //Color oldColor = image.GetPixel(x, y);
-                    //int newColor = ColorChange(oldColor.R, oldColor.G, oldColor.B);
-                    //image.SetPixel(x, y, Color.FromArgb(newColor, newColor, newColor));
-                }
-            }
-        }
+                PixelPackage pixels = new PixelPackage();
+                pixels.Set(image[i]);
 
-        public void SingleColorChannel(Object img)
-        {
-            Bitmap image = (Bitmap)img;
-            for (int x = 0; x < image.Width; x++)
-            {
-                for (int y = 0; y < image.Height; y += 8)
-                {
-                    byte[] newColorArrayRed = new byte[8];
-                    byte[] newColorArrayGreen = new byte[8];
-                    byte[] newColorArrayBlue = new byte[8];
-                    for (int i = 0; i < 8; i++)
-                    {
-                        Color oldColor = image.GetPixel(x, y);
-                        newColorArrayRed[0] = oldColor.R;
-                        newColorArrayGreen[0] = oldColor.G;
-                        newColorArrayBlue[0] = oldColor.B;
-                    }
+                ProcessingMethod(pixels.R, pixels.G, pixels.B);
 
-                    ColorChange(newColorArrayRed, newColorArrayGreen, newColorArrayBlue);
+                //ColorChange(pixels.R, pixels.G, pixels.B);
 
-                    for (int i = 0; i < 8; i++)
-                    {
-                        image.SetPixel(x, y + i, Color.FromArgb(newColorArrayRed[i], newColorArrayGreen[i], newColorArrayBlue[i]));
-                    }
+                image[i] = pixels.Get();
 
-                    //image.SetPixel(x, y, Color.FromArgb(newColor, newColor, newColor));
-                }
+                i = ThreadService.GetI();
             }
         }
     }

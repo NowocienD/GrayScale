@@ -14,5 +14,7 @@ namespace ColorToGrayScale
         ProcessingMethodDelegate ProcessingMethod { set; }
 
         void ChangeColorToGrayScale(object data);
+
+        void ColorChanger(byte[] r, byte[] g, byte[] b);
     }
 }
