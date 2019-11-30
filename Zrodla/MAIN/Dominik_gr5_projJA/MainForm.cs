@@ -22,11 +22,7 @@ namespace ColorToGrayScale
         private Bitmap[] dividedImage;
 
         public delegate void EndOfThreads();
-
-        public delegate void EndOfLoadingPicture();
-
-        public delegate void EndOfJoiningSmallerPictures();
-
+        
         public MainForm(
             IImageService _imageService,
             IThreadsService<Bitmap> _threadsService,
@@ -64,11 +60,10 @@ namespace ColorToGrayScale
                 StartBTN.Enabled = true;
 
                 pictureBox_modified.Image = imageToProcess;
-           // try { 
             }
             catch (Exception exception)
             {
-                MessageBox.Show("Błąd łądowania zdjęcia \n\n" + exception.Message);
+                MessageBox.Show("Błąd łądowania zdjęcia");
             }
         }
 
@@ -86,13 +81,6 @@ namespace ColorToGrayScale
             }
 
             pictureBox_modified.Image = imageService.JoinIntoBigOne(threadsService.DataToProcess);
-            StartBTN.Enabled = true;
-        }
-
-        private void ShowOriginalPhoto()
-        {
-            pictureBox_original.Image = imageToProcess;
-            pictureBox_modified.Image = imageToProcess;
             StartBTN.Enabled = true;
         }
 

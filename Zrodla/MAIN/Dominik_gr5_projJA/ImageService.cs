@@ -4,7 +4,7 @@ namespace ColorToGrayScale
 {
     public class ImageService : IImageService
     {
-        private int size = 16;
+        private const int Size = 16;
         private int height;
         private int width;
 
@@ -13,11 +13,11 @@ namespace ColorToGrayScale
             width = imageToProcess.Width;
             height = imageToProcess.Height;
 
-            int numberOfVerticalParts = height / size;
+            int numberOfVerticalParts = height / Size;
 
-            if (height % size != 0)
+            if (height % Size != 0)
             {
-                height = size * numberOfVerticalParts;
+                height = Size * numberOfVerticalParts;
                 imageToProcess = imageToProcess.Clone(
                     new Rectangle(
                         0,
@@ -36,13 +36,13 @@ namespace ColorToGrayScale
             int counter = 0;
             for (int x = 0; x < width; x++)
             {
-                for (int y = 0; y < height; y += size)
+                for (int y = 0; y < height; y += Size)
                 {
                     Rectangle rect = new Rectangle(
                             x,
                             y,
                             1,
-                            size);
+                            Size);
 
                     smallerImagesToProcess[counter] = imageToProcess.Clone(rect, format);
                     counter++;
@@ -61,13 +61,13 @@ namespace ColorToGrayScale
             int counter = 0;
             for (int x = 0; x < width; x++)
             {
-                for (int y = 0; y < height; y += size)
+                for (int y = 0; y < height; y += Size)
                 {
                     Rectangle rectangle = new Rectangle(
                         x,
                         y,
                         1,
-                        size);
+                        Size);
 
                     graphic.DrawImage(
                         smallImagesToProcess[counter],

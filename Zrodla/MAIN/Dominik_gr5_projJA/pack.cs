@@ -7,13 +7,7 @@ using System.Threading.Tasks;
 
 namespace ColorToGrayScale
 {
-    public class aaa
-    {
-        public pack[] SetOfPackages { get; set; }
-
-    }
-
-    public class pack
+    public class Pack
     {
         public byte[] Red { get; set; }
 
@@ -26,22 +20,24 @@ namespace ColorToGrayScale
     {
         private const int Size = 16;
 
-        private pack Package;
-
-        public byte[] R { get => Package.Red; }
-        public byte[] G { get => Package.Green; }
-        public byte[] B { get => Package.Blue; }
+        private Pack package;
 
         private Bitmap image;
+
+        public byte[] R { get => package.Red; }
+
+        public byte[] G { get => package.Green; }
+
+        public byte[] B { get => package.Blue; }
 
         public Bitmap Get()
         {
             for (int i = 0; i < Size; i++)
             {
                 image.SetPixel(0, i, Color.FromArgb(
-                    Package.Red[i],
-                    Package.Green[i],
-                    Package.Blue[i]));
+                    package.Red[i],
+                    package.Green[i],
+                    package.Blue[i]));
             }
             return image;
         }
@@ -50,17 +46,17 @@ namespace ColorToGrayScale
         {
             this.image = image;
 
-            Package = new pack();
-            Package.Red = new byte[Size];
-            Package.Green = new byte[Size];
-            Package.Blue = new byte[Size];
+            package = new Pack();
+            package.Red = new byte[Size];
+            package.Green = new byte[Size];
+            package.Blue = new byte[Size];
 
             for (int i = 0; i < Size; i++)
             {
                 Color color = image.GetPixel(0, i);
-                Package.Red[i] = color.R;
-                Package.Green[i] = color.G;
-                Package.Blue[i] = color.B;
+                package.Red[i] = color.R;
+                package.Green[i] = color.G;
+                package.Blue[i] = color.B;
             }
         }
     }

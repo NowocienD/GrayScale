@@ -6,9 +6,9 @@ namespace ColorToGrayScale
 {
     public class ThreadService<T> : IThreadsService<T>
     {
-        private static int count = 0;
-
         private static readonly object Locker = new object();
+
+        private static int count = 0;
 
         private Thread[] threads;
 
@@ -19,7 +19,6 @@ namespace ColorToGrayScale
         public EndOfThreads endOfThreads { internal get; set; }
 
         public ParameterizedThreadStart ProcessingFunction { internal get; set; }
-        
 
         public static int GetI()
         {
@@ -43,7 +42,9 @@ namespace ColorToGrayScale
 
             Thread main = new Thread(t =>
             {
-                while (!IsDone()) { }
+                while (!IsDone()) 
+                {
+                }
                 endOfThreads();
             });
 
