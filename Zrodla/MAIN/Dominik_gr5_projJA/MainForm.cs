@@ -77,11 +77,10 @@ namespace ColorToGrayScale
             }
             else
             {
-                label_time.Text = timeCounter.Time.ToString() + " ms";
+                label_time.Text = timeCounter.Time.ToString() + " ms"; 
+                pictureBox_modified.Image = imageService.JoinIntoBigOne(threadsService.DataToProcess);
+                StartBTN.Enabled = true;
             }
-
-            pictureBox_modified.Image = imageService.JoinIntoBigOne(threadsService.DataToProcess);
-            StartBTN.Enabled = true;
         }
 
         private void StartBTN_Click(object sender, EventArgs e)
