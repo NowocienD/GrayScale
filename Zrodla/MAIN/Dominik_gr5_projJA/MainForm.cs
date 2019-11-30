@@ -15,6 +15,8 @@ namespace ColorToGrayScale
 
         private readonly IDllService dllService;
 
+        private readonly IAsmDll asmDll;
+
         private Bitmap imageToProcess;
 
         private int processorCount;
@@ -25,13 +27,15 @@ namespace ColorToGrayScale
             IImageService _imageService,
             IThreadsService _threadsService,
             ITimeCounterService _timeCounterService,
-            IDllService _dllService)
+            IDllService _dllService,
+            IAsmDll asmDll)
         {
             InitializeComponent();
             imageService = _imageService;
             threadsService = _threadsService;
             this.timeCounter = _timeCounterService;
             this.dllService = _dllService;
+            this.asmDll = asmDll;
         }
 
         public delegate void EndOfThreads();
@@ -88,18 +92,22 @@ namespace ColorToGrayScale
             label_time.Text = string.Empty;
             StartBTN.Enabled = false;
 
-            if (radioButton_ASM.Checked == true)
-            {
-                threadsService.ProcessingFunction = dllService.ProcessUsingASM;
-            }
-            else if (radioButton_dotNet.Checked == true)
-            {
-                threadsService.ProcessingFunction = dllService.ProcessUsingASM;
-            }
-            else
-            {
-                throw new Exception();
-            }
+            //if (radioButton_ASM.Checked == true)
+            //{
+            //}
+            //else if (radioButton_dotNet.Checked == true)
+            //{
+            //    threadsService.ProcessingFunction = dllService.ProcessUsingASM;
+            //}
+            //else
+            //{
+            //    throw new Exception();
+            //}
+
+
+            asmDll.ProcessingMethod = AsmDll.ColorChange;
+            threadsService.ProcessingFunction = asmDll.ChangeColorToGrayScale;
+
 
             threadsService.EndOfThreads = new EndOfThreads(UpdateModifiedPhoto);
             threadsService.ThreadsNo = processorCount;

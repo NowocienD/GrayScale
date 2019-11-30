@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using static ColorToGrayScale.AsmDll;
 
 namespace ColorToGrayScale
 {
     public interface IAsmDll
     {
-        void ChangeColorToGrayScale(Bitmap[] image);
+        void ChangeColorToGrayScale(object data);
+
+        ProcessingMethodDelegate ProcessingMethod { set; }
     }
 }
