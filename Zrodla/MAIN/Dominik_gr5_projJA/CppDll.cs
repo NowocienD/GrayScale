@@ -11,10 +11,21 @@ namespace ColorToGrayScale
     public class CppDll : IDll
     {
         public ProcessingMethodDelegate ProcessingMethod { internal get; set; }
+        public void SingleColorChannel_Red(byte[] r, byte[] g, byte[] b) => SingleColorChannel_Red_ASM(r, g, b);
 
-        public void ColorChanger(byte[] r, byte[] g, byte[] b) => ColorChange(r, g, b);
+        public void SingleColorChannel_Green(byte[] r, byte[] g, byte[] b) => SingleColorChannel_Green_ASM(r, g, b);
+
+        public void SingleColorChannel_Blue(byte[] r, byte[] g, byte[] b) => SingleColorChannel_Blue_ASM(r, g, b);
 
         [DllImport(@"C:\Users\qwertyuiop\Desktop\repo\Zrodla\DLL_C\x64\Release\C_DLL.dll")]
+        private static extern void SingleColorChannel_Red_ASM(byte[] r, byte[] g, byte[] b);
+
+        [DllImport(@"C:\Users\qwertyuiop\Desktop\repo\Zrodla\DLL_C\x64\Release\C_DLL.dll")]
+        private static extern void SingleColorChannel_Green_ASM(byte[] r, byte[] g, byte[] b);
+
+        [DllImport(@"C:\Users\qwertyuiop\Desktop\repo\Zrodla\DLL_C\x64\Release\C_DLL.dll")]
+        private static extern void SingleColorChannel_Blue_ASM(byte[] r, byte[] g, byte[] b);
+        
         private static extern void ColorChange(byte[] r, byte[] g, byte[] b);
 
         public void ChangeColorToGrayScale(object data)

@@ -15,6 +15,10 @@ namespace ColorToGrayScale
 
         void ChangeColorToGrayScale(object data);
 
-        void ColorChanger(byte[] r, byte[] g, byte[] b);
+        void SingleColorChannel_Red(byte[] r, byte[] g, byte[] b);
+
+        void SingleColorChannel_Green(byte[] r, byte[] g, byte[] b);
+
+        void SingleColorChannel_Blue(byte[] r, byte[] g, byte[] b);
     }
 }

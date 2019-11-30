@@ -99,7 +99,7 @@ namespace ColorToGrayScale
                 throw new Exception();
             }
 
-            chosenDll.ProcessingMethod = chosenDll.ColorChanger;
+            chosenDll.ProcessingMethod = chosenDll.SingleColorChannel_Green;
             
             threadsService.ProcessingFunction = chosenDll.ChangeColorToGrayScale;
             threadsService.EndOfThreads = new EndOfThreads(UpdateModifiedPhoto);
