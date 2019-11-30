@@ -31,7 +31,7 @@ namespace ColorToGrayScale
             container.Register<MainForm>();
 
             container.Register<IImageService, ImageService>();
-            container.Register<IThreadsService<Bitmap>, ThreadService<Bitmap>>();
+            container.Register<IThreadsService, ThreadService>();
             container.Register<ITimeCounterService, TimeCounterService>();
 
             container.Register<IDllService, DllService>();

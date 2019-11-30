@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Drawing;
 using System.Threading;
 using static ColorToGrayScale.MainForm;
 
 namespace ColorToGrayScale
 {
-    public class ThreadService<T> : IThreadsService<T>
+    public class ThreadService : IThreadsService
     {
         private static readonly object Locker = new object();
 
@@ -14,9 +15,9 @@ namespace ColorToGrayScale
 
         public int ThreadsNo { internal get; set; }
 
-        public T[] DataToProcess { get; set; }
+        public Bitmap[] DataToProcess { get; set; }
         
-        public EndOfThreads endOfThreads { internal get; set; }
+        public EndOfThreads EndOfThreads { internal get; set; }
 
         public ParameterizedThreadStart ProcessingFunction { internal get; set; }
 
@@ -46,7 +47,7 @@ namespace ColorToGrayScale
                 while (!IsDone()) 
                 {
                 }
-                endOfThreads();
+                EndOfThreads();
             });
 
             main.Start();

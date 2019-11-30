@@ -9,7 +9,7 @@ namespace ColorToGrayScale
     {
         private readonly IImageService imageService;
 
-        private readonly IThreadsService<Bitmap> threadsService;
+        private readonly IThreadsService threadsService;
 
         private readonly ITimeCounterService timeCounter;
 
@@ -20,12 +20,10 @@ namespace ColorToGrayScale
         private int processorCount;
 
         private Bitmap[] dividedImage;
-
-        public delegate void EndOfThreads();
-        
+                
         public MainForm(
             IImageService _imageService,
-            IThreadsService<Bitmap> _threadsService,
+            IThreadsService _threadsService,
             ITimeCounterService _timeCounterService,
             IDllService _dllService)
         {
@@ -35,6 +33,8 @@ namespace ColorToGrayScale
             this.timeCounter = _timeCounterService;
             this.dllService = _dllService;
         }
+
+        public delegate void EndOfThreads();
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -101,7 +101,7 @@ namespace ColorToGrayScale
                 throw new Exception();
             }
 
-            threadsService.endOfThreads = new EndOfThreads(UpdateModifiedPhoto);
+            threadsService.EndOfThreads = new EndOfThreads(UpdateModifiedPhoto);
             threadsService.ThreadsNo = processorCount;
             threadsService.DataToProcess = dividedImage;
                         
