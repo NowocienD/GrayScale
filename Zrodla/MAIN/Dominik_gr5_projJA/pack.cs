@@ -46,10 +46,12 @@ namespace ColorToGrayScale
         {
             this.image = image;
 
-            package = new Pack();
-            package.Red = new byte[Size];
-            package.Green = new byte[Size];
-            package.Blue = new byte[Size];
+            package = new Pack
+            {
+                Red = new byte[Size],
+                Green = new byte[Size],
+                Blue = new byte[Size],
+            };
 
             for (int i = 0; i < Size; i++)
             {

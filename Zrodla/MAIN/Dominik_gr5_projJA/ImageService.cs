@@ -26,9 +26,7 @@ namespace ColorToGrayScale
                         height),
                     imageToProcess.PixelFormat);
             }
-
-            int partsNumber = width * numberOfVerticalParts;
-
+            
             Bitmap[] smallerImagesToProcess = new Bitmap[width * numberOfVerticalParts];
 
             System.Drawing.Imaging.PixelFormat format = imageToProcess.PixelFormat;
@@ -48,7 +46,6 @@ namespace ColorToGrayScale
                     counter++;
                 }
             }
-
             return smallerImagesToProcess;
         }
 
@@ -72,6 +69,7 @@ namespace ColorToGrayScale
                     graphic.DrawImage(
                         smallImagesToProcess[counter],
                         rectangle);
+
                     counter++;
                 }
             }

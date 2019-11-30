@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
@@ -61,7 +61,7 @@ namespace ColorToGrayScale
 
                 pictureBox_modified.Image = imageToProcess;
             }
-            catch (Exception exception)
+            catch
             {
                 MessageBox.Show("Błąd łądowania zdjęcia");
             }
