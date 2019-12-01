@@ -37,19 +37,28 @@
             this.label_time = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox_modified = new System.Windows.Forms.PictureBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.GSCC_radio = new System.Windows.Forms.RadioButton();
+            this.RSCC_radio = new System.Windows.Forms.RadioButton();
+            this.BSCC_radio = new System.Windows.Forms.RadioButton();
+            this.decomposition_max_radio = new System.Windows.Forms.RadioButton();
+            this.decomposition_min_radio = new System.Windows.Forms.RadioButton();
+            this.desaturation_radio = new System.Windows.Forms.RadioButton();
+            this.correcting_radio = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_Threads)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_original)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_modified)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.radioButton_dotNet);
             this.groupBox1.Controls.Add(this.radioButton_ASM);
-            this.groupBox1.Location = new System.Drawing.Point(196, 297);
+            this.groupBox1.Location = new System.Drawing.Point(13, 282);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(396, 72);
+            this.groupBox1.Size = new System.Drawing.Size(168, 65);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Wybór DLL";
@@ -57,28 +66,28 @@
             // radioButton_dotNet
             // 
             this.radioButton_dotNet.AutoSize = true;
-            this.radioButton_dotNet.Checked = true;
-            this.radioButton_dotNet.Location = new System.Drawing.Point(287, 31);
+            this.radioButton_dotNet.Location = new System.Drawing.Point(32, 42);
             this.radioButton_dotNet.Name = "radioButton_dotNet";
-            this.radioButton_dotNet.Size = new System.Drawing.Size(61, 17);
+            this.radioButton_dotNet.Size = new System.Drawing.Size(66, 17);
             this.radioButton_dotNet.TabIndex = 1;
-            this.radioButton_dotNet.TabStop = true;
-            this.radioButton_dotNet.Text = "c# DLL";
+            this.radioButton_dotNet.Text = "cpp DLL";
             this.radioButton_dotNet.UseVisualStyleBackColor = true;
             // 
             // radioButton_ASM
             // 
             this.radioButton_ASM.AutoSize = true;
-            this.radioButton_ASM.Location = new System.Drawing.Point(32, 31);
+            this.radioButton_ASM.Checked = true;
+            this.radioButton_ASM.Location = new System.Drawing.Point(32, 19);
             this.radioButton_ASM.Name = "radioButton_ASM";
             this.radioButton_ASM.Size = new System.Drawing.Size(67, 17);
             this.radioButton_ASM.TabIndex = 0;
+            this.radioButton_ASM.TabStop = true;
             this.radioButton_ASM.Text = "asm DLL";
             this.radioButton_ASM.UseVisualStyleBackColor = true;
             // 
             // trackBar_Threads
             // 
-            this.trackBar_Threads.Location = new System.Drawing.Point(196, 403);
+            this.trackBar_Threads.Location = new System.Drawing.Point(196, 440);
             this.trackBar_Threads.Maximum = 64;
             this.trackBar_Threads.Minimum = 1;
             this.trackBar_Threads.Name = "trackBar_Threads";
@@ -99,9 +108,9 @@
             // 
             // PhotoBTN
             // 
-            this.PhotoBTN.Location = new System.Drawing.Point(54, 332);
+            this.PhotoBTN.Location = new System.Drawing.Point(12, 353);
             this.PhotoBTN.Name = "PhotoBTN";
-            this.PhotoBTN.Size = new System.Drawing.Size(127, 37);
+            this.PhotoBTN.Size = new System.Drawing.Size(168, 37);
             this.PhotoBTN.TabIndex = 3;
             this.PhotoBTN.Text = "Wybierz zdjęcie";
             this.PhotoBTN.UseVisualStyleBackColor = true;
@@ -110,9 +119,9 @@
             // StartBTN
             // 
             this.StartBTN.Enabled = false;
-            this.StartBTN.Location = new System.Drawing.Point(54, 387);
+            this.StartBTN.Location = new System.Drawing.Point(13, 403);
             this.StartBTN.Name = "StartBTN";
-            this.StartBTN.Size = new System.Drawing.Size(127, 37);
+            this.StartBTN.Size = new System.Drawing.Size(168, 37);
             this.StartBTN.TabIndex = 4;
             this.StartBTN.Text = "Start";
             this.StartBTN.UseVisualStyleBackColor = true;
@@ -121,7 +130,7 @@
             // label_Threads
             // 
             this.label_Threads.AutoSize = true;
-            this.label_Threads.Location = new System.Drawing.Point(374, 387);
+            this.label_Threads.Location = new System.Drawing.Point(381, 415);
             this.label_Threads.Name = "label_Threads";
             this.label_Threads.Size = new System.Drawing.Size(35, 13);
             this.label_Threads.TabIndex = 5;
@@ -161,11 +170,100 @@
             this.pictureBox_modified.TabIndex = 8;
             this.pictureBox_modified.TabStop = false;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.GSCC_radio);
+            this.groupBox2.Controls.Add(this.desaturation_radio);
+            this.groupBox2.Controls.Add(this.decomposition_min_radio);
+            this.groupBox2.Controls.Add(this.correcting_radio);
+            this.groupBox2.Controls.Add(this.decomposition_max_radio);
+            this.groupBox2.Controls.Add(this.BSCC_radio);
+            this.groupBox2.Controls.Add(this.RSCC_radio);
+            this.groupBox2.Location = new System.Drawing.Point(196, 282);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(396, 130);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Wybór funkcji";
+            // 
+            // GSCC_radio
+            // 
+            this.GSCC_radio.AutoSize = true;
+            this.GSCC_radio.Checked = true;
+            this.GSCC_radio.Location = new System.Drawing.Point(32, 42);
+            this.GSCC_radio.Name = "GSCC_radio";
+            this.GSCC_radio.Size = new System.Drawing.Size(81, 17);
+            this.GSCC_radio.TabIndex = 1;
+            this.GSCC_radio.TabStop = true;
+            this.GSCC_radio.Text = "SCC zielony";
+            this.GSCC_radio.UseVisualStyleBackColor = true;
+            // 
+            // RSCC_radio
+            // 
+            this.RSCC_radio.AutoSize = true;
+            this.RSCC_radio.Location = new System.Drawing.Point(32, 19);
+            this.RSCC_radio.Name = "RSCC_radio";
+            this.RSCC_radio.Size = new System.Drawing.Size(94, 17);
+            this.RSCC_radio.TabIndex = 0;
+            this.RSCC_radio.Text = "SCC czerwony";
+            this.RSCC_radio.UseVisualStyleBackColor = true;
+            // 
+            // BSCC_radio
+            // 
+            this.BSCC_radio.AutoSize = true;
+            this.BSCC_radio.Location = new System.Drawing.Point(32, 65);
+            this.BSCC_radio.Name = "BSCC_radio";
+            this.BSCC_radio.Size = new System.Drawing.Size(90, 17);
+            this.BSCC_radio.TabIndex = 0;
+            this.BSCC_radio.Text = "SCC niebieski";
+            this.BSCC_radio.UseVisualStyleBackColor = true;
+            // 
+            // decomposition_max_radio
+            // 
+            this.decomposition_max_radio.AutoSize = true;
+            this.decomposition_max_radio.Location = new System.Drawing.Point(132, 19);
+            this.decomposition_max_radio.Name = "decomposition_max_radio";
+            this.decomposition_max_radio.Size = new System.Drawing.Size(115, 17);
+            this.decomposition_max_radio.TabIndex = 0;
+            this.decomposition_max_radio.Text = "decomposition max";
+            this.decomposition_max_radio.UseVisualStyleBackColor = true;
+            // 
+            // decomposition_min_radio
+            // 
+            this.decomposition_min_radio.AutoSize = true;
+            this.decomposition_min_radio.Location = new System.Drawing.Point(132, 42);
+            this.decomposition_min_radio.Name = "decomposition_min_radio";
+            this.decomposition_min_radio.Size = new System.Drawing.Size(112, 17);
+            this.decomposition_min_radio.TabIndex = 0;
+            this.decomposition_min_radio.Text = "decomposition min";
+            this.decomposition_min_radio.UseVisualStyleBackColor = true;
+            // 
+            // desaturation_radio
+            // 
+            this.desaturation_radio.AutoSize = true;
+            this.desaturation_radio.Location = new System.Drawing.Point(132, 65);
+            this.desaturation_radio.Name = "desaturation_radio";
+            this.desaturation_radio.Size = new System.Drawing.Size(83, 17);
+            this.desaturation_radio.TabIndex = 0;
+            this.desaturation_radio.Text = "desaturation";
+            this.desaturation_radio.UseVisualStyleBackColor = true;
+            // 
+            // correcting_radio
+            // 
+            this.correcting_radio.AutoSize = true;
+            this.correcting_radio.Location = new System.Drawing.Point(253, 19);
+            this.correcting_radio.Name = "correcting_radio";
+            this.correcting_radio.Size = new System.Drawing.Size(72, 17);
+            this.correcting_radio.TabIndex = 0;
+            this.correcting_radio.Text = "correcting";
+            this.correcting_radio.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 488);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.pictureBox_modified);
             this.Controls.Add(this.label_time);
             this.Controls.Add(this.label1);
@@ -183,6 +281,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_Threads)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_original)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_modified)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,6 +302,14 @@
         private System.Windows.Forms.Label label_time;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.PictureBox pictureBox_modified;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton GSCC_radio;
+        private System.Windows.Forms.RadioButton BSCC_radio;
+        private System.Windows.Forms.RadioButton RSCC_radio;
+        private System.Windows.Forms.RadioButton desaturation_radio;
+        private System.Windows.Forms.RadioButton decomposition_min_radio;
+        private System.Windows.Forms.RadioButton decomposition_max_radio;
+        private System.Windows.Forms.RadioButton correcting_radio;
     }
 }
 
