@@ -25,6 +25,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton_dotNet = new System.Windows.Forms.RadioButton();
             this.radioButton_ASM = new System.Windows.Forms.RadioButton();
@@ -51,6 +52,9 @@
             this.time_divide_label = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.time_join_label = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label5 = new System.Windows.Forms.Label();
+            this.RAMUsage_label = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_Threads)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_original)).BeginInit();
@@ -324,14 +328,42 @@
             this.time_join_label.TabIndex = 10;
             this.time_join_label.Text = "0";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label5.Location = new System.Drawing.Point(621, 386);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 17);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Użycie RAMu";
+            // 
+            // RAMUsage_label
+            // 
+            this.RAMUsage_label.AutoSize = true;
+            this.RAMUsage_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.RAMUsage_label.Location = new System.Drawing.Point(621, 403);
+            this.RAMUsage_label.Name = "RAMUsage_label";
+            this.RAMUsage_label.Size = new System.Drawing.Size(16, 17);
+            this.RAMUsage_label.TabIndex = 10;
+            this.RAMUsage_label.Text = "0";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 488);
+            this.Controls.Add(this.RAMUsage_label);
             this.Controls.Add(this.time_join_label);
             this.Controls.Add(this.time_divide_label);
             this.Controls.Add(this.BitmapParts_label);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -388,6 +420,9 @@
         private System.Windows.Forms.Label time_divide_label;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label time_join_label;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label RAMUsage_label;
     }
 }
 

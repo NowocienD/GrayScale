@@ -2,6 +2,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace ColorToGrayScale
 {
@@ -150,6 +151,17 @@ namespace ColorToGrayScale
                         
             timeCounter.Start();
             threadsService.StartProcessing();
+            imageToProcess.Dispose();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            var memory = 0.0;
+            Process proc = Process.GetCurrentProcess();
+            memory = Math.Round(proc.PrivateMemorySize64 / 1e+6, 2);
+            proc.Dispose();
+
+            RAMUsage_label.Text = memory.ToString();
         }
     }
 }
