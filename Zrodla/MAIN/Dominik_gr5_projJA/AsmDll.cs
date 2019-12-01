@@ -37,7 +37,7 @@ namespace ColorToGrayScale
                 PixelPackage pixels = new PixelPackage();
                 pixels.Set(image[i]);
 
-                ProcessingMethod(pixels.R, pixels.G, pixels.B);
+                ProcessingMethod(pixels.Red, pixels.Green, pixels.Blue);
 
                 image[i] = pixels.Get();
 
