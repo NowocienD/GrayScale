@@ -26,23 +26,22 @@ namespace ColorToGrayScale
 
         public void Desaturation(byte[] r, byte[] g, byte[] b) => Desaturation_ASM(r, g, b);
 
+        private PixelPackage[] pixels;
+
         public void ChangeColorToGrayScale(object data)
         {
-            Bitmap[] image = (Bitmap[])data;
+            pixels = (PixelPackage[])data;
 
             int i = ThreadService.GetI();
 
-            while (i < image.Length) 
-            {                 
-                PixelPackage pixels = new PixelPackage();
-                pixels.Set(image[i]);
-
-                ProcessingMethod(pixels.Red, pixels.Green, pixels.Blue);
-
-                image[i] = pixels.Get();
-
+            while (i < pixels.Length)
+            {
+                for (int j = 0; j < 1; j++)
+                {
+                    ProcessingMethod(pixels[i + j].Red, pixels[i + j].Green, pixels[i + j].Blue);
+                }
                 i = ThreadService.GetI();
-            } 
+            }
         }
 
         [DllImport(DllPath)]

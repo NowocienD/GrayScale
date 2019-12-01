@@ -10,17 +10,17 @@ namespace ColorToGrayScale
         private int height;
         private int width;
 
-        public Bitmap[] CopyArrayOfBitmap(Bitmap[] dividedImage)
+        public PixelPackage[] CopyArrayOfBitmap(PixelPackage[] dividedImage)
         {
-            Bitmap[] copyOfdividedImage = new Bitmap[dividedImage.Length];
+            PixelPackage[] copyOfdividedImage = new PixelPackage[dividedImage.Length];
             for (int i = 0; i < dividedImage.Length; i++)
             {
-                copyOfdividedImage[i] = (Bitmap)dividedImage[i].Clone();
+                //copyOfdividedImage[i] = (PixelPackage)dividedImage[i];
             }
             return copyOfdividedImage;
         }
 
-        public Bitmap[] ImageDivider(Bitmap imageToProcess)
+        public PixelPackage[] ImageDivider(Bitmap imageToProcess)
         {
             width = imageToProcess.Width;
             height = imageToProcess.Height;
@@ -39,8 +39,8 @@ namespace ColorToGrayScale
                         height),
                     pixelFormat);
             }
-            
-            Bitmap[] smallerImagesToProcess = new Bitmap[width * numberOfVerticalParts];
+
+            PixelPackage[] smallerImagesToProcess = new PixelPackage[width * numberOfVerticalParts];
 
             int counter = 0;
             for (int x = 0; x < width; x++)
@@ -53,14 +53,17 @@ namespace ColorToGrayScale
                             1,
                             Size);
 
-                    smallerImagesToProcess[counter] = imageToProcess.Clone(rect, pixelFormat);
+                    Bitmap a = (Bitmap)imageToProcess.Clone(rect, pixelFormat);
+
+                    smallerImagesToProcess[counter] = new PixelPackage();
+                    smallerImagesToProcess[counter].Set(a);
                     counter++;
                 }
             }
             return smallerImagesToProcess;
         }
 
-        public Bitmap JoinIntoBigOne(Bitmap[] smallImagesToProcess)
+        public Bitmap JoinIntoBigOne(PixelPackage[] smallImagesToProcess)
         {
             Bitmap image = new Bitmap(width, height);
 
@@ -78,7 +81,7 @@ namespace ColorToGrayScale
                         Size);
 
                     graphic.DrawImage(
-                        smallImagesToProcess[counter],
+                        smallImagesToProcess[counter].Get(),
                         rectangle);
 
                     counter++;

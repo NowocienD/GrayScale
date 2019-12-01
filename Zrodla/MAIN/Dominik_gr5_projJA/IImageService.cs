@@ -15,15 +15,15 @@ namespace ColorToGrayScale
         /// </summary>
         /// <param name="imageToProcess">Obraz do przetworzenia</param>
         /// <returns>Tablica z podzielonym obrazem na n częsci</returns>
-        Bitmap[] ImageDivider(Bitmap imageToProcess);
+        PixelPackage[] ImageDivider(Bitmap imageToProcess);
 
         /// <summary>
         /// Metoda łącząca wiele mniejszych przetworzonych obrazów w jeden cały
         /// </summary>
         /// <param name="smallImagesToProcess">Tablica zawierajaca mniejsze obrazy do polaczenia</param>
         /// <returns>Ostateczny obraz w docelowym rozmiarze</returns>
-        Bitmap JoinIntoBigOne(Bitmap[] smallImagesToProcess);
+        Bitmap JoinIntoBigOne(PixelPackage[] smallImagesToProcess);
 
-        Bitmap[] CopyArrayOfBitmap(Bitmap[] dividedImage);
+        PixelPackage[] CopyArrayOfBitmap(PixelPackage[] dividedImage);
     }
 }

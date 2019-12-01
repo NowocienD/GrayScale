@@ -31,21 +31,6 @@ namespace ColorToGrayScale
 
         public void ChangeColorToGrayScale(object data)
         {
-            Bitmap[] image = (Bitmap[])data;
-
-            int i = ThreadService.GetI();
-
-            while (i < image.Length)
-            {
-                PixelPackage pixels = new PixelPackage();
-                pixels.Set(image[i]);
-
-                ProcessingMethod(pixels.Red, pixels.Green, pixels.Blue);
-
-                image[i] = pixels.Get();
-
-                i = ThreadService.GetI();
-            }
         }
     }
 }

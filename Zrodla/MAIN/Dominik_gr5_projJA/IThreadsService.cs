@@ -8,7 +8,7 @@ namespace ColorToGrayScale
     {
         int ThreadsNo { set; }
 
-        Bitmap[] DataToProcess { get; set; }
+        PixelPackage[] DataToProcess { get; set; }
 
         ParameterizedThreadStart ProcessingFunction { set; }
 

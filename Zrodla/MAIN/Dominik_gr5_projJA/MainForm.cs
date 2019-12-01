@@ -18,9 +18,9 @@ namespace ColorToGrayScale
 
         private Bitmap imageToProcess;
 
-        private Bitmap[] dividedImage;
+        private PixelPackage[] dividedImage;
 
-        private Bitmap[] copyOfdividedImage;
+        private PixelPackage[] copyOfdividedImage;
 
         public MainForm(
             IImageService _imageService,
@@ -59,7 +59,7 @@ namespace ColorToGrayScale
 
                 timeCounter.Start();
                 dividedImage = imageService.ImageDivider(imageToProcess);
-                copyOfdividedImage = imageService.CopyArrayOfBitmap(dividedImage);
+                //copyOfdividedImage = imageService.CopyArrayOfBitmap(dividedImage);
 
                 timeCounter.Stop();
                 time_divide_label.Text = timeCounter.Time;
@@ -148,7 +148,7 @@ namespace ColorToGrayScale
 
         private void StartBTN_Click(object sender, EventArgs e)
         {
-            dividedImage = imageService.CopyArrayOfBitmap(copyOfdividedImage);
+            //dividedImage = imageService.CopyArrayOfBitmap(copyOfdividedImage);
             label_time.Text = string.Empty;
             StartBTN.Enabled = false;
 

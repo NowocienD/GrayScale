@@ -31,7 +31,7 @@
             <param name="imageToProcess">Obraz do przetworzenia</param>
             <returns>Tablica z podzielonym obrazem na n częsci</returns>
         </member>
-        <member name="M:ColorToGrayScale.IImageService.JoinIntoBigOne(System.Drawing.Bitmap[])">
+        <member name="M:ColorToGrayScale.IImageService.JoinIntoBigOne(ColorToGrayScale.PixelPackage[])">
             <summary>
             Metoda łącząca wiele mniejszych przetworzonych obrazów w jeden cały
             </summary>
