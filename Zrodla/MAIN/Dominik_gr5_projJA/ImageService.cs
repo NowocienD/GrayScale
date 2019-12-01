@@ -8,6 +8,16 @@ namespace ColorToGrayScale
         private int height;
         private int width;
 
+        public Bitmap[] CopyArrayOfBitmap(Bitmap[] dividedImage)
+        {
+            Bitmap[] copyOfdividedImage = new Bitmap[dividedImage.Length];
+            for (int i = 0; i < dividedImage.Length; i++)
+            {
+                copyOfdividedImage[i] = (Bitmap)dividedImage[i].Clone();
+            }
+            return copyOfdividedImage;
+        }
+
         public Bitmap[] ImageDivider(Bitmap imageToProcess)
         {
             width = imageToProcess.Width;

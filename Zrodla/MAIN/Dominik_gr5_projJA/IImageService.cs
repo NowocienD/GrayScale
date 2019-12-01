@@ -23,5 +23,7 @@ namespace ColorToGrayScale
         /// <param name="smallImagesToProcess">Tablica zawierajaca mniejsze obrazy do polaczenia</param>
         /// <returns>Ostateczny obraz w docelowym rozmiarze</returns>
         Bitmap JoinIntoBigOne(Bitmap[] smallImagesToProcess);
+
+        Bitmap[] CopyArrayOfBitmap(Bitmap[] dividedImage);
     }
 }

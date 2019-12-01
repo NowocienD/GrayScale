@@ -18,7 +18,9 @@ namespace ColorToGrayScale
         private int processorCount;
 
         private Bitmap[] dividedImage;
-                
+
+        private Bitmap[] copyOfdividedImage;
+
         public MainForm(
             IImageService _imageService,
             IThreadsService _threadsService,
@@ -52,6 +54,8 @@ namespace ColorToGrayScale
             {
                 this.imageToProcess = new Bitmap(Image.FromFile(openFileDialog.FileName));
                 dividedImage = imageService.ImageDivider(imageToProcess);
+                copyOfdividedImage = imageService.CopyArrayOfBitmap(dividedImage);
+
                 pictureBox_original.Image = imageToProcess;
                 StartBTN.Enabled = true;
 
@@ -79,8 +83,11 @@ namespace ColorToGrayScale
             }
         }
 
+
+
         private void StartBTN_Click(object sender, EventArgs e)
         {
+            dividedImage = imageService.CopyArrayOfBitmap(copyOfdividedImage);
             label_time.Text = string.Empty;
             StartBTN.Enabled = false;
             IDll chosenDll;
@@ -89,18 +96,45 @@ namespace ColorToGrayScale
             {
                 chosenDll = new AsmDll();
             }
-            else if (radioButton_dotNet.Checked == true)
+            //else if (radioButton_dotNet.Checked == true)
+            //{
+            //chosenDll = new CppDll();
+            //}
+            else
             {
-                //chosemDll = new CppDll();
-                chosenDll = new AsmDll();
+                throw new Exception();
+            }
+
+            if (RSCC_radio.Checked)
+            {
+                chosenDll.ProcessingMethod = chosenDll.SingleColorChannel_Red;
+            }
+            else if (GSCC_radio.Checked)
+            {
+                chosenDll.ProcessingMethod = chosenDll.SingleColorChannel_Green;
+            }
+            else if (BSCC_radio.Checked)
+            {
+                chosenDll.ProcessingMethod = chosenDll.SingleColorChannel_Blue;
+            }
+            else if (decomposition_max_radio.Checked)
+            {
+                chosenDll.ProcessingMethod = chosenDll.Decomposition_max;
+            }
+            else if (decomposition_min_radio.Checked)
+            {
+                chosenDll.ProcessingMethod = chosenDll.Decomposition_min;
+            }
+            else if (desaturation_radio.Checked)
+            {
+                chosenDll.ProcessingMethod = chosenDll.Desaturation;
             }
             else
             {
                 throw new Exception();
             }
 
-            chosenDll.ProcessingMethod = chosenDll.SingleColorChannel_Green;
-            
+
             threadsService.ProcessingFunction = chosenDll.ChangeColorToGrayScale;
             threadsService.EndOfThreads = new EndOfThreads(UpdateModifiedPhoto);
             threadsService.ThreadsNo = processorCount;
