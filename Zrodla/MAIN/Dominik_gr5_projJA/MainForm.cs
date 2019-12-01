@@ -14,9 +14,9 @@ namespace ColorToGrayScale
 
         private readonly ITimeCounterService timeCounter;
 
-        private Bitmap imageToProcess;
-
         private int processorCount;
+
+        private Bitmap imageToProcess;
 
         private Bitmap[] dividedImage;
 
@@ -85,80 +85,88 @@ namespace ColorToGrayScale
             else
             {
                 label_time.Text = timeCounter.Time;
+
                 timeCounter.Start();
                 pictureBox_modified.Image = imageService.JoinIntoBigOne(threadsService.DataToProcess);
-                StartBTN.Enabled = true;
                 timeCounter.Stop();
                 time_join_label.Text = timeCounter.Time;
+
+                StartBTN.Enabled = true;
             }
         }
 
-
-
-        private void StartBTN_Click(object sender, EventArgs e)
+        private void ChooseFunction(IDll dll)
         {
-            label_time.Text = string.Empty;
-            StartBTN.Enabled = false;
-            IDll chosenDll;
+            if (RSCC_radio.Checked)
+            {
+                dll.ProcessingMethod = dll.SingleColorChannel_Red;
+            }
+            else if (GSCC_radio.Checked)
+            {
+                dll.ProcessingMethod = dll.SingleColorChannel_Green;
+            }
+            else if (BSCC_radio.Checked)
+            {
+                dll.ProcessingMethod = dll.SingleColorChannel_Blue;
+            }
+            else if (decomposition_max_radio.Checked)
+            {
+                dll.ProcessingMethod = dll.Decomposition_max;
+            }
+            else if (decomposition_min_radio.Checked)
+            {
+                dll.ProcessingMethod = dll.Decomposition_min;
+            }
+            else if (desaturation_radio.Checked)
+            {
+                dll.ProcessingMethod = dll.Desaturation;
+            }
+            else
+            {
+                throw new Exception();
+            }
+        }
 
+        private IDll ChooseDll()
+        {
             if (radioButton_ASM.Checked == true)
             {
-                chosenDll = new AsmDll();
+                return new AsmDll();
             }
+
             //else if (radioButton_dotNet.Checked == true)
             //{
-            //chosenDll = new CppDll();
+            //return new CppDll();
             //}
             else
             {
                 throw new Exception();
             }
+        }
 
-            if (RSCC_radio.Checked)
-            {
-                chosenDll.ProcessingMethod = chosenDll.SingleColorChannel_Red;
-            }
-            else if (GSCC_radio.Checked)
-            {
-                chosenDll.ProcessingMethod = chosenDll.SingleColorChannel_Green;
-            }
-            else if (BSCC_radio.Checked)
-            {
-                chosenDll.ProcessingMethod = chosenDll.SingleColorChannel_Blue;
-            }
-            else if (decomposition_max_radio.Checked)
-            {
-                chosenDll.ProcessingMethod = chosenDll.Decomposition_max;
-            }
-            else if (decomposition_min_radio.Checked)
-            {
-                chosenDll.ProcessingMethod = chosenDll.Decomposition_min;
-            }
-            else if (desaturation_radio.Checked)
-            {
-                chosenDll.ProcessingMethod = chosenDll.Desaturation;
-            }
-            else
-            {
-                throw new Exception();
-            }
-            
+        private void StartBTN_Click(object sender, EventArgs e)
+        {
             dividedImage = imageService.CopyArrayOfBitmap(copyOfdividedImage);
-            threadsService.ProcessingFunction = chosenDll.ChangeColorToGrayScale;
+            label_time.Text = string.Empty;
+            StartBTN.Enabled = false;
+
+            IDll dll = ChooseDll();
+            ChooseFunction(dll);
+            
+            threadsService.ProcessingFunction = dll.ChangeColorToGrayScale;
             threadsService.EndOfThreads = new EndOfThreads(UpdateModifiedPhoto);
             threadsService.ThreadsNo = processorCount;
             threadsService.DataToProcess = dividedImage;
                         
             timeCounter.Start();
             threadsService.StartProcessing();
-            imageToProcess.Dispose();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
-            var memory = 0.0;
+            double memory;
             Process proc = Process.GetCurrentProcess();
-            memory = Math.Round(proc.PrivateMemorySize64 / 1e+6, 2);
+            memory = Math.Round(proc.PrivateMemorySize64 / 1e+6, 0);
             proc.Dispose();
 
             RAMUsage_label.Text = memory.ToString();

@@ -28,8 +28,6 @@ namespace ColorToGrayScale
 
         [DllImport(DllPath)]
         private static extern void SingleColorChannel_Blue_ASM(byte[] r, byte[] g, byte[] b);
-        
-        private static extern void ColorChange(byte[] r, byte[] g, byte[] b);
 
         public void ChangeColorToGrayScale(object data)
         {
@@ -43,8 +41,6 @@ namespace ColorToGrayScale
                 pixels.Set(image[i]);
 
                 ProcessingMethod(pixels.R, pixels.G, pixels.B);
-
-                //ColorChange(pixels.R, pixels.G, pixels.B);
 
                 image[i] = pixels.Get();
 

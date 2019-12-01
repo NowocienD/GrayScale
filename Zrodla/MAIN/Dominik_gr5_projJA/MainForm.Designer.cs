@@ -332,7 +332,7 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 500;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // label5
             // 
@@ -340,9 +340,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label5.Location = new System.Drawing.Point(621, 386);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 17);
+            this.label5.Size = new System.Drawing.Size(124, 17);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Użycie RAMu";
+            this.label5.Text = "Użycie RAMu [MB]";
             // 
             // RAMUsage_label
             // 

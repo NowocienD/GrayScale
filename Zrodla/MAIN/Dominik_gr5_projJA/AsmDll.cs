@@ -26,6 +26,25 @@ namespace ColorToGrayScale
 
         public void Desaturation(byte[] r, byte[] g, byte[] b) => Desaturation_ASM(r, g, b);
 
+        public void ChangeColorToGrayScale(object data)
+        {
+            Bitmap[] image = (Bitmap[])data;
+
+            int i = ThreadService.GetI();
+
+            while (i < image.Length) 
+            {                 
+                PixelPackage pixels = new PixelPackage();
+                pixels.Set(image[i]);
+
+                ProcessingMethod(pixels.R, pixels.G, pixels.B);
+
+                image[i] = pixels.Get();
+
+                i = ThreadService.GetI();
+            } 
+        }
+
         [DllImport(DllPath)]
         private static extern void SingleColorChannel_Red_ASM(byte[] r, byte[] g, byte[] b);
 
@@ -43,26 +62,5 @@ namespace ColorToGrayScale
 
         [DllImport(DllPath)]
         private static extern void Desaturation_ASM(byte[] r, byte[] g, byte[] b);
-
-        public void ChangeColorToGrayScale(object data)
-        {
-            Bitmap[] image = (Bitmap[])data;
-
-            int i = ThreadService.GetI();
-
-            while (i < image.Length) 
-            {                 
-                PixelPackage pixels = new PixelPackage();
-                pixels.Set(image[i]);
-
-                ProcessingMethod(pixels.R, pixels.G, pixels.B);
-
-                //ColorChange(pixels.R, pixels.G, pixels.B);
-
-                image[i] = pixels.Get();
-
-                i = ThreadService.GetI();
-            } 
-        }
     }
 }
