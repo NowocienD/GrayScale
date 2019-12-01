@@ -1,4 +1,6 @@
 ﻿using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 
 namespace ColorToGrayScale
 {
@@ -22,6 +24,7 @@ namespace ColorToGrayScale
         {
             width = imageToProcess.Width;
             height = imageToProcess.Height;
+            PixelFormat pixelFormat = imageToProcess.PixelFormat;
 
             int numberOfVerticalParts = height / Size;
 
@@ -34,12 +37,10 @@ namespace ColorToGrayScale
                         0,
                         width,
                         height),
-                    imageToProcess.PixelFormat);
+                    pixelFormat);
             }
             
             Bitmap[] smallerImagesToProcess = new Bitmap[width * numberOfVerticalParts];
-
-            System.Drawing.Imaging.PixelFormat format = imageToProcess.PixelFormat;
 
             int counter = 0;
             for (int x = 0; x < width; x++)
@@ -52,7 +53,7 @@ namespace ColorToGrayScale
                             1,
                             Size);
 
-                    smallerImagesToProcess[counter] = imageToProcess.Clone(rect, format);
+                    smallerImagesToProcess[counter] = imageToProcess.Clone(rect, pixelFormat);
                     counter++;
                 }
             }
