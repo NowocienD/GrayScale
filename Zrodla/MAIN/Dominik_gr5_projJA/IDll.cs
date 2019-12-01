@@ -20,5 +20,11 @@ namespace ColorToGrayScale
         void SingleColorChannel_Green(byte[] r, byte[] g, byte[] b);
 
         void SingleColorChannel_Blue(byte[] r, byte[] g, byte[] b);
+
+        void Decomposition_max(byte[] r, byte[] g, byte[] b);
+
+        void Decomposition_min(byte[] r, byte[] g, byte[] b);
+
+        void Desaturation(byte[] r, byte[] g, byte[] b);
     }
 }

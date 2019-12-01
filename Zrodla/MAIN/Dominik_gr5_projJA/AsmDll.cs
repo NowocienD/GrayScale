@@ -20,6 +20,12 @@ namespace ColorToGrayScale
 
         public void SingleColorChannel_Blue(byte[] r, byte[] g, byte[] b) => SingleColorChannel_Blue_ASM(r, g, b);
 
+        public void Decomposition_max(byte[] r, byte[] g, byte[] b) => Decomposition_max_ASM(r, g, b);
+
+        public void Decomposition_min(byte[] r, byte[] g, byte[] b) => Decomposition_min_ASM(r, g, b);
+
+        public void Desaturation(byte[] r, byte[] g, byte[] b) => Desaturation_ASM(r, g, b);
+
         [DllImport(DllPath)]
         private static extern void SingleColorChannel_Red_ASM(byte[] r, byte[] g, byte[] b);
 
@@ -28,6 +34,15 @@ namespace ColorToGrayScale
 
         [DllImport(DllPath)]
         private static extern void SingleColorChannel_Blue_ASM(byte[] r, byte[] g, byte[] b);
+
+        [DllImport(DllPath)]
+        private static extern void Decomposition_max_ASM(byte[] r, byte[] g, byte[] b);
+
+        [DllImport(DllPath)]
+        private static extern void Decomposition_min_ASM(byte[] r, byte[] g, byte[] b);
+
+        [DllImport(DllPath)]
+        private static extern void Desaturation_ASM(byte[] r, byte[] g, byte[] b);
 
         public void ChangeColorToGrayScale(object data)
         {
