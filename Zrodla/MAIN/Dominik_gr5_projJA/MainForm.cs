@@ -53,11 +53,17 @@ namespace ColorToGrayScale
             try
             {
                 this.imageToProcess = new Bitmap(Image.FromFile(openFileDialog.FileName));
+
+                timeCounter.Start();
                 dividedImage = imageService.ImageDivider(imageToProcess);
                 copyOfdividedImage = imageService.CopyArrayOfBitmap(dividedImage);
 
+                timeCounter.Stop();
+                time_divide_label.Text = timeCounter.Time;
+
                 pictureBox_original.Image = imageToProcess;
                 StartBTN.Enabled = true;
+                BitmapParts_label.Text = dividedImage.Length.ToString();
 
                 pictureBox_modified.Image = imageToProcess;
             }
@@ -77,9 +83,12 @@ namespace ColorToGrayScale
             }
             else
             {
-                label_time.Text = timeCounter.Time.ToString() + " ms"; 
+                label_time.Text = timeCounter.Time;
+                timeCounter.Start();
                 pictureBox_modified.Image = imageService.JoinIntoBigOne(threadsService.DataToProcess);
                 StartBTN.Enabled = true;
+                timeCounter.Stop();
+                time_join_label.Text = timeCounter.Time;
             }
         }
 
@@ -87,7 +96,6 @@ namespace ColorToGrayScale
 
         private void StartBTN_Click(object sender, EventArgs e)
         {
-            dividedImage = imageService.CopyArrayOfBitmap(copyOfdividedImage);
             label_time.Text = string.Empty;
             StartBTN.Enabled = false;
             IDll chosenDll;
@@ -133,8 +141,8 @@ namespace ColorToGrayScale
             {
                 throw new Exception();
             }
-
-
+            
+            dividedImage = imageService.CopyArrayOfBitmap(copyOfdividedImage);
             threadsService.ProcessingFunction = chosenDll.ChangeColorToGrayScale;
             threadsService.EndOfThreads = new EndOfThreads(UpdateModifiedPhoto);
             threadsService.ThreadsNo = processorCount;

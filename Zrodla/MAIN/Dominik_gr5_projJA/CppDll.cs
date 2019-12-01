@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace ColorToGrayScale
 {
-    public class CppDll : IDll
+    public class CppDll 
     {
         private const string DllPath = @"C:\Users\qwertyuiop\Desktop\repo\Zrodla\DLL_C\x64\Release\C_DLL.dll";
 

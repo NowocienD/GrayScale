@@ -8,7 +8,7 @@ namespace ColorToGrayScale
 {
     public interface ITimeCounterService
     {
-        int Time { get; }
+        string Time { get; }
 
         void Start();
 

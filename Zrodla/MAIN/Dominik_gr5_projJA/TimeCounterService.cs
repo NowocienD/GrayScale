@@ -12,10 +12,9 @@ namespace ColorToGrayScale
 
         private int stopTime;
 
-        public int Time 
+        public string Time 
         { 
-            get => stopTime - startTime; 
-            internal set => Time = value; 
+            get => (stopTime - startTime).ToString() + " ms"; 
         }
 
         public void Start()

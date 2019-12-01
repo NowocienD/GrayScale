@@ -39,12 +39,18 @@
             this.pictureBox_modified = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.GSCC_radio = new System.Windows.Forms.RadioButton();
-            this.RSCC_radio = new System.Windows.Forms.RadioButton();
-            this.BSCC_radio = new System.Windows.Forms.RadioButton();
-            this.decomposition_max_radio = new System.Windows.Forms.RadioButton();
-            this.decomposition_min_radio = new System.Windows.Forms.RadioButton();
             this.desaturation_radio = new System.Windows.Forms.RadioButton();
+            this.decomposition_min_radio = new System.Windows.Forms.RadioButton();
             this.correcting_radio = new System.Windows.Forms.RadioButton();
+            this.decomposition_max_radio = new System.Windows.Forms.RadioButton();
+            this.BSCC_radio = new System.Windows.Forms.RadioButton();
+            this.RSCC_radio = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.BitmapParts_label = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.time_divide_label = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.time_join_label = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_Threads)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_original)).BeginInit();
@@ -101,7 +107,7 @@
             this.pictureBox_original.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_original.Location = new System.Drawing.Point(13, 12);
             this.pictureBox_original.Name = "pictureBox_original";
-            this.pictureBox_original.Size = new System.Drawing.Size(380, 264);
+            this.pictureBox_original.Size = new System.Drawing.Size(380, 256);
             this.pictureBox_original.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_original.TabIndex = 2;
             this.pictureBox_original.TabStop = false;
@@ -139,20 +145,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(665, 371);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label1.Location = new System.Drawing.Point(619, 415);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 17);
+            this.label1.Size = new System.Drawing.Size(64, 25);
             this.label1.TabIndex = 6;
             this.label1.Text = "Czas:";
             // 
             // label_time
             // 
             this.label_time.AutoSize = true;
-            this.label_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_time.Location = new System.Drawing.Point(672, 403);
+            this.label_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label_time.Location = new System.Drawing.Point(619, 440);
             this.label_time.Name = "label_time";
-            this.label_time.Size = new System.Drawing.Size(36, 17);
+            this.label_time.Size = new System.Drawing.Size(51, 25);
             this.label_time.TabIndex = 7;
             this.label_time.Text = "0:00";
             // 
@@ -165,7 +171,7 @@
             this.pictureBox_modified.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_modified.Location = new System.Drawing.Point(408, 12);
             this.pictureBox_modified.Name = "pictureBox_modified";
-            this.pictureBox_modified.Size = new System.Drawing.Size(380, 264);
+            this.pictureBox_modified.Size = new System.Drawing.Size(380, 256);
             this.pictureBox_modified.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_modified.TabIndex = 8;
             this.pictureBox_modified.TabStop = false;
@@ -198,35 +204,15 @@
             this.GSCC_radio.Text = "SCC zielony";
             this.GSCC_radio.UseVisualStyleBackColor = true;
             // 
-            // RSCC_radio
+            // desaturation_radio
             // 
-            this.RSCC_radio.AutoSize = true;
-            this.RSCC_radio.Location = new System.Drawing.Point(32, 19);
-            this.RSCC_radio.Name = "RSCC_radio";
-            this.RSCC_radio.Size = new System.Drawing.Size(94, 17);
-            this.RSCC_radio.TabIndex = 0;
-            this.RSCC_radio.Text = "SCC czerwony";
-            this.RSCC_radio.UseVisualStyleBackColor = true;
-            // 
-            // BSCC_radio
-            // 
-            this.BSCC_radio.AutoSize = true;
-            this.BSCC_radio.Location = new System.Drawing.Point(32, 65);
-            this.BSCC_radio.Name = "BSCC_radio";
-            this.BSCC_radio.Size = new System.Drawing.Size(90, 17);
-            this.BSCC_radio.TabIndex = 0;
-            this.BSCC_radio.Text = "SCC niebieski";
-            this.BSCC_radio.UseVisualStyleBackColor = true;
-            // 
-            // decomposition_max_radio
-            // 
-            this.decomposition_max_radio.AutoSize = true;
-            this.decomposition_max_radio.Location = new System.Drawing.Point(132, 19);
-            this.decomposition_max_radio.Name = "decomposition_max_radio";
-            this.decomposition_max_radio.Size = new System.Drawing.Size(115, 17);
-            this.decomposition_max_radio.TabIndex = 0;
-            this.decomposition_max_radio.Text = "decomposition max";
-            this.decomposition_max_radio.UseVisualStyleBackColor = true;
+            this.desaturation_radio.AutoSize = true;
+            this.desaturation_radio.Location = new System.Drawing.Point(132, 65);
+            this.desaturation_radio.Name = "desaturation_radio";
+            this.desaturation_radio.Size = new System.Drawing.Size(83, 17);
+            this.desaturation_radio.TabIndex = 0;
+            this.desaturation_radio.Text = "desaturation";
+            this.desaturation_radio.UseVisualStyleBackColor = true;
             // 
             // decomposition_min_radio
             // 
@@ -238,16 +224,6 @@
             this.decomposition_min_radio.Text = "decomposition min";
             this.decomposition_min_radio.UseVisualStyleBackColor = true;
             // 
-            // desaturation_radio
-            // 
-            this.desaturation_radio.AutoSize = true;
-            this.desaturation_radio.Location = new System.Drawing.Point(132, 65);
-            this.desaturation_radio.Name = "desaturation_radio";
-            this.desaturation_radio.Size = new System.Drawing.Size(83, 17);
-            this.desaturation_radio.TabIndex = 0;
-            this.desaturation_radio.Text = "desaturation";
-            this.desaturation_radio.UseVisualStyleBackColor = true;
-            // 
             // correcting_radio
             // 
             this.correcting_radio.AutoSize = true;
@@ -258,11 +234,107 @@
             this.correcting_radio.Text = "correcting";
             this.correcting_radio.UseVisualStyleBackColor = true;
             // 
+            // decomposition_max_radio
+            // 
+            this.decomposition_max_radio.AutoSize = true;
+            this.decomposition_max_radio.Location = new System.Drawing.Point(132, 19);
+            this.decomposition_max_radio.Name = "decomposition_max_radio";
+            this.decomposition_max_radio.Size = new System.Drawing.Size(115, 17);
+            this.decomposition_max_radio.TabIndex = 0;
+            this.decomposition_max_radio.Text = "decomposition max";
+            this.decomposition_max_radio.UseVisualStyleBackColor = true;
+            // 
+            // BSCC_radio
+            // 
+            this.BSCC_radio.AutoSize = true;
+            this.BSCC_radio.Location = new System.Drawing.Point(32, 65);
+            this.BSCC_radio.Name = "BSCC_radio";
+            this.BSCC_radio.Size = new System.Drawing.Size(90, 17);
+            this.BSCC_radio.TabIndex = 0;
+            this.BSCC_radio.Text = "SCC niebieski";
+            this.BSCC_radio.UseVisualStyleBackColor = true;
+            // 
+            // RSCC_radio
+            // 
+            this.RSCC_radio.AutoSize = true;
+            this.RSCC_radio.Location = new System.Drawing.Point(32, 19);
+            this.RSCC_radio.Name = "RSCC_radio";
+            this.RSCC_radio.Size = new System.Drawing.Size(94, 17);
+            this.RSCC_radio.TabIndex = 0;
+            this.RSCC_radio.Text = "SCC czerwony";
+            this.RSCC_radio.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label2.Location = new System.Drawing.Point(621, 282);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(149, 17);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "ilość paczek z danymi:";
+            // 
+            // BitmapParts_label
+            // 
+            this.BitmapParts_label.AutoSize = true;
+            this.BitmapParts_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.BitmapParts_label.Location = new System.Drawing.Point(621, 301);
+            this.BitmapParts_label.Name = "BitmapParts_label";
+            this.BitmapParts_label.Size = new System.Drawing.Size(16, 17);
+            this.BitmapParts_label.TabIndex = 10;
+            this.BitmapParts_label.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label3.Location = new System.Drawing.Point(621, 318);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(147, 17);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Czas dzielenia obrazu";
+            // 
+            // time_divide_label
+            // 
+            this.time_divide_label.AutoSize = true;
+            this.time_divide_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.time_divide_label.Location = new System.Drawing.Point(621, 335);
+            this.time_divide_label.Name = "time_divide_label";
+            this.time_divide_label.Size = new System.Drawing.Size(16, 17);
+            this.time_divide_label.TabIndex = 10;
+            this.time_divide_label.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label4.Location = new System.Drawing.Point(621, 352);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(152, 17);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Czas łączenia obrazów";
+            // 
+            // time_join_label
+            // 
+            this.time_join_label.AutoSize = true;
+            this.time_join_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.time_join_label.Location = new System.Drawing.Point(621, 369);
+            this.time_join_label.Name = "time_join_label";
+            this.time_join_label.Size = new System.Drawing.Size(16, 17);
+            this.time_join_label.TabIndex = 10;
+            this.time_join_label.Text = "0";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 488);
+            this.Controls.Add(this.time_join_label);
+            this.Controls.Add(this.time_divide_label);
+            this.Controls.Add(this.BitmapParts_label);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.pictureBox_modified);
             this.Controls.Add(this.label_time);
@@ -310,6 +382,12 @@
         private System.Windows.Forms.RadioButton decomposition_min_radio;
         private System.Windows.Forms.RadioButton decomposition_max_radio;
         private System.Windows.Forms.RadioButton correcting_radio;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label BitmapParts_label;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label time_divide_label;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label time_join_label;
     }
 }
 
