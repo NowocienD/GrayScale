@@ -15,18 +15,14 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BBBAF888-0803-409D-9950-F7B3B769281A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BBBAF888-0803-409D-9950-F7B3B769281A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBBAF888-0803-409D-9950-F7B3B769281A}.Debug|Any CPU.ActiveCfg = Debug|x64
 		{BBBAF888-0803-409D-9950-F7B3B769281A}.Debug|x64.ActiveCfg = Debug|x64
 		{BBBAF888-0803-409D-9950-F7B3B769281A}.Debug|x64.Build.0 = Debug|x64
-		{BBBAF888-0803-409D-9950-F7B3B769281A}.Debug|x86.ActiveCfg = Debug|x86
-		{BBBAF888-0803-409D-9950-F7B3B769281A}.Debug|x86.Build.0 = Debug|x86
-		{BBBAF888-0803-409D-9950-F7B3B769281A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BBBAF888-0803-409D-9950-F7B3B769281A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBBAF888-0803-409D-9950-F7B3B769281A}.Debug|x86.ActiveCfg = Debug|x64
+		{BBBAF888-0803-409D-9950-F7B3B769281A}.Release|Any CPU.ActiveCfg = Release|x64
 		{BBBAF888-0803-409D-9950-F7B3B769281A}.Release|x64.ActiveCfg = Release|x64
 		{BBBAF888-0803-409D-9950-F7B3B769281A}.Release|x64.Build.0 = Release|x64
-		{BBBAF888-0803-409D-9950-F7B3B769281A}.Release|x86.ActiveCfg = Release|x86
-		{BBBAF888-0803-409D-9950-F7B3B769281A}.Release|x86.Build.0 = Release|x86
+		{BBBAF888-0803-409D-9950-F7B3B769281A}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
