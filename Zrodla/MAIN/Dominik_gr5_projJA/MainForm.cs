@@ -55,6 +55,8 @@ namespace ColorToGrayScale
             {
                 this.imageToProcess = new Bitmap(Image.FromFile(openFileDialog.FileName));
 
+                imageToProcess = imageToProcess.Clone(new Rectangle(0, 0, imageToProcess.Width, imageToProcess.Height), System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+
                 timeCounter.Start();
                 dividedImage = imageService.ImageDivider(imageToProcess);
                 copyOfdividedImage = imageService.CopyArrayOfBitmap(dividedImage);
