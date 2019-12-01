@@ -9,20 +9,11 @@ namespace ColorToGrayScale
     /// </summary>
     public interface IImageService
     {
-        /// <summary>
-        /// Metoda dzieląca obraz na n mniejszych
-        /// Umożlia pozniejsze jego przetwarzanie na większej ilości wątków
-        /// </summary>
-        /// <param name="imageToProcess">Obraz do przetworzenia</param>
-        /// <returns>Tablica z podzielonym obrazem na n częsci</returns>
-        PixelPackage[] ImageDivider(Bitmap imageToProcess);
+        void ImageDivider(Bitmap imageToProcess);
 
-        /// <summary>
-        /// Metoda łącząca wiele mniejszych przetworzonych obrazów w jeden cały
-        /// </summary>
-        /// <param name="smallImagesToProcess">Tablica zawierajaca mniejsze obrazy do polaczenia</param>
-        /// <returns>Ostateczny obraz w docelowym rozmiarze</returns>
-        Bitmap JoinIntoBigOne(PixelPackage[] smallImagesToProcess);
+        PixelPackage pixels { get; set; }
+
+        Bitmap JoinIntoBigOne();
 
         PixelPackage[] CopyArrayOfBitmap(PixelPackage[] dividedImage);
     }

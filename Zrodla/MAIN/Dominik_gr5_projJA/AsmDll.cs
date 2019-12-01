@@ -26,11 +26,11 @@ namespace ColorToGrayScale
 
         public void Desaturation(byte[] r, byte[] g, byte[] b) => Desaturation_ASM(r, g, b);
 
-        private PixelPackage[] pixels;
+        public PixelPackage pixels { set; get; }
 
         public void ChangeColorToGrayScale(object data)
         {
-            pixels = (PixelPackage[])data;
+            //pixels = (PixelPackage)data;
 
             int i = ThreadService.GetI();
 
@@ -38,7 +38,7 @@ namespace ColorToGrayScale
             {
                 for (int j = 0; j < 1; j++)
                 {
-                    ProcessingMethod(pixels[i + j].Red, pixels[i + j].Green, pixels[i + j].Blue);
+                    ProcessingMethod(pixels.Get_red(i), pixels.Get_green(i), pixels.Get_blue(i));
                 }
                 i = ThreadService.GetI();
             }

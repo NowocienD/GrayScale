@@ -13,6 +13,8 @@ namespace ColorToGrayScale
     {
         ProcessingMethodDelegate ProcessingMethod { set; }
 
+        PixelPackage pixels { get; set; }
+
         void ChangeColorToGrayScale(object data);
 
         void SingleColorChannel_Red(byte[] r, byte[] g, byte[] b);

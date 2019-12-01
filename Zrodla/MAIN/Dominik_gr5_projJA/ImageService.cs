@@ -9,6 +9,9 @@ namespace ColorToGrayScale
         private const int Size = 16;
         private int height;
         private int width;
+        private int imageSize;
+
+        public PixelPackage pixels { get; set; }
 
         public PixelPackage[] CopyArrayOfBitmap(PixelPackage[] dividedImage)
         {
@@ -20,70 +23,44 @@ namespace ColorToGrayScale
             return copyOfdividedImage;
         }
 
-        public PixelPackage[] ImageDivider(Bitmap imageToProcess)
+        public void ImageDivider(Bitmap imageToProcess)
         {
             width = imageToProcess.Width;
             height = imageToProcess.Height;
             PixelFormat pixelFormat = imageToProcess.PixelFormat;
 
-            int numberOfVerticalParts = height / Size;
-
-            if (height % Size != 0)
-            {
-                height = Size * numberOfVerticalParts;
-                imageToProcess = imageToProcess.Clone(
-                    new Rectangle(
-                        0,
-                        0,
-                        width,
-                        height),
-                    pixelFormat);
-            }
-
-            PixelPackage[] smallerImagesToProcess = new PixelPackage[width * numberOfVerticalParts];
+            imageSize = width * height;
+            pixels = new PixelPackage(imageSize);
 
             int counter = 0;
             for (int x = 0; x < width; x++)
             {
-                for (int y = 0; y < height; y += Size)
+                for (int y = 0; y < height; y++)
                 {
-                    Rectangle rect = new Rectangle(
-                            x,
-                            y,
-                            1,
-                            Size);
-
-                    Bitmap a = (Bitmap)imageToProcess.Clone(rect, pixelFormat);
-
-                    smallerImagesToProcess[counter] = new PixelPackage();
-                    smallerImagesToProcess[counter].Set(a);
+                    Color color = imageToProcess.GetPixel(x, y);
+                    pixels.Red[counter] = color.R;
+                    pixels.Green[counter] = color.G;
+                    pixels.Blue[counter] = color.B;
                     counter++;
                 }
             }
-            return smallerImagesToProcess;
         }
 
-        public Bitmap JoinIntoBigOne(PixelPackage[] smallImagesToProcess)
+        public Bitmap JoinIntoBigOne()
         {
             Bitmap image = new Bitmap(width, height);
-
-            Graphics graphic = Graphics.FromImage(image);
 
             int counter = 0;
             for (int x = 0; x < width; x++)
             {
-                for (int y = 0; y < height; y += Size)
+                for (int y = 0; y < height; y++)
                 {
-                    Rectangle rectangle = new Rectangle(
-                        x,
-                        y,
-                        1,
-                        Size);
+                    Color color = Color.FromArgb(
+                        pixels.Red[counter],
+                        pixels.Green[counter],
+                        pixels.Blue[counter]);
 
-                    graphic.DrawImage(
-                        smallImagesToProcess[counter].Get(),
-                        rectangle);
-
+                    image.SetPixel(x, y, color);
                     counter++;
                 }
             }

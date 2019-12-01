@@ -15,7 +15,7 @@ namespace ColorToGrayScale
 
         public int ThreadsNo { internal get; set; }
 
-        public PixelPackage[] DataToProcess { get; set; }
+        public PixelPackage DataToProcess { get; set; }
         
         public EndOfThreads EndOfThreads { internal get; set; }
 
@@ -28,7 +28,6 @@ namespace ColorToGrayScale
             {
                 i = count;
                 count++;
-                //count += 32;
             }
             return i;
         }
