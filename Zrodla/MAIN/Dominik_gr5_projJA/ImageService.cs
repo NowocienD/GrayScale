@@ -35,13 +35,16 @@ namespace ColorToGrayScale
             int counter = 0;
             for (int x = 0; x < width; x++)
             {
-                for (int y = 0; y < height; y++)
+                for (int y = 0; y < height; y += Size)
                 {
-                    Color color = imageToProcess.GetPixel(x, y);
-                    pixels.Red[counter] = color.R;
-                    pixels.Green[counter] = color.G;
-                    pixels.Blue[counter] = color.B;
-                    counter++;
+                    for (int i = 0; i < Size; i++)
+                    {
+                        Color color = imageToProcess.GetPixel(x, i + y);
+                        pixels.Red[counter][i] = color.R;
+                        pixels.Green[counter][i] = color.G;
+                        pixels.Blue[counter][i] = color.B;
+                        counter++;
+                    }
                 }
             }
         }
@@ -53,15 +56,18 @@ namespace ColorToGrayScale
             int counter = 0;
             for (int x = 0; x < width; x++)
             {
-                for (int y = 0; y < height; y++)
+                for (int y = 0; y < height; y += Size)
                 {
-                    Color color = Color.FromArgb(
-                        pixels.Red[counter],
-                        pixels.Green[counter],
-                        pixels.Blue[counter]);
+                    for (int i = 0; i < Size; i++)
+                    {
+                        Color color = Color.FromArgb(
+                           pixels.Red[counter][i],
+                           pixels.Green[counter][i],
+                           pixels.Blue[counter][i]);
 
-                    image.SetPixel(x, y, color);
-                    counter++;
+                        image.SetPixel(x, i + y, color);
+                        counter++;
+                    }
                 }
             }
             return image;

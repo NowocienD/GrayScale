@@ -38,7 +38,7 @@ namespace ColorToGrayScale
             {
                 for (int j = 0; j < 1; j++)
                 {
-                    ProcessingMethod(pixels.Get_red(i), pixels.Get_green(i), pixels.Get_blue(i));
+                    ProcessingMethod(pixels.GetRed(i), pixels.GetGreen(i), pixels.GetBlue(i));
                 }
                 i = ThreadService.GetI();
             }
