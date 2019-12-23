@@ -25,6 +25,7 @@ namespace ColorToGrayScale
                 Blue[i] = new byte[Size];
             }
         }
+
         public int Length { get; internal set; }
 
         public byte[][] Red { get; internal set; }

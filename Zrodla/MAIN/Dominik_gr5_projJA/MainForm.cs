@@ -51,6 +51,7 @@ namespace ColorToGrayScale
         private void PhotoBTN_Click(object sender, EventArgs e)
         {
             openFileDialog.ShowDialog();
+
             //try
             //{
             this.imageToProcess = new Bitmap(Image.FromFile(openFileDialog.FileName));

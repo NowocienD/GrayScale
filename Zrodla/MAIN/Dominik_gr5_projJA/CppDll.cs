@@ -20,6 +20,10 @@ namespace ColorToGrayScale
 
         public void SingleColorChannel_Blue(byte[] r, byte[] g, byte[] b) => SingleColorChannel_Blue_ASM(r, g, b);
 
+        public void ChangeColorToGrayScale(object data)
+        {
+        }
+
         [DllImport(DllPath)]
         private static extern void SingleColorChannel_Red_ASM(byte[] r, byte[] g, byte[] b);
 
@@ -28,9 +32,5 @@ namespace ColorToGrayScale
 
         [DllImport(DllPath)]
         private static extern void SingleColorChannel_Blue_ASM(byte[] r, byte[] g, byte[] b);
-
-        public void ChangeColorToGrayScale(object data)
-        {
-        }
     }
 }
