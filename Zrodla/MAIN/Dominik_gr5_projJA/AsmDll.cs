@@ -13,6 +13,7 @@ namespace ColorToGrayScale
         private const string DllPath = @"C:\Users\qwertyuiop\source\repos\asm_dll_2017\x64\Release\asm_dll_2017.dll";
 
         public ProcessingMethodDelegate ProcessingMethod { internal get; set; }
+        public PixelPackage pixels { get; set; }
 
         public void SingleColorChannel_Red(byte[] r, byte[] g, byte[] b) => SingleColorChannel_Red_ASM(r, g, b);
 
@@ -26,12 +27,8 @@ namespace ColorToGrayScale
 
         public void Desaturation(byte[] r, byte[] g, byte[] b) => Desaturation_ASM(r, g, b);
 
-        public PixelPackage pixels { set; get; }
-
         public void ChangeColorToGrayScale(object data)
         {
-            //pixels = (PixelPackage)data;
-
             int i = ThreadService.GetI();
 
             while (i < pixels.Length)

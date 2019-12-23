@@ -55,6 +55,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.RAMUsage_label = new System.Windows.Forms.Label();
+            this.radioButton_dotNet_noSIMD = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_Threads)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_original)).BeginInit();
@@ -64,11 +65,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.radioButton_dotNet_noSIMD);
             this.groupBox1.Controls.Add(this.radioButton_dotNet);
             this.groupBox1.Controls.Add(this.radioButton_ASM);
             this.groupBox1.Location = new System.Drawing.Point(13, 282);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(168, 65);
+            this.groupBox1.Size = new System.Drawing.Size(168, 87);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Wybór DLL";
@@ -118,7 +120,7 @@
             // 
             // PhotoBTN
             // 
-            this.PhotoBTN.Location = new System.Drawing.Point(12, 353);
+            this.PhotoBTN.Location = new System.Drawing.Point(13, 375);
             this.PhotoBTN.Name = "PhotoBTN";
             this.PhotoBTN.Size = new System.Drawing.Size(168, 37);
             this.PhotoBTN.TabIndex = 3;
@@ -129,7 +131,7 @@
             // StartBTN
             // 
             this.StartBTN.Enabled = false;
-            this.StartBTN.Location = new System.Drawing.Point(13, 403);
+            this.StartBTN.Location = new System.Drawing.Point(12, 428);
             this.StartBTN.Name = "StartBTN";
             this.StartBTN.Size = new System.Drawing.Size(168, 37);
             this.StartBTN.TabIndex = 4;
@@ -354,6 +356,16 @@
             this.RAMUsage_label.TabIndex = 10;
             this.RAMUsage_label.Text = "0";
             // 
+            // radioButton_dotNet_noSIMD
+            // 
+            this.radioButton_dotNet_noSIMD.AutoSize = true;
+            this.radioButton_dotNet_noSIMD.Location = new System.Drawing.Point(32, 65);
+            this.radioButton_dotNet_noSIMD.Name = "radioButton_dotNet_noSIMD";
+            this.radioButton_dotNet_noSIMD.Size = new System.Drawing.Size(111, 17);
+            this.radioButton_dotNet_noSIMD.TabIndex = 2;
+            this.radioButton_dotNet_noSIMD.Text = "cpp DLL no SIMD";
+            this.radioButton_dotNet_noSIMD.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -423,6 +435,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label RAMUsage_label;
+        private System.Windows.Forms.RadioButton radioButton_dotNet_noSIMD;
     }
 }
 

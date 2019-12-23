@@ -18,9 +18,9 @@ namespace ColorToGrayScale
 
         private Bitmap imageToProcess;
 
-        private PixelPackage[] dividedImage;
+        private PixelPackage dividedImage;
 
-        private PixelPackage[] copyOfdividedImage;
+        private PixelPackage copyOfdividedImage;
 
         public MainForm(
             IImageService _imageService,
@@ -53,22 +53,21 @@ namespace ColorToGrayScale
             openFileDialog.ShowDialog();
             //try
             //{
-                this.imageToProcess = new Bitmap(Image.FromFile(openFileDialog.FileName));
+            this.imageToProcess = new Bitmap(Image.FromFile(openFileDialog.FileName));
 
-                imageToProcess = imageToProcess.Clone(new Rectangle(0, 0, imageToProcess.Width, imageToProcess.Height), System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+            imageToProcess = imageToProcess.Clone(new Rectangle(0, 0, imageToProcess.Width, imageToProcess.Height), System.Drawing.Imaging.PixelFormat.Format24bppRgb);
 
-                timeCounter.Start();
-                imageService.ImageDivider(imageToProcess);
-                //copyOfdividedImage = imageService.CopyArrayOfBitmap(dividedImage);
-                timeCounter.Stop();
-                time_divide_label.Text = timeCounter.Time;
+            timeCounter.Start();
+            imageService.ImageDivider(imageToProcess);
+            timeCounter.Stop();
+            time_divide_label.Text = timeCounter.Time;
 
-                pictureBox_original.Image = imageToProcess;
-                StartBTN.Enabled = true;
-                BitmapParts_label.Text = imageService.pixels.Length.ToString();
-
-                //pictureBox_modified.Image = imageToProcess;
-                try { 
+            pictureBox_original.Image = imageToProcess;
+            StartBTN.Enabled = true;
+            BitmapParts_label.Text = imageService.pixels.Length.ToString();
+            copyOfdividedImage = imageService.CopyArrayOfBitmap(imageService.pixels);
+            try 
+            { 
             }
             catch
             {
@@ -148,7 +147,7 @@ namespace ColorToGrayScale
 
         private void StartBTN_Click(object sender, EventArgs e)
         {
-            //dividedImage = imageService.CopyArrayOfBitmap(copyOfdividedImage);
+            dividedImage = imageService.CopyArrayOfBitmap(copyOfdividedImage);
             label_time.Text = string.Empty;
             StartBTN.Enabled = false;
 
@@ -159,7 +158,7 @@ namespace ColorToGrayScale
             threadsService.ProcessingFunction = dll.ChangeColorToGrayScale;
             threadsService.EndOfThreads = new EndOfThreads(UpdateModifiedPhoto);
             threadsService.ThreadsNo = processorCount;
-            threadsService.DataToProcess = imageService.pixels;
+            threadsService.DataToProcess = dividedImage;
                         
             timeCounter.Start();
             threadsService.StartProcessing();

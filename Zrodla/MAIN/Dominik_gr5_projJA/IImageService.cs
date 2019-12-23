@@ -15,6 +15,6 @@ namespace ColorToGrayScale
 
         Bitmap JoinIntoBigOne();
 
-        PixelPackage[] CopyArrayOfBitmap(PixelPackage[] dividedImage);
+        PixelPackage CopyArrayOfBitmap(PixelPackage dividedImage);
     }
 }
