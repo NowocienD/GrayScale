@@ -1,2 +1,7 @@
 LIBRARY C_DLL
-EXPORTS ColorChange
+EXPORTS SingleColorChannel_Red_CPP
+EXPORTS SingleColorChannel_Green_CPP
+EXPORTS SingleColorChannel_Blue_CPP
+EXPORTS Decomposition_max_CPP
+EXPORTS Decomposition_min_CPP
+EXPORTS Desaturation_CPP
