@@ -10,23 +10,31 @@ namespace ColorToGrayScale
         private int height;
         private int width;
         private int imageSize;
+        private PixelPackage copyOfImage;
 
         public PixelPackage Pixels { get; set; }
 
-        public PixelPackage CopyOfOryginalImage { get; set; }
-
-        public PixelPackage CopyArrayOfBitmap(PixelPackage dividedImage)
+        public PixelPackage CopyOfOryginalImage
         {
-            int length = dividedImage.Length;
+            get
+            {
+                Pixels = CopyArrayOfBitmap(copyOfImage);
+                return Pixels;
+            }
+        }
+
+        public PixelPackage CopyArrayOfBitmap(PixelPackage imagePixelsArray)
+        {
+            int length = imagePixelsArray.Length;
             PixelPackage copyOfdividedImage = new PixelPackage(length);
 
             for (int i = 0; i < length; i++)
             {
                 for (int j = 0; j < Size; j++)
                 {
-                    copyOfdividedImage.Red[i][j] = dividedImage.Red[i][j];
-                    copyOfdividedImage.Green[i][j] = dividedImage.Green[i][j];
-                    copyOfdividedImage.Blue[i][j] = dividedImage.Blue[i][j];
+                    copyOfdividedImage.Red[i][j] = imagePixelsArray.Red[i][j];
+                    copyOfdividedImage.Green[i][j] = imagePixelsArray.Green[i][j];
+                    copyOfdividedImage.Blue[i][j] = imagePixelsArray.Blue[i][j];
                 }
             }
 
@@ -58,7 +66,7 @@ namespace ColorToGrayScale
                 }
             }
 
-            this.CopyOfOryginalImage = CopyArrayOfBitmap(Pixels);
+            this.copyOfImage = CopyArrayOfBitmap(Pixels);
         }
 
         public Bitmap JoinIntoBigOne()

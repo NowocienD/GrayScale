@@ -50,8 +50,6 @@ namespace ColorToGrayScale
             //{
             Bitmap imageToProcess = new Bitmap(Image.FromFile(openFileDialog.FileName));
 
-            imageToProcess = imageToProcess.Clone(new Rectangle(0, 0, imageToProcess.Width, imageToProcess.Height), System.Drawing.Imaging.PixelFormat.Format24bppRgb);
-
             timeCounter.Start();
             imageService.ImageDivider(imageToProcess);
             timeCounter.Stop();
@@ -61,7 +59,7 @@ namespace ColorToGrayScale
             StartBTN.Enabled = true;
             BitmapParts_label.Text = imageService.Pixels.Length.ToString();
 
-            imageService.CopyOfOryginalImage = imageService.CopyArrayOfBitmap(imageService.Pixels);
+            //imageService.CopyOfOryginalImage = imageService.CopyArrayOfBitmap(imageService.Pixels);
 
             try 
             { 
@@ -143,14 +141,14 @@ namespace ColorToGrayScale
 
         private void StartBTN_Click(object sender, EventArgs e)
         {
-            imageService.Pixels = imageService.CopyArrayOfBitmap(imageService.CopyOfOryginalImage);
+            //imageService.Pixels = imageService.CopyArrayOfBitmap(imageService.CopyOfOryginalImage);
             label_time.Text = string.Empty;
             StartBTN.Enabled = false;
 
             IDll dll = ChooseDll();
             ChooseFunction(dll);
             
-            dll.Pixels = imageService.Pixels;
+            dll.Pixels = imageService.CopyOfOryginalImage;
 
             threadsService.ProcessingFunction = dll.ChangeColorToGrayScale;
             threadsService.EndOfThreads = new EndOfThreads(UpdateModifiedPhoto);
