@@ -13,6 +13,8 @@ namespace ColorToGrayScale
 
         public PixelPackage pixels { get; set; }
 
+        public PixelPackage copy { get; set; }
+
         public PixelPackage CopyArrayOfBitmap(PixelPackage dividedImage)
         {
             int length = dividedImage.Length;

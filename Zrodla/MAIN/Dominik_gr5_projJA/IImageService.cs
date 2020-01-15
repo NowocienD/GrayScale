@@ -11,6 +11,8 @@ namespace ColorToGrayScale
     {
         PixelPackage pixels { get; set; }
 
+        PixelPackage copy { get; set; }
+
         void ImageDivider(Bitmap imageToProcess);
 
         Bitmap JoinIntoBigOne();

@@ -39,7 +39,7 @@ namespace ColorToGrayScale
             for (int i = 0; i < ThreadsNo; i++)
             {
                 threads[i] = new Thread(ProcessingFunction);
-                threads[i].Start(DataToProcess);
+                threads[i].Start();
             }
 
             Thread main = new Thread(t =>

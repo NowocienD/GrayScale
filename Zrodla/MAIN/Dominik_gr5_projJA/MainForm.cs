@@ -16,11 +16,11 @@ namespace ColorToGrayScale
 
         private int processorCount;
 
-        private Bitmap imageToProcess;
+        //private Bitmap imageToProcess;
 
-        private PixelPackage dividedImage;
+        //private PixelPackage dividedImage;
 
-        private PixelPackage copyOfdividedImage;
+        //private PixelPackage copyOfdividedImage;
 
         public MainForm(
             IImageService _imageService,
@@ -54,7 +54,7 @@ namespace ColorToGrayScale
 
             //try
             //{
-            this.imageToProcess = new Bitmap(Image.FromFile(openFileDialog.FileName));
+            Bitmap imageToProcess = new Bitmap(Image.FromFile(openFileDialog.FileName));
 
             imageToProcess = imageToProcess.Clone(new Rectangle(0, 0, imageToProcess.Width, imageToProcess.Height), System.Drawing.Imaging.PixelFormat.Format24bppRgb);
 
@@ -66,7 +66,9 @@ namespace ColorToGrayScale
             pictureBox_original.Image = imageToProcess;
             StartBTN.Enabled = true;
             BitmapParts_label.Text = imageService.pixels.Length.ToString();
-            copyOfdividedImage = imageService.CopyArrayOfBitmap(imageService.pixels);
+
+            imageService.copy = imageService.CopyArrayOfBitmap(imageService.pixels);
+
             try 
             { 
             }
@@ -147,20 +149,21 @@ namespace ColorToGrayScale
 
         private void StartBTN_Click(object sender, EventArgs e)
         {
-            dividedImage = imageService.CopyArrayOfBitmap(copyOfdividedImage);
+            imageService.pixels = imageService.CopyArrayOfBitmap(imageService.copy);
             label_time.Text = string.Empty;
             StartBTN.Enabled = false;
 
             IDll dll = ChooseDll();
             ChooseFunction(dll);
-           dll.Pixels = imageService.pixels;
-            //dll.Pixels = dividedImage;
+            
+            //dll.Pixels = imageService.pixels;
 
+            dll.Pixels = imageService.pixels;
 
             threadsService.ProcessingFunction = dll.ChangeColorToGrayScale;
             threadsService.EndOfThreads = new EndOfThreads(UpdateModifiedPhoto);
             threadsService.ThreadsNo = processorCount;
-            threadsService.DataToProcess = dividedImage;
+            //threadsService.DataToProcess = imageService.pixels;
                         
             timeCounter.Start();
             threadsService.StartProcessing();
