@@ -14,7 +14,7 @@ namespace ColorToGrayScale
 
         public ProcessingMethodDelegate ProcessingMethod { internal get; set; }
 
-        public PixelPackage pixels { get; set; }
+        public PixelPackage Pixels { get; set; }
 
         public void SingleColorChannel_Red(byte[] r, byte[] g, byte[] b) => SingleColorChannel_Red_ASM(r, g, b);
 
@@ -32,11 +32,11 @@ namespace ColorToGrayScale
         {
             int i = ThreadService.GetI();
 
-            while (i < pixels.Length)
+            while (i < Pixels.Length)
             {
                 for (int j = 0; j < 1; j++)
                 {
-                    ProcessingMethod(pixels.GetRed(i), pixels.GetGreen(i), pixels.GetBlue(i));
+                    ProcessingMethod(Pixels.GetRed(i), Pixels.GetGreen(i), Pixels.GetBlue(i));
                 }
                 i = ThreadService.GetI();
             }

@@ -15,13 +15,19 @@ namespace ColorToGrayScale
 
         public PixelPackage CopyArrayOfBitmap(PixelPackage dividedImage)
         {
-            PixelPackage copyOfdividedImage = new PixelPackage(dividedImage.Length);
-            for (int i = 0; i < dividedImage.Length; i++)
+            int length = dividedImage.Length;
+            PixelPackage copyOfdividedImage = new PixelPackage(length);
+
+            for (int i = 0; i < length; i++)
             {
-                copyOfdividedImage.Red[i] = dividedImage.Red[i];
-                copyOfdividedImage.Green[i] = dividedImage.Green[i];
-                copyOfdividedImage.Blue[i] = dividedImage.Blue[i];
+                for (int j = 0; j < Size; j++)
+                {
+                    copyOfdividedImage.Red[i][j] = dividedImage.Red[i][j];
+                    copyOfdividedImage.Green[i][j] = dividedImage.Green[i][j];
+                    copyOfdividedImage.Blue[i][j] = dividedImage.Blue[i][j];
+                }
             }
+
             return copyOfdividedImage;
         }
 

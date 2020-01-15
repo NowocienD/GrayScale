@@ -135,11 +135,10 @@ namespace ColorToGrayScale
             {
                 return new AsmDll();
             }
-
-            //else if (radioButton_dotNet.Checked == true)
-            //{
-            //return new CppDll();
-            //}
+            else if (radioButton_dotNet.Checked == true)
+            {
+                return new CppDll();
+            }
             else
             {
                 throw new Exception();
@@ -154,8 +153,10 @@ namespace ColorToGrayScale
 
             IDll dll = ChooseDll();
             ChooseFunction(dll);
-            dll.pixels = imageService.pixels;
-            
+           dll.Pixels = imageService.pixels;
+            //dll.Pixels = dividedImage;
+
+
             threadsService.ProcessingFunction = dll.ChangeColorToGrayScale;
             threadsService.EndOfThreads = new EndOfThreads(UpdateModifiedPhoto);
             threadsService.ThreadsNo = processorCount;
