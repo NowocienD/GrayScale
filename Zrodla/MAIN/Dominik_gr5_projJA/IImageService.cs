@@ -9,9 +9,9 @@ namespace ColorToGrayScale
     /// </summary>
     public interface IImageService
     {
-        PixelPackage pixels { get; set; }
+        PixelPackage Pixels { get; set; }
 
-        PixelPackage copy { get; set; }
+        PixelPackage CopyOfOryginalImage { get; set; }
 
         void ImageDivider(Bitmap imageToProcess);
 

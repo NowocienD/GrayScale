@@ -11,9 +11,9 @@ namespace ColorToGrayScale
         private int width;
         private int imageSize;
 
-        public PixelPackage pixels { get; set; }
+        public PixelPackage Pixels { get; set; }
 
-        public PixelPackage copy { get; set; }
+        public PixelPackage CopyOfOryginalImage { get; set; }
 
         public PixelPackage CopyArrayOfBitmap(PixelPackage dividedImage)
         {
@@ -40,7 +40,7 @@ namespace ColorToGrayScale
             PixelFormat pixelFormat = imageToProcess.PixelFormat;
 
             imageSize = width * height;
-            pixels = new PixelPackage(imageSize);
+            Pixels = new PixelPackage(imageSize);
 
             int counter = 0;
             for (int x = 0; x < width; x++)
@@ -50,13 +50,15 @@ namespace ColorToGrayScale
                     for (int i = 0; i < Size; i++)
                     {
                         Color color = imageToProcess.GetPixel(x, i + y);
-                        pixels.Red[counter][i] = color.R;
-                        pixels.Green[counter][i] = color.G;
-                        pixels.Blue[counter][i] = color.B;
+                        Pixels.Red[counter][i] = color.R;
+                        Pixels.Green[counter][i] = color.G;
+                        Pixels.Blue[counter][i] = color.B;
                         counter++;
                     }
                 }
             }
+
+            this.CopyOfOryginalImage = CopyArrayOfBitmap(Pixels);
         }
 
         public Bitmap JoinIntoBigOne()
@@ -71,9 +73,9 @@ namespace ColorToGrayScale
                     for (int i = 0; i < Size; i++)
                     {
                         Color color = Color.FromArgb(
-                           pixels.Red[counter][i],
-                           pixels.Green[counter][i],
-                           pixels.Blue[counter][i]);
+                           Pixels.Red[counter][i],
+                           Pixels.Green[counter][i],
+                           Pixels.Blue[counter][i]);
 
                         image.SetPixel(x, i + y, color);
                         counter++;
