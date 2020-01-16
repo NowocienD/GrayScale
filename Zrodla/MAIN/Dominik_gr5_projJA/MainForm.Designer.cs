@@ -27,6 +27,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton_dotNet_noSIMD = new System.Windows.Forms.RadioButton();
             this.radioButton_dotNet = new System.Windows.Forms.RadioButton();
             this.radioButton_ASM = new System.Windows.Forms.RadioButton();
             this.trackBar_Threads = new System.Windows.Forms.TrackBar();
@@ -55,7 +56,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.RAMUsage_label = new System.Windows.Forms.Label();
-            this.radioButton_dotNet_noSIMD = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_Threads)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_original)).BeginInit();
@@ -74,6 +74,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Wybór DLL";
+            // 
+            // radioButton_dotNet_noSIMD
+            // 
+            this.radioButton_dotNet_noSIMD.AutoSize = true;
+            this.radioButton_dotNet_noSIMD.Location = new System.Drawing.Point(32, 65);
+            this.radioButton_dotNet_noSIMD.Name = "radioButton_dotNet_noSIMD";
+            this.radioButton_dotNet_noSIMD.Size = new System.Drawing.Size(111, 17);
+            this.radioButton_dotNet_noSIMD.TabIndex = 2;
+            this.radioButton_dotNet_noSIMD.Text = "cpp DLL no SIMD";
+            this.radioButton_dotNet_noSIMD.UseVisualStyleBackColor = true;
             // 
             // radioButton_dotNet
             // 
@@ -356,16 +366,6 @@
             this.RAMUsage_label.TabIndex = 10;
             this.RAMUsage_label.Text = "0";
             // 
-            // radioButton_dotNet_noSIMD
-            // 
-            this.radioButton_dotNet_noSIMD.AutoSize = true;
-            this.radioButton_dotNet_noSIMD.Location = new System.Drawing.Point(32, 65);
-            this.radioButton_dotNet_noSIMD.Name = "radioButton_dotNet_noSIMD";
-            this.radioButton_dotNet_noSIMD.Size = new System.Drawing.Size(111, 17);
-            this.radioButton_dotNet_noSIMD.TabIndex = 2;
-            this.radioButton_dotNet_noSIMD.Text = "cpp DLL no SIMD";
-            this.radioButton_dotNet_noSIMD.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,7 +390,7 @@
             this.Controls.Add(this.trackBar_Threads);
             this.Controls.Add(this.groupBox1);
             this.Name = "MainForm";
-            this.Text = "Dominik Nowocień JA proj";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

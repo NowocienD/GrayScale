@@ -14,9 +14,7 @@ namespace ColorToGrayScale
         private Thread[] threads;
 
         public int ThreadsNo { internal get; set; }
-
-        public PixelPackage DataToProcess { get; set; }
-        
+                
         public EndOfThreads EndOfThreads { internal get; set; }
 
         public ParameterizedThreadStart ProcessingFunction { internal get; set; }
