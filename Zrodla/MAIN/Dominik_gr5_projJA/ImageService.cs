@@ -9,7 +9,6 @@ namespace ColorToGrayScale
         private const int Size = 16;
         private int height;
         private int width;
-        private int imageSize;
         private PixelPackage copyOfImage;
 
         public PixelPackage Pixels { get; set; }
@@ -45,10 +44,8 @@ namespace ColorToGrayScale
         {
             width = imageToProcess.Width;
             height = imageToProcess.Height;
-            PixelFormat pixelFormat = imageToProcess.PixelFormat;
 
-            imageSize = width * height;
-            Pixels = new PixelPackage(imageSize);
+            Pixels = new PixelPackage(width * height);
 
             int counter = 0;
             for (int x = 0; x < width; x++)
