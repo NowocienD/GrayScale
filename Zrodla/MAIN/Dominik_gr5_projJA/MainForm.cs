@@ -46,23 +46,18 @@ namespace ColorToGrayScale
         {
             openFileDialog.ShowDialog();
 
-            //try
-            //{
-            Bitmap imageToProcess = new Bitmap(Image.FromFile(openFileDialog.FileName));
+            try
+            {
+                Bitmap imageToProcess = new Bitmap(Image.FromFile(openFileDialog.FileName));
 
-            timeCounter.Start();
-            imageService.ImageDivider(imageToProcess);
-            timeCounter.Stop();
-            time_divide_label.Text = timeCounter.Time;
+                timeCounter.Start();
+                imageService.ImageDivider(imageToProcess);
+                timeCounter.Stop();
+                time_divide_label.Text = timeCounter.Time;
 
-            pictureBox_original.Image = imageToProcess;
-            StartBTN.Enabled = true;
-            BitmapParts_label.Text = imageService.Pixels.Length.ToString();
-
-            //imageService.CopyOfOryginalImage = imageService.CopyArrayOfBitmap(imageService.Pixels);
-
-            try 
-            { 
+                pictureBox_original.Image = imageToProcess;
+                BitmapParts_label.Text = imageService.Length.ToString();
+                StartBTN.Enabled = true;
             }
             catch
             {
@@ -141,13 +136,11 @@ namespace ColorToGrayScale
 
         private void StartBTN_Click(object sender, EventArgs e)
         {
-            //imageService.Pixels = imageService.CopyArrayOfBitmap(imageService.CopyOfOryginalImage);
             label_time.Text = string.Empty;
             StartBTN.Enabled = false;
 
             IDll dll = ChooseDll();
-            ChooseFunction(dll);
-            
+            ChooseFunction(dll);            
             dll.Pixels = imageService.CopyOfOryginalImage;
 
             threadsService.ProcessingFunction = dll.ChangeColorToGrayScale;

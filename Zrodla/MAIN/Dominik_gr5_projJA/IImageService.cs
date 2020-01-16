@@ -9,7 +9,7 @@ namespace ColorToGrayScale
     /// </summary>
     public interface IImageService
     {
-        PixelPackage Pixels { get; set; }
+        int Length { get; }
 
         PixelPackage CopyOfOryginalImage { get; }
 

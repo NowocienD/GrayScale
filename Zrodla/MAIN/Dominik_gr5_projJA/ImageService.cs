@@ -10,8 +10,9 @@ namespace ColorToGrayScale
         private int height;
         private int width;
         private PixelPackage copyOfImage;
+        private PixelPackage Pixels;
 
-        public PixelPackage Pixels { get; set; }
+        public int Length { get; internal set; }
 
         public PixelPackage CopyOfOryginalImage
         {
@@ -24,10 +25,9 @@ namespace ColorToGrayScale
 
         public PixelPackage CopyArrayOfBitmap(PixelPackage imagePixelsArray)
         {
-            int length = imagePixelsArray.Length;
-            PixelPackage copyOfdividedImage = new PixelPackage(length);
+            PixelPackage copyOfdividedImage = new PixelPackage(Length);
 
-            for (int i = 0; i < length; i++)
+            for (int i = 0; i < Length; i++)
             {
                 for (int j = 0; j < Size; j++)
                 {
@@ -42,10 +42,10 @@ namespace ColorToGrayScale
 
         public void ImageDivider(Bitmap imageToProcess)
         {
-            width = imageToProcess.Width;
-            height = imageToProcess.Height;
-
-            Pixels = new PixelPackage(width * height);
+            this.width = imageToProcess.Width;
+            this.height = imageToProcess.Height;
+            this.Length = width * height;
+            this.Pixels = new PixelPackage(Length);
 
             int counter = 0;
             for (int x = 0; x < width; x++)
@@ -62,7 +62,6 @@ namespace ColorToGrayScale
                     }
                 }
             }
-
             this.copyOfImage = CopyArrayOfBitmap(Pixels);
         }
 
