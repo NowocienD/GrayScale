@@ -1,0 +1,7 @@
+LIBRARY ASM_DLL_2017
+EXPORTS SingleColorChannel_Red_ASM
+EXPORTS SingleColorChannel_Green_ASM
+EXPORTS SingleColorChannel_Blue_ASM
+EXPORTS Decomposition_max_ASM
+EXPORTS Decomposition_min_ASM
+EXPORTS Desaturation_ASM
