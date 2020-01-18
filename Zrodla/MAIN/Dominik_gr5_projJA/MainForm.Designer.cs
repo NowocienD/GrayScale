@@ -27,7 +27,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton_dotNet_noSIMD = new System.Windows.Forms.RadioButton();
             this.radioButton_dotNet = new System.Windows.Forms.RadioButton();
             this.radioButton_ASM = new System.Windows.Forms.RadioButton();
             this.trackBar_Threads = new System.Windows.Forms.TrackBar();
@@ -43,7 +42,6 @@
             this.GSCC_radio = new System.Windows.Forms.RadioButton();
             this.desaturation_radio = new System.Windows.Forms.RadioButton();
             this.decomposition_min_radio = new System.Windows.Forms.RadioButton();
-            this.correcting_radio = new System.Windows.Forms.RadioButton();
             this.decomposition_max_radio = new System.Windows.Forms.RadioButton();
             this.BSCC_radio = new System.Windows.Forms.RadioButton();
             this.RSCC_radio = new System.Windows.Forms.RadioButton();
@@ -65,25 +63,14 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton_dotNet_noSIMD);
             this.groupBox1.Controls.Add(this.radioButton_dotNet);
             this.groupBox1.Controls.Add(this.radioButton_ASM);
             this.groupBox1.Location = new System.Drawing.Point(13, 282);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(168, 87);
+            this.groupBox1.Size = new System.Drawing.Size(168, 70);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Wybór DLL";
-            // 
-            // radioButton_dotNet_noSIMD
-            // 
-            this.radioButton_dotNet_noSIMD.AutoSize = true;
-            this.radioButton_dotNet_noSIMD.Location = new System.Drawing.Point(32, 65);
-            this.radioButton_dotNet_noSIMD.Name = "radioButton_dotNet_noSIMD";
-            this.radioButton_dotNet_noSIMD.Size = new System.Drawing.Size(111, 17);
-            this.radioButton_dotNet_noSIMD.TabIndex = 2;
-            this.radioButton_dotNet_noSIMD.Text = "cpp DLL no SIMD";
-            this.radioButton_dotNet_noSIMD.UseVisualStyleBackColor = true;
             // 
             // radioButton_dotNet
             // 
@@ -130,9 +117,9 @@
             // 
             // PhotoBTN
             // 
-            this.PhotoBTN.Location = new System.Drawing.Point(13, 375);
+            this.PhotoBTN.Location = new System.Drawing.Point(13, 365);
             this.PhotoBTN.Name = "PhotoBTN";
-            this.PhotoBTN.Size = new System.Drawing.Size(168, 37);
+            this.PhotoBTN.Size = new System.Drawing.Size(168, 47);
             this.PhotoBTN.TabIndex = 3;
             this.PhotoBTN.Text = "Wybierz zdjęcie";
             this.PhotoBTN.UseVisualStyleBackColor = true;
@@ -141,9 +128,9 @@
             // StartBTN
             // 
             this.StartBTN.Enabled = false;
-            this.StartBTN.Location = new System.Drawing.Point(12, 428);
+            this.StartBTN.Location = new System.Drawing.Point(12, 418);
             this.StartBTN.Name = "StartBTN";
-            this.StartBTN.Size = new System.Drawing.Size(168, 37);
+            this.StartBTN.Size = new System.Drawing.Size(168, 47);
             this.StartBTN.TabIndex = 4;
             this.StartBTN.Text = "Start";
             this.StartBTN.UseVisualStyleBackColor = true;
@@ -197,7 +184,6 @@
             this.groupBox2.Controls.Add(this.GSCC_radio);
             this.groupBox2.Controls.Add(this.desaturation_radio);
             this.groupBox2.Controls.Add(this.decomposition_min_radio);
-            this.groupBox2.Controls.Add(this.correcting_radio);
             this.groupBox2.Controls.Add(this.decomposition_max_radio);
             this.groupBox2.Controls.Add(this.BSCC_radio);
             this.groupBox2.Controls.Add(this.RSCC_radio);
@@ -212,7 +198,7 @@
             // 
             this.GSCC_radio.AutoSize = true;
             this.GSCC_radio.Checked = true;
-            this.GSCC_radio.Location = new System.Drawing.Point(32, 42);
+            this.GSCC_radio.Location = new System.Drawing.Point(32, 87);
             this.GSCC_radio.Name = "GSCC_radio";
             this.GSCC_radio.Size = new System.Drawing.Size(81, 17);
             this.GSCC_radio.TabIndex = 1;
@@ -223,7 +209,7 @@
             // desaturation_radio
             // 
             this.desaturation_radio.AutoSize = true;
-            this.desaturation_radio.Location = new System.Drawing.Point(132, 65);
+            this.desaturation_radio.Location = new System.Drawing.Point(212, 87);
             this.desaturation_radio.Name = "desaturation_radio";
             this.desaturation_radio.Size = new System.Drawing.Size(83, 17);
             this.desaturation_radio.TabIndex = 0;
@@ -233,27 +219,17 @@
             // decomposition_min_radio
             // 
             this.decomposition_min_radio.AutoSize = true;
-            this.decomposition_min_radio.Location = new System.Drawing.Point(132, 42);
+            this.decomposition_min_radio.Location = new System.Drawing.Point(212, 53);
             this.decomposition_min_radio.Name = "decomposition_min_radio";
             this.decomposition_min_radio.Size = new System.Drawing.Size(112, 17);
             this.decomposition_min_radio.TabIndex = 0;
             this.decomposition_min_radio.Text = "decomposition min";
             this.decomposition_min_radio.UseVisualStyleBackColor = true;
             // 
-            // correcting_radio
-            // 
-            this.correcting_radio.AutoSize = true;
-            this.correcting_radio.Location = new System.Drawing.Point(253, 19);
-            this.correcting_radio.Name = "correcting_radio";
-            this.correcting_radio.Size = new System.Drawing.Size(72, 17);
-            this.correcting_radio.TabIndex = 0;
-            this.correcting_radio.Text = "correcting";
-            this.correcting_radio.UseVisualStyleBackColor = true;
-            // 
             // decomposition_max_radio
             // 
             this.decomposition_max_radio.AutoSize = true;
-            this.decomposition_max_radio.Location = new System.Drawing.Point(132, 19);
+            this.decomposition_max_radio.Location = new System.Drawing.Point(212, 19);
             this.decomposition_max_radio.Name = "decomposition_max_radio";
             this.decomposition_max_radio.Size = new System.Drawing.Size(115, 17);
             this.decomposition_max_radio.TabIndex = 0;
@@ -263,7 +239,7 @@
             // BSCC_radio
             // 
             this.BSCC_radio.AutoSize = true;
-            this.BSCC_radio.Location = new System.Drawing.Point(32, 65);
+            this.BSCC_radio.Location = new System.Drawing.Point(32, 53);
             this.BSCC_radio.Name = "BSCC_radio";
             this.BSCC_radio.Size = new System.Drawing.Size(90, 17);
             this.BSCC_radio.TabIndex = 0;
@@ -377,6 +353,7 @@
             this.Controls.Add(this.BitmapParts_label);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.StartBTN);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox2);
@@ -384,7 +361,6 @@
             this.Controls.Add(this.label_time);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label_Threads);
-            this.Controls.Add(this.StartBTN);
             this.Controls.Add(this.PhotoBTN);
             this.Controls.Add(this.pictureBox_original);
             this.Controls.Add(this.trackBar_Threads);
@@ -425,7 +401,6 @@
         private System.Windows.Forms.RadioButton desaturation_radio;
         private System.Windows.Forms.RadioButton decomposition_min_radio;
         private System.Windows.Forms.RadioButton decomposition_max_radio;
-        private System.Windows.Forms.RadioButton correcting_radio;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label BitmapParts_label;
         private System.Windows.Forms.Label label3;
@@ -435,7 +410,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label RAMUsage_label;
-        private System.Windows.Forms.RadioButton radioButton_dotNet_noSIMD;
     }
 }
 
