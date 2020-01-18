@@ -10,7 +10,7 @@ namespace ColorToGrayScale
         private int height;
         private int width;
         private PixelPackage copyOfImage;
-        private PixelPackage Pixels;
+        private PixelPackage pixels;
 
         public int Length { get; internal set; }
 
@@ -18,8 +18,8 @@ namespace ColorToGrayScale
         {
             get
             {
-                Pixels = CopyArrayOfBitmap(copyOfImage);
-                return Pixels;
+                pixels = CopyArrayOfBitmap(copyOfImage);
+                return pixels;
             }
         }
 
@@ -45,7 +45,7 @@ namespace ColorToGrayScale
             this.width = imageToProcess.Width;
             this.height = imageToProcess.Height;
             this.Length = width * height;
-            this.Pixels = new PixelPackage(Length);
+            this.pixels = new PixelPackage(Length);
 
             int counter = 0;
             for (int x = 0; x < width; x++)
@@ -55,14 +55,14 @@ namespace ColorToGrayScale
                     for (int i = 0; i < Size; i++)
                     {
                         Color color = imageToProcess.GetPixel(x, i + y);
-                        Pixels.Red[counter][i] = color.R;
-                        Pixels.Green[counter][i] = color.G;
-                        Pixels.Blue[counter][i] = color.B;
+                        pixels.Red[counter][i] = color.R;
+                        pixels.Green[counter][i] = color.G;
+                        pixels.Blue[counter][i] = color.B;
                         counter++;
                     }
                 }
             }
-            this.copyOfImage = CopyArrayOfBitmap(Pixels);
+            this.copyOfImage = CopyArrayOfBitmap(pixels);
         }
 
         public Bitmap JoinIntoBigOne()
@@ -77,9 +77,9 @@ namespace ColorToGrayScale
                     for (int i = 0; i < Size; i++)
                     {
                         Color color = Color.FromArgb(
-                           Pixels.Red[counter][i],
-                           Pixels.Green[counter][i],
-                           Pixels.Blue[counter][i]);
+                           pixels.Red[counter][i],
+                           pixels.Green[counter][i],
+                           pixels.Blue[counter][i]);
 
                         image.SetPixel(x, i + y, color);
                         counter++;
