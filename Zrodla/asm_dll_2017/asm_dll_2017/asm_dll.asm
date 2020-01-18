@@ -41,8 +41,8 @@ movdqu xmm1, [rcx]
 movdqu xmm2, [rdx]
 movdqu xmm3, [r8]
 
-PMAXsw xmm1, xmm2
-PMAXsw xmm1, xmm3
+PMAXub xmm1, xmm2
+PMAXub xmm1, xmm3
 
 movdqu [rcx], xmm1
 movdqu [rdx], xmm1
@@ -55,8 +55,8 @@ movdqu xmm1, [rcx]
 movdqu xmm2, [rdx]
 movdqu xmm3, [r8]
 
-PMINsw xmm1, xmm2
-PMINsw xmm1, xmm3
+PMINub xmm1, xmm2
+PMINub xmm1, xmm3
 
 movdqu [rcx], xmm1
 movdqu [rdx], xmm1
