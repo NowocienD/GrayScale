@@ -52,6 +52,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ModuleDefinitionFile>asm_dll.def</ModuleDefinitionFile>
+      <OutputFile>..\..\..\Plik_exe\ASM_DLL.dll</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

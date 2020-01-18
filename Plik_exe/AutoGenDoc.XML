@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Dominik Nowocien projektJA</name>
+    </assembly>
+    <members>
+        <member name="M:ColorToGrayScale.MainForm.Dispose(System.Boolean)">
+            <summary>
+            Wyczyść wszystkie używane zasoby.
+            </summary>
+            <param name="disposing">prawda, jeżeli zarządzane zasoby powinny zostać zlikwidowane; Fałsz w przeciwnym wypadku.</param>
+        </member>
+        <member name="M:ColorToGrayScale.MainForm.InitializeComponent">
+            <summary>
+            Metoda wymagana do obsługi projektanta — nie należy modyfikować
+            jej zawartości w edytorze kodu.
+            </summary>
+        </member>
+        <member name="T:ColorToGrayScale.IImageService">
+            <summary>
+            Interfejs Usługi Image.
+            pozwala na podzielenie i pozniejsze polaczenie obrazu na mniejsze w zaleśności od ilosći wątków.
+            Celem jest pozniejsze szybsze przetwarzanie obrazu.
+            </summary>
+        </member>
+        <member name="M:ColorToGrayScale.Program.Main">
+            <summary>
+            Główny punkt wejścia dla aplikacji.
+            </summary>
+        </member>
+        <member name="M:ColorToGrayScale.Program.Bootstrap">
+            <summary>
+            Metoda zarządająca kontenerem usług 
+            Próba implementacji dependency injection w aplikacji Windows Forms
+            </summary>
+        </member>
+        <member name="T:ColorToGrayScale.Properties.Resources">
+            <summary>
+              Silnie typizowana klasa zasobów do wyszukiwania zlokalizowanych ciągów itd.
+            </summary>
+        </member>
+        <member name="P:ColorToGrayScale.Properties.Resources.ResourceManager">
+            <summary>
+              Zwraca buforowane wystąpienie składnika ResourceManager używane przez tę klasę.
+            </summary>
+        </member>
+        <member name="P:ColorToGrayScale.Properties.Resources.Culture">
+            <summary>
+              Przesłania właściwość CurrentUICulture bieżącego wątku dla wszystkich
+              przypadków przeszukiwania zasobów za pomocą tej silnie typizowanej klasy zasobów.
+            </summary>
+        </member>
+    </members>
+</doc>

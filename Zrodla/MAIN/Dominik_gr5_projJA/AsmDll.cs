@@ -10,7 +10,7 @@ namespace ColorToGrayScale
 {
     public class AsmDll : IDll
     {
-        private const string DllPath = @"C:\Users\qwertyuiop\Desktop\repo\Zrodla\asm_dll_2017\x64\Release\asm_dll_2017.dll";
+        private const string DllPath = @"ASM_DLL.dll";
 
         public ProcessingMethodDelegate ProcessingMethod { internal get; set; }
 

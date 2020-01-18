@@ -97,6 +97,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <ModuleDefinitionFile>C_DLL.def</ModuleDefinitionFile>
+      <OutputFile>..\..\..\Plik_exe\C_DLL.dll</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -114,6 +115,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <ModuleDefinitionFile>C_DLL.def</ModuleDefinitionFile>
+      <OutputFile>..\..\..\Plik_exe\C_DLL.dll</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -135,6 +137,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <ModuleDefinitionFile>C_DLL.def</ModuleDefinitionFile>
+      <OutputFile>..\..\..\Plik_exe\C_DLL.dll</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -156,6 +159,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <ModuleDefinitionFile>C_DLL.def</ModuleDefinitionFile>
+      <OutputFile>..\..\..\Plik_exe\C_DLL.dll</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

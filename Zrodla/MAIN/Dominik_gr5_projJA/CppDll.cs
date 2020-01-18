@@ -10,7 +10,7 @@ namespace ColorToGrayScale
 {
     public class CppDll : IDll
     {
-        private const string DllPath = @"C:\Users\qwertyuiop\Desktop\repo\Zrodla\DLL_C\x64\Release\C_DLL.dll";
+        private const string DllPath = @"C_DLL.dll";
 
         public ProcessingMethodDelegate ProcessingMethod { internal get; set; }
 
