@@ -9,9 +9,6 @@ namespace ColorToGrayScale
     {
         private static Container container;
 
-        /// <summary>
-        /// Główny punkt wejścia dla aplikacji.
-        /// </summary>
         [STAThread]
         public static void Main()
         {
@@ -21,10 +18,6 @@ namespace ColorToGrayScale
             Application.Run(container.GetInstance<MainForm>());
         }
 
-        /// <summary>
-        /// Metoda zarządająca kontenerem usług 
-        /// Próba implementacji dependency injection w aplikacji Windows Forms
-        /// </summary>
         private static void Bootstrap()
         {
             container = new Container();
