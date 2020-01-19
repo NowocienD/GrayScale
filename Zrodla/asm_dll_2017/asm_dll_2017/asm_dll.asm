@@ -35,14 +35,15 @@ movdqu [r8], xmm3
 ret
 SingleColorChannel_Blue_ASM endp
 
+;--------------------------------------------------------------------------------
 
 Decomposition_max_ASM PROC 
 movdqu xmm1, [rcx]
 movdqu xmm2, [rdx]
 movdqu xmm3, [r8]
 
-PMAXub xmm1, xmm2
-PMAXub xmm1, xmm3
+pmaxub xmm1, xmm2
+pmaxub xmm1, xmm3
 
 movdqu [rcx], xmm1
 movdqu [rdx], xmm1
@@ -50,13 +51,15 @@ movdqu [r8], xmm1
 ret
 Decomposition_max_ASM endp
 
+;--------------------------------------------------------------------------------
+
 Decomposition_min_ASM PROC 
 movdqu xmm1, [rcx]
 movdqu xmm2, [rdx]
 movdqu xmm3, [r8]
 
-PMINub xmm1, xmm2
-PMINub xmm1, xmm3
+pminub xmm1, xmm2
+pminub xmm1, xmm3
 
 movdqu [rcx], xmm1
 movdqu [rdx], xmm1
@@ -64,7 +67,7 @@ movdqu [r8], xmm1
 ret
 Decomposition_min_ASM endp
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;--------------------------------------------------------------------------------
 
 Desaturation_ASM PROC 
 movdqu xmm1, [rcx]
@@ -73,19 +76,17 @@ movdqu xmm3, [r8]
 movdqu xmm4, [rcx]
 
 ;wartosc minimalna zapisywana do xmm1
-PMINuw xmm1, xmm2
-PMINuw xmm1, xmm3
+pminub xmm1, xmm2
+pminub xmm1, xmm3
 
 ;wartosc maxymalna zapisywana do xmm4
-PMAXuw xmm4, xmm2
-PMAXuw xmm4, xmm3
+pmaxub xmm4, xmm2
+pmaxub xmm4, xmm3
 
-;dzielenie przez 2
-PSRLW xmm1, 1
-PSRLW xmm4, 1
-
-;dodawwanie
-PADDusB xmm1, xmm4
+;wyciaganie sredniej z min i max
+psrlw xmm1, 1			;dzielenie przez 2
+psrlw xmm4, 1			;dzielenie przez 2
+paddusb xmm1, xmm4		;dodawwanie
 
 ;propagowanie
 movdqu [rcx], xmm1
