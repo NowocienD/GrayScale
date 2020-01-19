@@ -1,8 +1,6 @@
 #include "C_DLL.h"
 #include "pch.h"
 #include <emmintrin.h>
-#include <smmintrin.h>
-#include  <mmintrin.h>
 
 
 class C_DLL
