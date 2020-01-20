@@ -38,16 +38,18 @@ SingleColorChannel_Blue_ASM endp
 ;--------------------------------------------------------------------------------
 
 Decomposition_max_ASM PROC 
-movdqu xmm1, [rcx]
+movdqu xmm1, [rcx] ; przes³anie wartoœci umieszczonej w pamiêci wskazywanej przez adres zawarty w rcx to xmm1
 movdqu xmm2, [rdx]
 movdqu xmm3, [r8]
 
-pmaxub xmm1, xmm2
+pmaxub xmm1, xmm2 ; porównanie ka¿dego z 16 pakietów 8-bitów z xmm1 i xmm2, i zapisanie wyniku wiêkszego do rejestru xmm1
 pmaxub xmm1, xmm3
 
-movdqu [rcx], xmm1
+movdqu [rcx], xmm1 ; przeniesienie adresu z xmm1 do rejestru rcx
 movdqu [rdx], xmm1
 movdqu [r8], xmm1
+; przenoszona jest identyczna wartoœæ do ka¿dego rejestru poniewa¿ taka jest charakterystyka mojego zadania (kolor -> skala szarosci)
+
 ret
 Decomposition_max_ASM endp
 
