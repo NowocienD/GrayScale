@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
+using ColorToGrayScale.Exceptions;
 
 namespace ColorToGrayScale
 {
@@ -58,6 +59,10 @@ namespace ColorToGrayScale
                 pictureBox_original.Image = imageToProcess;
                 BitmapParts_label.Text = imageService.Length.ToString();
                 StartBTN.Enabled = true;
+            }
+            catch (NotDivisibleBy16Exception)
+            {
+                MessageBox.Show("Jestem leniwym programista i zamiast obrobic zdjęcie wymagam zeby jego wysokosc byla podzielna przez 16.");
             }
             catch
             {

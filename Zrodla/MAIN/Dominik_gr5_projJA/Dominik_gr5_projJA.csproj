@@ -90,6 +90,7 @@
   <ItemGroup>
     <Compile Include="AsmDll.cs" />
     <Compile Include="CppDll.cs" />
+    <Compile Include="Exceptions\NotDivisibleBy16Exception.cs" />
     <Compile Include="IDll.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

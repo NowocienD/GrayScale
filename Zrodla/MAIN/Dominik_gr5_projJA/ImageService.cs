@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using ColorToGrayScale.Exceptions;
 
 namespace ColorToGrayScale
 {
@@ -42,6 +43,11 @@ namespace ColorToGrayScale
 
         public void ImageDivider(Bitmap imageToProcess)
         {
+            if (imageToProcess.Height % 16 != 0)
+            {
+                throw new NotDivisibleBy16Exception();
+            }
+
             this.width = imageToProcess.Width;
             this.height = imageToProcess.Height;
             this.Length = width * height;
