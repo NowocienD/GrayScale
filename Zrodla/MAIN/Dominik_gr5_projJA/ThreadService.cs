@@ -40,7 +40,7 @@ namespace ColorToGrayScale
                 threads[i].Start();
             }
 
-            Thread main = new Thread(t =>
+            Thread mainThread = new Thread(t =>
             {
                 while (!IsDone())
                 {
@@ -48,7 +48,7 @@ namespace ColorToGrayScale
                 EndOfThreads();
             });
 
-            main.Start();
+            mainThread.Start();
         }
 
         public bool IsDone()
