@@ -60,6 +60,10 @@ namespace ColorToGrayScale
                 BitmapParts_label.Text = imageService.Length.ToString();
                 StartBTN.Enabled = true;
             }
+            catch (System.IO.FileNotFoundException exception)
+            {
+                MessageBox.Show(String.Format("Nie znaleziono pliku:\n\r{0}", exception.Message));
+            }
             catch (NotDivisibleBy16Exception)
             {
                 MessageBox.Show("Jestem leniwym programista i zamiast obrobic zdjęcie wymagam zeby jego wysokosc byla podzielna przez 16.");
