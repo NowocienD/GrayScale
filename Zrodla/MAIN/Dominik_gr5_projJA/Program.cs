@@ -2,6 +2,8 @@
 using System.Drawing;
 using System.Windows.Forms;
 using SimpleInjector;
+using System.IO;
+using ColorToGrayScale.Exceptions;
 
 namespace ColorToGrayScale
 {
@@ -12,6 +14,16 @@ namespace ColorToGrayScale
         [STAThread]
         public static void Main()
         {
+            if (!File.Exists("C_DLL.dll"))
+            {
+                //tak, mma swiadomosc istnienia DllNotFoundException();
+                throw new DllFileNotExistException("C_DLL.dll");
+            }
+            if (!File.Exists("ASM_DLL.dll"))
+            {
+                throw new DllFileNotExistException("ASM_DLL.dll");
+            }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Bootstrap(); 
