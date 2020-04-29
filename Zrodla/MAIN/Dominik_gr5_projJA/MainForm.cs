@@ -153,9 +153,8 @@ namespace ColorToGrayScale
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            double memory;
             Process proc = Process.GetCurrentProcess();
-            memory = Math.Round(proc.PrivateMemorySize64 / 1e+6, 0);
+            double memory = Math.Round(proc.PrivateMemorySize64 / 1e+6, 0);
             proc.Dispose();
 
             RAMUsage_label.Text = memory.ToString();
