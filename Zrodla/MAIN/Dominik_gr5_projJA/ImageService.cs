@@ -9,12 +9,12 @@ namespace ColorToGrayScale
         private const int Size = 16;
         private int height;
         private int width;
-        private PixelPackage copyOfImage;
-        private PixelPackage pixels;
+        private PixelPackage<byte> copyOfImage;
+        private PixelPackage<byte> pixels;
 
         public int Length { get; internal set; }
 
-        public PixelPackage CopyOfOryginalImage
+        public PixelPackage<byte> CopyOfOryginalImage
         {
             get
             {
@@ -23,9 +23,9 @@ namespace ColorToGrayScale
             }
         }
 
-        public PixelPackage CopyArrayOfBitmap(PixelPackage imagePixelsArray)
+        public PixelPackage<byte> CopyArrayOfBitmap(PixelPackage<byte> imagePixelsArray)
         {
-            PixelPackage copyOfdividedImage = new PixelPackage(Length);
+            PixelPackage<byte> copyOfdividedImage = new PixelPackage<byte>(Length);
 
             for (int i = 0; i < Length; i++)
             {
@@ -45,7 +45,7 @@ namespace ColorToGrayScale
             this.width = imageToProcess.Width;
             this.height = imageToProcess.Height;
             this.Length = width * height;
-            this.pixels = new PixelPackage(Length);
+            this.pixels = new PixelPackage<byte>(Length);
 
             int counter = 0;
             for (int x = 0; x < width; x++)

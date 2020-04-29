@@ -6,7 +6,7 @@ namespace ColorToGrayScale
     {
         int Length { get; }
 
-        PixelPackage CopyOfOryginalImage { get; }
+        PixelPackage<byte> CopyOfOryginalImage { get; }
 
         void ImageDivider(Bitmap imageToProcess);
 

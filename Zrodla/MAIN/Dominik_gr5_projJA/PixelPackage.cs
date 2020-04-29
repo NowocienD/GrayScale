@@ -7,44 +7,44 @@ using System.Threading.Tasks;
 
 namespace ColorToGrayScale
 {
-    public class PixelPackage
+    public class PixelPackage<T>
     {
         private const int Size = 16;
 
         public PixelPackage(int len)
         {
             Length = len;
-            Red = new byte[len][];
-            Green = new byte[len][];
-            Blue = new byte[len][];
+            Red = new T[len][];
+            Green = new T[len][];
+            Blue = new T[len][];
 
             for (int i = 0; i < len; i++)
             {
-                Red[i] = new byte[Size];
-                Green[i] = new byte[Size];
-                Blue[i] = new byte[Size];
+                Red[i] = new T[Size];
+                Green[i] = new T[Size];
+                Blue[i] = new T[Size];
             }
         }
 
         public int Length { get; internal set; }
 
-        public byte[][] Red { get; internal set; }
+        public T[][] Red { get; internal set; }
 
-        public byte[][] Green { get; internal set; }
+        public T[][] Green { get; internal set; }
 
-        public byte[][] Blue { get; internal set; }
+        public T[][] Blue { get; internal set; }
 
-        public byte[] GetRed(int i)
+        public T[] GetRed(int i)
         {
             return Red[i];
         }
 
-        public byte[] GetGreen(int i)
+        public T[] GetGreen(int i)
         {
             return Green[i];
         }
 
-        public byte[] GetBlue(int i)
+        public T[] GetBlue(int i)
         {
             return Blue[i];
         }
