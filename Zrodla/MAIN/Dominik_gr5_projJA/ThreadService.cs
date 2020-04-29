@@ -13,7 +13,7 @@ namespace ColorToGrayScale
 
         private Thread[] threads;
 
-        public int ThreadsNo { internal get; set; }
+        public int ThreadsCount { internal get; set; }
                 
         public EndOfThreads EndOfThreads { internal get; set; }
 
@@ -33,8 +33,8 @@ namespace ColorToGrayScale
         public void StartProcessing()
         {
             count = 0;
-            threads = new Thread[ThreadsNo];
-            for (int i = 0; i < ThreadsNo; i++)
+            threads = new Thread[ThreadsCount];
+            for (int i = 0; i < ThreadsCount; i++)
             {
                 threads[i] = new Thread(ProcessingFunction);
                 threads[i].Start();

@@ -145,7 +145,7 @@ namespace ColorToGrayScale
 
             threadsService.ProcessingFunction = dll.ChangeColorToGrayScale;
             threadsService.EndOfThreads = new EndOfThreads(UpdateModifiedPhoto);
-            threadsService.ThreadsNo = processorCount;
+            threadsService.ThreadsCount = processorCount;
                         
             timeCounter.Start();
             threadsService.StartProcessing();
