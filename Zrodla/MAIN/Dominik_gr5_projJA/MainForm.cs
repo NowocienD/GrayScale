@@ -64,13 +64,25 @@ namespace ColorToGrayScale
             {
                 MessageBox.Show(String.Format("Nie znaleziono pliku:\n\r{0}", exception.Message));
             }
-            catch (NotDivisibleBy16Exception)
+            catch (NotDivisibleBy16Exception exception)
             {
-                MessageBox.Show("Jestem leniwym programista i zamiast obrobic zdjęcie wymagam zeby jego wysokosc byla podzielna przez 16.");
+                MessageBox.Show(String.Format("Jestem leniwym programista i zamiast obrobic zdjęcie wymagam zeby jego wysokosc byla podzielna przez 16. \n\r\n\r {0}", exception.Message));
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Błąd łądowania zdjęcia");
+                //inne podejscie do wykatkow. Próba implementacji RTTI w języku C# 
+                if (ex is ArgumentException)
+                {
+                    MessageBox.Show(ex.GetType().ToString());
+                }
+                else if (ex is OutOfMemoryException)
+                {
+                    MessageBox.Show(ex.GetType().ToString());
+                }
+                else
+                {
+                    MessageBox.Show(String.Format("Błąd łądowania zdjęcia.\n\r\n\r{0}", ex.Message));
+                }
             }
         }
 
