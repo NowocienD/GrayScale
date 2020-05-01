@@ -32,21 +32,14 @@ namespace ColorToGrayScale
             WriteToLog(String.Format("Error |{0}| {1}{2}", System.DateTime.Now.ToString(), message, Environment.NewLine));
         }
 
-        public List<string> ReadLog(string regexPattern)
+        public string ReadLog(string regexPattern)
         {
             string[] lines = ReadFromFile();
 
             Regex regex = new Regex(regexPattern);
-            List<string> list = new List<string>();
 
-            foreach (string line in lines)
-            {
-                if (regex.IsMatch(line))
-                {
-                    list.Add(line);
-                }
-            }
-            return list;          
+            var regexMatch = lines.Where<string>(x => regex.IsMatch(x));
+            return string.Join(Environment.NewLine, regexMatch);
         }
 
         private void WriteToLog(string message)
@@ -58,7 +51,7 @@ namespace ColorToGrayScale
         {
             if (!File.Exists(FilePath))
             {
-                return null;
+                return new string[0];
             }
             return File.ReadAllLines(FilePath);
         }

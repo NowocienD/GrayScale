@@ -73,22 +73,7 @@ namespace ColorToGrayScale
             }
             catch (NotDivisibleBy16Exception exception)
             {
-                string aaaa = this.ToString();
-                string bbb = System.Reflection.MethodBase.GetCurrentMethod().Name;
-                loger.Error(aaaa);
-
-                loger.Warning(exception.Message);
-                loger.Info(exception.Message);
                 loger.Error(exception.Message);
-
-                loger.Error(exception.Message);
-                loger.Warning(exception.Message);
-                loger.Info(exception.Message);
-                loger.Error(exception.Message);
-
-                List<string> aaa = loger.ReadLog("(?:Error)|(?:Info)");
-
-
                 MessageBox.Show(String.Format("Jestem leniwym programista i zamiast obrobic zdjęcie wymagam zeby jego wysokosc byla podzielna przez 16. \n\r\n\r {0}", exception.Message));
             }
             catch (Exception exception)
@@ -208,7 +193,7 @@ namespace ColorToGrayScale
 
         private void OpenLogs_Button_Click(object sender, EventArgs e)
         {
-            new LogForm().Show();
+            new LogForm(loger).Show();
         }
     }
 }

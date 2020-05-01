@@ -16,6 +16,6 @@ namespace ColorToGrayScale
         
         void Error(string message);
 
-        List<string> ReadLog(string regexPattern);
+        string ReadLog(string regexPattern);
     }
 }
