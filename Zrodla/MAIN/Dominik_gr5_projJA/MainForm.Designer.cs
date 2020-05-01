@@ -54,6 +54,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.RAMUsage_label = new System.Windows.Forms.Label();
+            this.OpenLogs_Button = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_Threads)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_original)).BeginInit();
@@ -342,11 +343,22 @@
             this.RAMUsage_label.TabIndex = 10;
             this.RAMUsage_label.Text = "0";
             // 
+            // OpenLogs_Button
+            // 
+            this.OpenLogs_Button.Location = new System.Drawing.Point(720, 418);
+            this.OpenLogs_Button.Name = "OpenLogs_Button";
+            this.OpenLogs_Button.Size = new System.Drawing.Size(68, 58);
+            this.OpenLogs_Button.TabIndex = 11;
+            this.OpenLogs_Button.Text = "Logi";
+            this.OpenLogs_Button.UseVisualStyleBackColor = true;
+            this.OpenLogs_Button.Click += new System.EventHandler(this.OpenLogs_Button_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 488);
+            this.Controls.Add(this.OpenLogs_Button);
             this.Controls.Add(this.RAMUsage_label);
             this.Controls.Add(this.time_join_label);
             this.Controls.Add(this.time_divide_label);
@@ -410,6 +422,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label RAMUsage_label;
+        private System.Windows.Forms.Button OpenLogs_Button;
     }
 }
 
