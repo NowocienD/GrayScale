@@ -8,6 +8,8 @@ namespace ColorToGrayScale
 {
     public interface ILogerService
     {
+        void Debug(string message);
+
         void Info(string message);
 
         void Warning(string message);
