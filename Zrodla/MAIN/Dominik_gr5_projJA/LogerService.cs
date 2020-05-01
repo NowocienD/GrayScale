@@ -20,20 +20,21 @@ namespace ColorToGrayScale
 
         public void Info(string message)
         {
-            string textToWrite = String.Format("Info |{0}| {1} ", System.DateTime.Now.ToString(), message);
-            file.Write(Encoding.ASCII.GetBytes(textToWrite), 0, textToWrite.Length);
+            WriteToLog(String.Format("Debug |{0}| {1} ", System.DateTime.Now.ToString(), message));
         }
 
         public void Warning(string message)
         {
-            string textToWrite = String.Format("Warning |{0}| {1} ", System.DateTime.Now.ToString(), message);
-            file.Write(Encoding.ASCII.GetBytes(textToWrite), 0, textToWrite.Length);
+            WriteToLog(String.Format("Debug |{0}| {1} ", System.DateTime.Now.ToString(), message));
         }
 
         public void Error(string message)
         {
-            string textToWrite = String.Format("Error |{0}| {1} ", System.DateTime.Now.ToString(), message);
-            file.Write(Encoding.ASCII.GetBytes(textToWrite), 0, textToWrite.Length);
+            WriteToLog(String.Format("Debug |{0}| {1} ", System.DateTime.Now.ToString(), message));
+        }
+        private void WriteToLog(string message)
+        {
+            file.Write(Encoding.ASCII.GetBytes(message), 0, message.Length);
         }
     }
 }
