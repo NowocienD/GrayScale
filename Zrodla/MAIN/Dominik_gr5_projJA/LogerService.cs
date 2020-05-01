@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -40,7 +40,7 @@ namespace ColorToGrayScale
 
         private void WriteToLog(string message)
         {
-            file.Write(Encoding.ASCII.GetBytes(message), 0, message.Length);
+            File.AppendAllText(filePath, message);
         }
     }
 }
