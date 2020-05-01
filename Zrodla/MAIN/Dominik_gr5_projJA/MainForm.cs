@@ -15,17 +15,21 @@ namespace ColorToGrayScale
 
         private readonly ITimeCounterService timeCounter;
 
+        private readonly ILogerService loger;
+
         private int processorCount;
 
         public MainForm(
             IImageService _imageService,
             IThreadsService _threadsService,
-            ITimeCounterService _timeCounterService)
+            ITimeCounterService _timeCounterService,
+            ILogerService logerService)
         {
             InitializeComponent();
             this.imageService = _imageService;
             this.threadsService = _threadsService;
             this.timeCounter = _timeCounterService;
+            this.loger = logerService;
         }
 
         public delegate void EndOfThreads();
@@ -62,26 +66,30 @@ namespace ColorToGrayScale
             }
             catch (System.IO.FileNotFoundException exception)
             {
+                loger.Error(exception.Message);
                 MessageBox.Show(String.Format("Nie znaleziono pliku:\n\r{0}", exception.Message));
             }
             catch (NotDivisibleBy16Exception exception)
             {
+                loger.Error(exception.Message);
                 MessageBox.Show(String.Format("Jestem leniwym programista i zamiast obrobic zdjęcie wymagam zeby jego wysokosc byla podzielna przez 16. \n\r\n\r {0}", exception.Message));
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
+                loger.Error(exception.Message);
+             
                 //inne podejscie do wykatkow. Próba implementacji RTTI w języku C# 
-                if (ex is ArgumentException)
+                if (exception is ArgumentException)
                 {
-                    MessageBox.Show(ex.GetType().ToString());
+                    MessageBox.Show(exception.GetType().ToString());
                 }
-                else if (ex is OutOfMemoryException)
+                else if (exception is OutOfMemoryException)
                 {
-                    MessageBox.Show(ex.GetType().ToString());
+                    MessageBox.Show(exception.GetType().ToString());
                 }
                 else
                 {
-                    MessageBox.Show(String.Format("Błąd łądowania zdjęcia.\n\r\n\r{0}", ex.Message));
+                    MessageBox.Show(String.Format("Błąd łądowania zdjęcia.\n\r\n\r{0}", exception.Message));
                 }
             }
         }

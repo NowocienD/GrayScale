@@ -38,6 +38,7 @@ namespace ColorToGrayScale
             container.Register<IImageService, ImageService>();
             container.Register<IThreadsService, ThreadService>();
             container.Register<ITimeCounterService, TimeCounterService>();
+            container.RegisterSingleton<ILogerService, LogerService>();
         }
     }
 }
