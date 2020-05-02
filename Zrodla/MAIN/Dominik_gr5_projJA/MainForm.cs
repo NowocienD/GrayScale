@@ -19,19 +19,25 @@ namespace ColorToGrayScale
 
         private readonly ILogerService loger;
 
+        private readonly LogForm logForm;
+
         private int processorCount;
 
         public MainForm(
             IImageService _imageService,
             IThreadsService _threadsService,
             ITimeCounterService _timeCounterService,
-            ILogerService logerService)
+            ILogerService logerService,
+            Form logForm)
         {
             InitializeComponent();
             this.imageService = _imageService;
             this.threadsService = _threadsService;
             this.timeCounter = _timeCounterService;
             this.loger = logerService;
+            this.logForm = logForm as LogForm;
+
+            loger.Info(String.Format("Prawidlowa inicjalizacja"));
         }
 
         public delegate void EndOfThreads();
@@ -41,6 +47,7 @@ namespace ColorToGrayScale
             this.processorCount = Environment.ProcessorCount;
             trackBar_Threads.Value = processorCount;
             label_Threads.Text = processorCount.ToString();
+            loger.Info(String.Format("Poprawnie uruchomiono okno {0}", this.Name));
         }
 
         private void TrackBar_Threads_Scroll(object sender, EventArgs e)
@@ -57,10 +64,12 @@ namespace ColorToGrayScale
             {
                 Bitmap imageToProcess = new Bitmap(Image.FromFile(openFileDialog.FileName));
 
+                loger.Debug("rozpoczęcie dzielenia obrazu");
                 timeCounter.Start();
                 imageService.ImageDivider(imageToProcess);
                 timeCounter.Stop();
                 time_divide_label.Text = timeCounter.Time;
+                loger.Debug("obraz podzielony");
 
                 pictureBox_original.Image = imageToProcess;
                 BitmapParts_label.Text = imageService.Length.ToString();
@@ -184,16 +193,29 @@ namespace ColorToGrayScale
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
+            const int RamMBUsageWarning = 1000;
             Process proc = Process.GetCurrentProcess();
             double memory = Math.Round(proc.PrivateMemorySize64 / 1e+6, 0);
             proc.Dispose();
+            if (memory > RamMBUsageWarning)
+            {
+                loger.Warning(String.Format("Zuycie ramu większe niż {0}MB.", RamMBUsageWarning));
+            }
 
             RAMUsage_label.Text = memory.ToString();
         }
 
         private void OpenLogs_Button_Click(object sender, EventArgs e)
         {
-            new LogForm(loger).Show();
+            if (!logForm.IsDisposed)
+            {
+                logForm.Show();
+            }
+            else
+            {
+                loger.Warning(String.Format("Okno {0} zorstlo zniszczone.", logForm.GetType().ToString()));
+                MessageBox.Show(String.Format("Jestem leniwym programista #2 i nie uruchomie wylaczonego okna.{1}{1}Okno {0} zorstlo zniszczone.", logForm.GetType().ToString(), Environment.NewLine));
+            }
         }
     }
 }

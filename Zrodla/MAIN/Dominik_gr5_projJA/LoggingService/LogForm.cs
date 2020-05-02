@@ -37,16 +37,19 @@ namespace ColorToGrayScale.LoggingService
                 AddSeparatorToRegex(ref regexPattern);
                 regexPattern += "(?:Debug)";
             }
+
             if (Info_checkBox.Checked)
             {
                 AddSeparatorToRegex(ref regexPattern);
                 regexPattern += "(?:Info)";
             }
+
             if (Warning_checkBox.Checked)
             {
                 AddSeparatorToRegex(ref regexPattern);
                 regexPattern += "(?:Warning)";
             }
+
             if (Error_checkBox.Checked)
             {
                 AddSeparatorToRegex(ref regexPattern);

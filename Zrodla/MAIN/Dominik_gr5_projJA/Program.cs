@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using SimpleInjector;
 using System.IO;
 using ColorToGrayScale.Exceptions;
+using ColorToGrayScale.LoggingService;
 
 namespace ColorToGrayScale
 {
@@ -16,7 +17,7 @@ namespace ColorToGrayScale
         {
             if (!File.Exists("C_DLL.dll"))
             {
-                //tak, mma swiadomosc istnienia DllNotFoundException();
+                //tak, mam swiadomosc istnienia DllNotFoundException();
                 throw new DllFileNotExistException("C_DLL.dll");
             }
             if (!File.Exists("ASM_DLL.dll"))
@@ -34,6 +35,7 @@ namespace ColorToGrayScale
         {
             container = new Container();
             container.Register<MainForm>();
+            container.Register<Form, LogForm>();
 
             container.Register<IImageService, ImageService>();
             container.Register<IThreadsService, ThreadService>();

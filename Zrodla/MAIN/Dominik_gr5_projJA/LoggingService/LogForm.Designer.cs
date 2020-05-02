@@ -42,8 +42,9 @@
             // 
             this.groupBox1.Controls.Add(this.Warning_checkBox);
             this.groupBox1.Controls.Add(this.Info_checkBox);
+            this.groupBox1.Controls.Add(this.Error_checkBox);
             this.groupBox1.Controls.Add(this.Debug_checkBox);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 28);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(102, 115);
             this.groupBox1.TabIndex = 0;
@@ -83,7 +84,7 @@
             // Error_checkBox
             // 
             this.Error_checkBox.AutoSize = true;
-            this.Error_checkBox.Location = new System.Drawing.Point(18, 100);
+            this.Error_checkBox.Location = new System.Drawing.Point(6, 88);
             this.Error_checkBox.Name = "Error_checkBox";
             this.Error_checkBox.Size = new System.Drawing.Size(48, 17);
             this.Error_checkBox.TabIndex = 3;
@@ -116,7 +117,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Search_Button);
             this.Controls.Add(this.Output_textBox);
-            this.Controls.Add(this.Error_checkBox);
             this.Controls.Add(this.groupBox1);
             this.Name = "LogForm";
             this.Text = "LogForm";
