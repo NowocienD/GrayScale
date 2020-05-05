@@ -168,10 +168,8 @@ namespace ColorToGrayScale
             {
                 return new CppDll();
             }
-            else
-            {
-                throw new Exception();
-            }
+
+            throw new Exception();
         }
 
         private void StartBTN_Click(object sender, EventArgs e)
@@ -197,6 +195,7 @@ namespace ColorToGrayScale
             Process proc = Process.GetCurrentProcess();
             double memory = Math.Round(proc.PrivateMemorySize64 / 1e+6, 0);
             proc.Dispose();
+
             if (memory > RamMBUsageWarning)
             {
                 loger.Warning(String.Format("Zuycie ramu większe niż {0}MB.", RamMBUsageWarning));
@@ -210,6 +209,8 @@ namespace ColorToGrayScale
             if (!logForm.IsDisposed)
             {
                 logForm.Show();
+                loger.Debug(String.Format("Wcisnieto przycisk {0}", (sender as Button).Text));
+                loger.Info(String.Format("Wlaczono okno {0}", (logForm as Form).Text));
             }
             else
             {

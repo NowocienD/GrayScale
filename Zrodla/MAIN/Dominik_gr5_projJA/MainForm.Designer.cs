@@ -51,7 +51,7 @@
             this.time_divide_label = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.time_join_label = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer_2s = new System.Windows.Forms.Timer(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.RAMUsage_label = new System.Windows.Forms.Label();
             this.OpenLogs_Button = new System.Windows.Forms.Button();
@@ -317,11 +317,11 @@
             this.time_join_label.TabIndex = 10;
             this.time_join_label.Text = "0";
             // 
-            // timer1
+            // timer_2s
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 500;
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            this.timer_2s.Enabled = true;
+            this.timer_2s.Interval = 2000;
+            this.timer_2s.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // label5
             // 
@@ -419,7 +419,7 @@
         private System.Windows.Forms.Label time_divide_label;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label time_join_label;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer_2s;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label RAMUsage_label;
         private System.Windows.Forms.Button OpenLogs_Button;
