@@ -166,7 +166,7 @@ namespace ColorToGrayScale
             {
                 return new AsmDll();
             }
-            else if (radioButton_dotNet.Checked == true)
+            else if (radioButton_CPP.Checked == true)
             {
                 return new CppDll();
             }

@@ -27,7 +27,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton_dotNet = new System.Windows.Forms.RadioButton();
+            this.radioButton_CPP = new System.Windows.Forms.RadioButton();
             this.radioButton_ASM = new System.Windows.Forms.RadioButton();
             this.trackBar_Threads = new System.Windows.Forms.TrackBar();
             this.pictureBox_original = new System.Windows.Forms.PictureBox();
@@ -64,7 +64,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton_dotNet);
+            this.groupBox1.Controls.Add(this.radioButton_CPP);
             this.groupBox1.Controls.Add(this.radioButton_ASM);
             this.groupBox1.Location = new System.Drawing.Point(13, 282);
             this.groupBox1.Name = "groupBox1";
@@ -73,15 +73,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Wybór DLL";
             // 
-            // radioButton_dotNet
+            // radioButton_CPP
             // 
-            this.radioButton_dotNet.AutoSize = true;
-            this.radioButton_dotNet.Location = new System.Drawing.Point(32, 42);
-            this.radioButton_dotNet.Name = "radioButton_dotNet";
-            this.radioButton_dotNet.Size = new System.Drawing.Size(66, 17);
-            this.radioButton_dotNet.TabIndex = 1;
-            this.radioButton_dotNet.Text = "cpp DLL";
-            this.radioButton_dotNet.UseVisualStyleBackColor = true;
+            this.radioButton_CPP.AutoSize = true;
+            this.radioButton_CPP.Location = new System.Drawing.Point(32, 42);
+            this.radioButton_CPP.Name = "radioButton_CPP";
+            this.radioButton_CPP.Size = new System.Drawing.Size(66, 17);
+            this.radioButton_CPP.TabIndex = 1;
+            this.radioButton_CPP.Text = "cpp DLL";
+            this.radioButton_CPP.UseVisualStyleBackColor = true;
             // 
             // radioButton_ASM
             // 
@@ -395,7 +395,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton_dotNet;
+        private System.Windows.Forms.RadioButton radioButton_CPP;
         private System.Windows.Forms.RadioButton radioButton_ASM;
         private System.Windows.Forms.TrackBar trackBar_Threads;
         private System.Windows.Forms.PictureBox pictureBox_original;
