@@ -64,12 +64,12 @@ namespace ColorToGrayScale
             {
                 Bitmap imageToProcess = new Bitmap(Image.FromFile(openFileDialog.FileName));
 
-                loger.Debug("rozpoczęcie dzielenia obrazu");
+                loger.Debug("Rozpoczęcie dzielenia obrazu");
                 timeCounter.Start();
                 imageService.ImageDivider(imageToProcess);
                 timeCounter.Stop();
                 time_divide_label.Text = timeCounter.Time;
-                loger.Debug("obraz podzielony");
+                loger.Debug(String.Format("Obraz podzielony w czasie {0} ms.", timeCounter.Time));
 
                 pictureBox_original.Image = imageToProcess;
                 BitmapParts_label.Text = imageService.Length.ToString();
@@ -116,11 +116,13 @@ namespace ColorToGrayScale
             else
             {
                 label_time.Text = timeCounter.Time;
+                loger.Debug(String.Format("Obraz przetworzony w czasie {0} ms.", timeCounter.Time));
 
                 timeCounter.Start();
                 pictureBox_modified.Image = imageService.JoinIntoBigOne();
                 timeCounter.Stop();
                 time_join_label.Text = timeCounter.Time;
+                loger.Debug(String.Format("Obraz polaczony w czasie {0} ms.", timeCounter.Time));
 
                 StartBTN.Enabled = true;
             }

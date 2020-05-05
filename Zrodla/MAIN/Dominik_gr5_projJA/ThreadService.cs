@@ -11,8 +11,15 @@ namespace ColorToGrayScale
 
         private static int count = 0;
 
+        private readonly ILogerService loger;
+
         private Thread[] threads;
 
+        public ThreadService(ILogerService logerService)
+        {
+            this.loger = logerService;
+        }
+        
         public int ThreadsCount { internal get; set; }
                 
         public EndOfThreads EndOfThreads { internal get; set; }
@@ -39,6 +46,8 @@ namespace ColorToGrayScale
                 threads[i] = new Thread(ProcessingFunction);
                 threads[i].Start();
             }
+
+            loger.Debug(String.Format("Utworzono {0} watkow.", ThreadsCount));
 
             Thread mainThread = new Thread(t =>
             {
