@@ -26,7 +26,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox_dllChose = new System.Windows.Forms.GroupBox();
             this.radioButton_CPP = new System.Windows.Forms.RadioButton();
             this.radioButton_ASM = new System.Windows.Forms.RadioButton();
             this.trackBar_Threads = new System.Windows.Forms.TrackBar();
@@ -38,8 +38,8 @@
             this.label_time = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox_modified = new System.Windows.Forms.PictureBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.GSCC_radio = new System.Windows.Forms.RadioButton();
+            this.groupBox_methodChoose = new System.Windows.Forms.GroupBox();
+            this.SingleColorChannel_Green_radioButton = new System.Windows.Forms.RadioButton();
             this.desaturation_radio = new System.Windows.Forms.RadioButton();
             this.decomposition_min_radio = new System.Windows.Forms.RadioButton();
             this.decomposition_max_radio = new System.Windows.Forms.RadioButton();
@@ -55,23 +55,23 @@
             this.label5 = new System.Windows.Forms.Label();
             this.RAMUsage_label = new System.Windows.Forms.Label();
             this.OpenLogs_Button = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.groupBox_dllChose.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_Threads)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_original)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_modified)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.groupBox_methodChoose.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupBox_dllChose
             // 
-            this.groupBox1.Controls.Add(this.radioButton_CPP);
-            this.groupBox1.Controls.Add(this.radioButton_ASM);
-            this.groupBox1.Location = new System.Drawing.Point(13, 282);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(168, 70);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Wybór DLL";
+            this.groupBox_dllChose.Controls.Add(this.radioButton_CPP);
+            this.groupBox_dllChose.Controls.Add(this.radioButton_ASM);
+            this.groupBox_dllChose.Location = new System.Drawing.Point(13, 282);
+            this.groupBox_dllChose.Name = "groupBox_dllChose";
+            this.groupBox_dllChose.Size = new System.Drawing.Size(168, 70);
+            this.groupBox_dllChose.TabIndex = 0;
+            this.groupBox_dllChose.TabStop = false;
+            this.groupBox_dllChose.Text = "Wybór DLL";
             // 
             // radioButton_CPP
             // 
@@ -180,32 +180,32 @@
             this.pictureBox_modified.TabIndex = 8;
             this.pictureBox_modified.TabStop = false;
             // 
-            // groupBox2
+            // groupBox_methodChoose
             // 
-            this.groupBox2.Controls.Add(this.GSCC_radio);
-            this.groupBox2.Controls.Add(this.desaturation_radio);
-            this.groupBox2.Controls.Add(this.decomposition_min_radio);
-            this.groupBox2.Controls.Add(this.decomposition_max_radio);
-            this.groupBox2.Controls.Add(this.BSCC_radio);
-            this.groupBox2.Controls.Add(this.RSCC_radio);
-            this.groupBox2.Location = new System.Drawing.Point(196, 282);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(396, 130);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Wybór funkcji";
+            this.groupBox_methodChoose.Controls.Add(this.SingleColorChannel_Green_radioButton);
+            this.groupBox_methodChoose.Controls.Add(this.desaturation_radio);
+            this.groupBox_methodChoose.Controls.Add(this.decomposition_min_radio);
+            this.groupBox_methodChoose.Controls.Add(this.decomposition_max_radio);
+            this.groupBox_methodChoose.Controls.Add(this.BSCC_radio);
+            this.groupBox_methodChoose.Controls.Add(this.RSCC_radio);
+            this.groupBox_methodChoose.Location = new System.Drawing.Point(196, 282);
+            this.groupBox_methodChoose.Name = "groupBox_methodChoose";
+            this.groupBox_methodChoose.Size = new System.Drawing.Size(396, 130);
+            this.groupBox_methodChoose.TabIndex = 2;
+            this.groupBox_methodChoose.TabStop = false;
+            this.groupBox_methodChoose.Text = "Wybór funkcji";
             // 
-            // GSCC_radio
+            // SingleColorChannel_Green_radioButton
             // 
-            this.GSCC_radio.AutoSize = true;
-            this.GSCC_radio.Checked = true;
-            this.GSCC_radio.Location = new System.Drawing.Point(32, 87);
-            this.GSCC_radio.Name = "GSCC_radio";
-            this.GSCC_radio.Size = new System.Drawing.Size(81, 17);
-            this.GSCC_radio.TabIndex = 1;
-            this.GSCC_radio.TabStop = true;
-            this.GSCC_radio.Text = "SCC zielony";
-            this.GSCC_radio.UseVisualStyleBackColor = true;
+            this.SingleColorChannel_Green_radioButton.AutoSize = true;
+            this.SingleColorChannel_Green_radioButton.Checked = true;
+            this.SingleColorChannel_Green_radioButton.Location = new System.Drawing.Point(32, 87);
+            this.SingleColorChannel_Green_radioButton.Name = "SingleColorChannel_Green_radioButton";
+            this.SingleColorChannel_Green_radioButton.Size = new System.Drawing.Size(81, 17);
+            this.SingleColorChannel_Green_radioButton.TabIndex = 1;
+            this.SingleColorChannel_Green_radioButton.TabStop = true;
+            this.SingleColorChannel_Green_radioButton.Text = "SCC zielony";
+            this.SingleColorChannel_Green_radioButton.UseVisualStyleBackColor = true;
             // 
             // desaturation_radio
             // 
@@ -368,7 +368,7 @@
             this.Controls.Add(this.StartBTN);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox_methodChoose);
             this.Controls.Add(this.pictureBox_modified);
             this.Controls.Add(this.label_time);
             this.Controls.Add(this.label1);
@@ -376,17 +376,17 @@
             this.Controls.Add(this.PhotoBTN);
             this.Controls.Add(this.pictureBox_original);
             this.Controls.Add(this.trackBar_Threads);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox_dllChose);
             this.Name = "MainForm";
             this.Text = " ";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBox_dllChose.ResumeLayout(false);
+            this.groupBox_dllChose.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_Threads)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_original)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_modified)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupBox_methodChoose.ResumeLayout(false);
+            this.groupBox_methodChoose.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,7 +394,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox_dllChose;
         private System.Windows.Forms.RadioButton radioButton_CPP;
         private System.Windows.Forms.RadioButton radioButton_ASM;
         private System.Windows.Forms.TrackBar trackBar_Threads;
@@ -406,13 +406,7 @@
         private System.Windows.Forms.Label label_time;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.PictureBox pictureBox_modified;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton GSCC_radio;
-        private System.Windows.Forms.RadioButton BSCC_radio;
-        private System.Windows.Forms.RadioButton RSCC_radio;
-        private System.Windows.Forms.RadioButton desaturation_radio;
-        private System.Windows.Forms.RadioButton decomposition_min_radio;
-        private System.Windows.Forms.RadioButton decomposition_max_radio;
+        private System.Windows.Forms.GroupBox groupBox_methodChoose;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label BitmapParts_label;
         private System.Windows.Forms.Label label3;
@@ -423,6 +417,14 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label RAMUsage_label;
         private System.Windows.Forms.Button OpenLogs_Button;
+
+
+        private System.Windows.Forms.RadioButton SingleColorChannel_Green_radioButton;
+        private System.Windows.Forms.RadioButton BSCC_radio;
+        private System.Windows.Forms.RadioButton RSCC_radio;
+        private System.Windows.Forms.RadioButton desaturation_radio;
+        private System.Windows.Forms.RadioButton decomposition_min_radio;
+        private System.Windows.Forms.RadioButton decomposition_max_radio;
     }
 }
 
