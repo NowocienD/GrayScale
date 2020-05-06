@@ -5,6 +5,7 @@ using SimpleInjector;
 using System.IO;
 using ColorToGrayScale.Exceptions;
 using ColorToGrayScale.LoggingService;
+using ColorToGrayScale.DllManager;
 
 namespace ColorToGrayScale
 {
@@ -41,6 +42,7 @@ namespace ColorToGrayScale
             container.Register<IThreadsService, ThreadService>();
             container.Register<ITimeCounterService, TimeCounterService>();
             container.RegisterSingleton<ILogerService, LogerService>();
+            container.Register<IDllService, DllService>();
         }
     }
 }

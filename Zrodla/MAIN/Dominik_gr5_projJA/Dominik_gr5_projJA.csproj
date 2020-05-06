@@ -91,9 +91,7 @@
     <Compile Include="DllServices\AsmDll.cs" />
     <Compile Include="DllServices\CppDll.cs" />
     <Compile Include="DllServices\DllService.cs" />
-    <Compile Include="DllServices\IDllManager.cs" />
-    <Compile Include="DllServices\IMethodManager.cs" />
-    <Compile Include="DllServices\MethodManager.cs" />
+    <Compile Include="DllServices\IDllService.cs" />
     <Compile Include="Exceptions\DllFileNotExistException.cs" />
     <Compile Include="Exceptions\NotDivisibleBy16Exception.cs" />
     <Compile Include="DllServices\IDll.cs" />

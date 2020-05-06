@@ -6,12 +6,16 @@ using System.Diagnostics;
 using ColorToGrayScale.Exceptions;
 using System.Collections.Generic;
 using ColorToGrayScale.LoggingService;
+using ColorToGrayScale.DllManager;
+using System.Linq;
 
 namespace ColorToGrayScale
 {
     public partial class MainForm : Form
     {
         private readonly IImageService imageService;
+
+        private readonly IDllService dllManager;
 
         private readonly IThreadsService threadsService;
 
@@ -28,20 +32,47 @@ namespace ColorToGrayScale
             IThreadsService _threadsService,
             ITimeCounterService _timeCounterService,
             ILogerService logerService,
-            Form logForm)
+            Form logForm,
+            IDllService dllManager)
         {
             InitializeComponent();
+            AddControlsToGroupbox(groupBox_methodChoose);
             this.imageService = _imageService;
             this.threadsService = _threadsService;
             this.timeCounter = _timeCounterService;
             this.loger = logerService;
             this.logForm = logForm as LogForm;
+            this.dllManager = dllManager;
 
             loger.Info(String.Format("Prawidlowa inicjalizacja"));
         }
 
         public delegate void EndOfThreads();
 
+        private void AddControlsToGroupbox(GroupBox groupBox_methodChoose)
+        {
+            string[] methodsInDllInterface = typeof(IDll).GetMethods().Where(x => !x.IsSpecialName).Where(x => !x.Name.Contains("Change")).Select(x => x.Name).ToArray();
+
+            int height = (groupBox_methodChoose.Size.Height - 16) / methodsInDllInterface.Count();
+
+            for (int i = 0; i < methodsInDllInterface.Count(); i++)
+            {
+                RadioButton temporaryRadioButton = new System.Windows.Forms.RadioButton();
+                temporaryRadioButton.AutoSize = true;
+                temporaryRadioButton.Checked = (i == 0);
+                temporaryRadioButton.Name = String.Format("{0}_radioButton", methodsInDllInterface[i]);
+                temporaryRadioButton.Size = new System.Drawing.Size(215, 17);
+                temporaryRadioButton.TabIndex = 1;
+                temporaryRadioButton.TabStop = true;
+                temporaryRadioButton.Text = methodsInDllInterface[i];
+                temporaryRadioButton.UseVisualStyleBackColor = true;
+
+                groupBox_methodChoose.Controls.Add(temporaryRadioButton);
+
+                temporaryRadioButton.Location = new System.Drawing.Point(20, 16 + (height * i));
+            }
+        }
+        
         private void MainForm_Load(object sender, EventArgs e)
         {
             this.processorCount = Environment.ProcessorCount;
@@ -127,60 +158,15 @@ namespace ColorToGrayScale
                 StartBTN.Enabled = true;
             }
         }
-
-        private void ChooseFunction(IDll dll)
-        {
-            if (RSCC_radio.Checked)
-            {
-                dll.ProcessingMethod = dll.SingleColorChannel_Red;
-            }
-            else if (GSCC_radio.Checked)
-            {
-                dll.ProcessingMethod = dll.SingleColorChannel_Green;
-            }
-            else if (BSCC_radio.Checked)
-            {
-                dll.ProcessingMethod = dll.SingleColorChannel_Blue;
-            }
-            else if (decomposition_max_radio.Checked)
-            {
-                dll.ProcessingMethod = dll.Decomposition_max;
-            }
-            else if (decomposition_min_radio.Checked)
-            {
-                dll.ProcessingMethod = dll.Decomposition_min;
-            }
-            else if (desaturation_radio.Checked)
-            {
-                dll.ProcessingMethod = dll.Desaturation;
-            }
-            else
-            {
-                throw new Exception();
-            }
-        }
-
-        private IDll ChooseDll()
-        {
-            if (radioButton_ASM.Checked == true)
-            {
-                return new AsmDll();
-            }
-            else if (radioButton_CPP.Checked == true)
-            {
-                return new CppDll();
-            }
-
-            throw new Exception();
-        }
-
+        
         private void StartBTN_Click(object sender, EventArgs e)
         {
             label_time.Text = string.Empty;
             StartBTN.Enabled = false;
 
-            IDll dll = ChooseDll();
-            ChooseFunction(dll);            
+            dllManager.ChooseDll(this.groupBox_dllChose);
+            dllManager.ChooseMethod(this.groupBox_methodChoose);
+            IDll dll = dllManager.Dll;
             dll.Pixels = imageService.CopyOfOryginalImage;
 
             threadsService.ProcessingFunction = dll.ChangeColorToGrayScale;
