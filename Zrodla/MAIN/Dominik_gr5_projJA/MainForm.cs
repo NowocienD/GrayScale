@@ -37,6 +37,7 @@ namespace ColorToGrayScale
         {
             InitializeComponent();
             AddControlsToGroupbox(groupBox_methodChoose);
+
             this.imageService = _imageService;
             this.threadsService = _threadsService;
             this.timeCounter = _timeCounterService;
@@ -56,7 +57,7 @@ namespace ColorToGrayScale
             int numberOfMethods = methodsInDllInterface.Count();
             int offset = 30;
 
-            int heightOffset = (groupBox_methodChoose.Size.Height - offset) / (numberOfMethods / 2);
+            int heightOffset = (groupBox_methodChoose.Size.Height - offset) / numberOfMethods * 2;
 
             for (int i = 0; i < numberOfMethods; i++)
             {
