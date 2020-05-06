@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using ColorToGrayScale.LoggingService;
 using ColorToGrayScale.DllManager;
 using System.Linq;
+using ColorToGrayScale.helpers;
 
 namespace ColorToGrayScale
 {
@@ -130,7 +131,6 @@ namespace ColorToGrayScale
             {
                 loger.Error(exception.Message);
 
-                //inne podejscie do wykatkow. Próba implementacji RTTI w języku C# 
                 if (exception is ArgumentException)
                 {
                     MessageBox.Show(exception.GetType().ToString());
@@ -159,10 +159,11 @@ namespace ColorToGrayScale
                 label_time.Text = timeCounter.Time;
                 loger.Debug(String.Format("Obraz przetworzony w czasie {0} ms.", timeCounter.Time));
 
-                timeCounter.Start();
+                TimeCounterService time = new TimeCounterService();
+                time.Start();
                 pictureBox_modified.Image = imageService.JoinIntoBigOne();
-                timeCounter.Stop();
-                time_join_label.Text = timeCounter.Time;
+                time.Stop();
+                time_join_label.Text = time.Time;
                 loger.Debug(String.Format("Obraz polaczony w czasie {0} ms.", timeCounter.Time));
 
                 StartBTN.Enabled = true;
@@ -189,17 +190,7 @@ namespace ColorToGrayScale
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            const int RamMBUsageWarning = 1000;
-            Process proc = Process.GetCurrentProcess();
-            double memory = Math.Round(proc.PrivateMemorySize64 / 1e+6, 0);
-            proc.Dispose();
-
-            if (memory > RamMBUsageWarning)
-            {
-                loger.Warning(String.Format("Zuycie ramu większe niż {0}MB.", RamMBUsageWarning));
-            }
-
-            RAMUsage_label.Text = memory.ToString();
+            RAMUsage_label.Text = new RamUsageHelper().RamUsage();
         }
 
         private void OpenLogs_Button_Click(object sender, EventArgs e)

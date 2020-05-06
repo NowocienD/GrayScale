@@ -95,6 +95,7 @@
     <Compile Include="Exceptions\DllFileNotExistException.cs" />
     <Compile Include="Exceptions\NotDivisibleBy16Exception.cs" />
     <Compile Include="DllServices\IDll.cs" />
+    <Compile Include="helpers\RamUsageHelper.cs" />
     <Compile Include="LoggingManager\ILogerService.cs" />
     <Compile Include="LoggingManager\LogerService.cs" />
     <Compile Include="LoggingManager\LogForm.cs">

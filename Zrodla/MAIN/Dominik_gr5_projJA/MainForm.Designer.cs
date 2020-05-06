@@ -45,7 +45,7 @@
             this.time_divide_label = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.time_join_label = new System.Windows.Forms.Label();
-            this.timer_2s = new System.Windows.Forms.Timer(this.components);
+            this.timer_500ms = new System.Windows.Forms.Timer(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.RAMUsage_label = new System.Windows.Forms.Label();
             this.OpenLogs_Button = new System.Windows.Forms.Button();
@@ -53,7 +53,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_Threads)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_original)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_modified)).BeginInit();
-            this.groupBox_methodChoose.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox_dllChose
@@ -243,11 +242,11 @@
             this.time_join_label.TabIndex = 10;
             this.time_join_label.Text = "0";
             // 
-            // timer_2s
+            // timer_500ms
             // 
-            this.timer_2s.Enabled = true;
-            this.timer_2s.Interval = 2000;
-            this.timer_2s.Tick += new System.EventHandler(this.Timer1_Tick);
+            this.timer_500ms.Enabled = true;
+            this.timer_500ms.Interval = 500;
+            this.timer_500ms.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // label5
             // 
@@ -311,8 +310,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_Threads)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_original)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_modified)).EndInit();
-            this.groupBox_methodChoose.ResumeLayout(false);
-            this.groupBox_methodChoose.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,7 +336,7 @@
         private System.Windows.Forms.Label time_divide_label;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label time_join_label;
-        private System.Windows.Forms.Timer timer_2s;
+        private System.Windows.Forms.Timer timer_500ms;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label RAMUsage_label;
         private System.Windows.Forms.Button OpenLogs_Button;
