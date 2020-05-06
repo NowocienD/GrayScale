@@ -1,0 +1,529 @@
+﻿Error |01.05.2020 17:33:01| ColorToGrayScale.MainForm, Text:  
+Error |01.05.2020 17:33:03| ColorToGrayScale.MainForm, Text:  
+Error |01.05.2020 17:33:04| ColorToGrayScale.MainForm, Text:  
+Info |01.05.2020 17:33:06| ColorToGrayScale.MainForm, Text:  
+Error |01.05.2020 20:49:20| ColorToGrayScale.MainForm, Text:  
+Error |01.05.2020 20:49:30| ColorToGrayScale.MainForm, Text:  
+Error |01.05.2020 20:49:37| ColorToGrayScale.MainForm, Text:  
+Error |01.05.2020 20:52:24| ColorToGrayScale.MainForm, Text:  
+Warning |01.05.2020 20:52:24| Zgłoszono wyjątek typu 'ColorToGrayScale.Exceptions.NotDivisibleBy16Exception'.
+Info |01.05.2020 20:52:24| Zgłoszono wyjątek typu 'ColorToGrayScale.Exceptions.NotDivisibleBy16Exception'.
+Error |01.05.2020 20:52:24| Zgłoszono wyjątek typu 'ColorToGrayScale.Exceptions.NotDivisibleBy16Exception'.
+Error |01.05.2020 20:52:24| Zgłoszono wyjątek typu 'ColorToGrayScale.Exceptions.NotDivisibleBy16Exception'.
+Warning |01.05.2020 20:52:24| Zgłoszono wyjątek typu 'ColorToGrayScale.Exceptions.NotDivisibleBy16Exception'.
+Info |01.05.2020 20:52:24| Zgłoszono wyjątek typu 'ColorToGrayScale.Exceptions.NotDivisibleBy16Exception'.
+Error |01.05.2020 20:52:24| Zgłoszono wyjątek typu 'ColorToGrayScale.Exceptions.NotDivisibleBy16Exception'.
+Info |01.05.2020 23:49:14| Poprawnie uruchomiono okno MainForm
+Info |02.05.2020 18:56:32| Prawidlowa inicjalizacja
+Info |02.05.2020 18:56:32| Poprawnie uruchomiono okno MainForm
+Info |02.05.2020 18:58:28| Prawidlowa inicjalizacja
+Info |02.05.2020 18:58:28| Poprawnie uruchomiono okno MainForm
+Debug |02.05.2020 18:58:32| rozpoczęcie dzielenia obrazu
+Error |02.05.2020 18:58:32| Zgłoszono wyjątek typu 'ColorToGrayScale.Exceptions.NotDivisibleBy16Exception'.
+Debug |02.05.2020 18:58:36| rozpoczęcie dzielenia obrazu
+Debug |02.05.2020 18:58:39| obraz podzielony
+Warning |02.05.2020 18:58:39| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:39| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:40| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:41| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:42| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:43| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:43| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:44| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:44| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:45| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:45| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:46| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:46| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:47| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:47| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:48| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:48| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:49| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:49| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:50| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:50| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:51| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:51| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:52| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:52| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:53| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:53| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:54| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:54| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:55| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:55| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:56| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:56| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:57| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:57| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:58| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:58| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:59| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:58:59| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:59:00| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:59:00| Zuycie ramu większe niż 100MB.
+Warning |02.05.2020 18:59:01| Zuycie ramu większe niż 100MB.
+Info |02.05.2020 19:01:14| Prawidlowa inicjalizacja
+Info |02.05.2020 19:01:14| Poprawnie uruchomiono okno MainForm
+Info |02.05.2020 19:04:48| Prawidlowa inicjalizacja
+Info |02.05.2020 19:04:48| Poprawnie uruchomiono okno MainForm
+Info |02.05.2020 19:13:26| Prawidlowa inicjalizacja
+Info |02.05.2020 19:13:26| Poprawnie uruchomiono okno MainForm
+Info |02.05.2020 19:14:31| Prawidlowa inicjalizacja
+Info |02.05.2020 19:14:31| Poprawnie uruchomiono okno MainForm
+Info |02.05.2020 19:15:32| Prawidlowa inicjalizacja
+Info |02.05.2020 19:15:32| Poprawnie uruchomiono okno MainForm
+Info |02.05.2020 19:24:50| Prawidlowa inicjalizacja
+Info |02.05.2020 19:24:50| Poprawnie uruchomiono okno MainForm
+Warning |02.05.2020 19:24:53| Okno ColorToGrayScale.LoggingService.LogForm zorstlo zniszczone.
+Info |02.05.2020 19:25:14| Prawidlowa inicjalizacja
+Info |02.05.2020 19:25:14| Poprawnie uruchomiono okno MainForm
+Warning |02.05.2020 19:25:17| Okno ColorToGrayScale.LoggingService.LogForm zorstlo zniszczone.
+Info |02.05.2020 19:25:49| Prawidlowa inicjalizacja
+Info |02.05.2020 19:25:49| Poprawnie uruchomiono okno MainForm
+Warning |02.05.2020 19:25:53| Okno ColorToGrayScale.LoggingService.LogForm zorstlo zniszczone.
+Info |02.05.2020 19:26:14| Prawidlowa inicjalizacja
+Info |02.05.2020 19:26:14| Poprawnie uruchomiono okno MainForm
+Info |03.05.2020 00:29:40| Prawidlowa inicjalizacja
+Info |03.05.2020 00:29:40| Poprawnie uruchomiono okno MainForm
+Debug |03.05.2020 00:29:49| rozpoczęcie dzielenia obrazu
+Error |03.05.2020 00:29:49| Zgłoszono wyjątek typu 'ColorToGrayScale.Exceptions.NotDivisibleBy16Exception'.
+Debug |03.05.2020 00:30:06| rozpoczęcie dzielenia obrazu
+Debug |03.05.2020 00:30:09| obraz podzielony
+Info |03.05.2020 00:30:35| Prawidlowa inicjalizacja
+Info |03.05.2020 00:30:35| Poprawnie uruchomiono okno MainForm
+Debug |03.05.2020 00:30:38| rozpoczęcie dzielenia obrazu
+Debug |03.05.2020 00:30:42| obraz podzielony
+Warning |03.05.2020 00:30:46| Zuycie ramu większe niż 1000MB.
+Warning |03.05.2020 00:30:48| Zuycie ramu większe niż 1000MB.
+Warning |03.05.2020 00:30:49| Zuycie ramu większe niż 1000MB.
+Warning |03.05.2020 00:30:51| Zuycie ramu większe niż 1000MB.
+Warning |03.05.2020 00:30:53| Zuycie ramu większe niż 1000MB.
+Warning |03.05.2020 00:30:55| Zuycie ramu większe niż 1000MB.
+Warning |03.05.2020 00:30:57| Zuycie ramu większe niż 1000MB.
+Warning |03.05.2020 00:30:59| Zuycie ramu większe niż 1000MB.
+Warning |03.05.2020 00:31:01| Zuycie ramu większe niż 1000MB.
+Warning |03.05.2020 00:31:03| Zuycie ramu większe niż 1000MB.
+Warning |03.05.2020 00:31:05| Zuycie ramu większe niż 1000MB.
+Warning |03.05.2020 00:31:07| Zuycie ramu większe niż 1000MB.
+Warning |03.05.2020 00:31:09| Zuycie ramu większe niż 1000MB.
+Warning |03.05.2020 00:31:11| Zuycie ramu większe niż 1000MB.
+Warning |03.05.2020 00:31:13| Zuycie ramu większe niż 1000MB.
+Warning |03.05.2020 00:31:15| Zuycie ramu większe niż 1000MB.
+Warning |03.05.2020 00:31:17| Zuycie ramu większe niż 1000MB.
+Warning |03.05.2020 00:31:19| Zuycie ramu większe niż 1000MB.
+Warning |03.05.2020 00:31:21| Zuycie ramu większe niż 1000MB.
+Warning |03.05.2020 00:31:23| Zuycie ramu większe niż 1000MB.
+Warning |03.05.2020 00:31:25| Zuycie ramu większe niż 1000MB.
+Info |03.05.2020 00:33:15| Prawidlowa inicjalizacja
+Info |03.05.2020 00:33:15| Poprawnie uruchomiono okno MainForm
+Info |05.05.2020 20:32:03| Prawidlowa inicjalizacja
+Info |05.05.2020 20:32:03| Poprawnie uruchomiono okno MainForm
+Info |05.05.2020 20:32:04| Wlaczone okno System.Windows.Forms.Button, Text: Logi
+Info |05.05.2020 20:33:10| Prawidlowa inicjalizacja
+Info |05.05.2020 20:33:10| Poprawnie uruchomiono okno MainForm
+Info |05.05.2020 20:33:12| Wlaczone okno System.Windows.Forms.Button, Text: Logi
+Info |05.05.2020 20:35:04| Prawidlowa inicjalizacja
+Info |05.05.2020 20:35:04| Poprawnie uruchomiono okno MainForm
+Info |05.05.2020 20:35:12| Wcisnieto przycisk Logi
+Info |05.05.2020 20:35:12| Wlaczono okno LogForm
+Info |05.05.2020 20:35:23| Prawidlowa inicjalizacja
+Info |05.05.2020 20:35:23| Poprawnie uruchomiono okno MainForm
+Info |05.05.2020 20:35:24| Wcisnieto przycisk Logi
+Info |05.05.2020 20:35:24| Wlaczono okno LogForm
+Info |05.05.2020 20:37:03| Prawidlowa inicjalizacja
+Info |05.05.2020 20:37:03| Poprawnie uruchomiono okno MainForm
+Info |05.05.2020 20:51:03| Prawidlowa inicjalizacja
+Info |05.05.2020 20:51:03| Poprawnie uruchomiono okno MainForm
+Debug |05.05.2020 20:51:07| Wcisnieto przycisk Logi
+Info |05.05.2020 20:51:07| Wlaczono okno LogForm
+Info |05.05.2020 20:51:17| Prawidlowa inicjalizacja
+Info |05.05.2020 20:51:17| Poprawnie uruchomiono okno MainForm
+Debug |05.05.2020 20:51:23| Wcisnieto przycisk Logi
+Info |05.05.2020 20:51:23| Wlaczono okno LogForm
+Info |05.05.2020 20:54:13| Prawidlowa inicjalizacja
+Info |05.05.2020 20:54:13| Poprawnie uruchomiono okno MainForm
+Debug |05.05.2020 20:54:16| Rozpoczęcie dzielenia obrazu
+Error |05.05.2020 20:54:16| Zgłoszono wyjątek typu 'ColorToGrayScale.Exceptions.NotDivisibleBy16Exception'.
+Debug |05.05.2020 20:54:19| Rozpoczęcie dzielenia obrazu
+Debug |05.05.2020 20:54:23| Obraz podzielony w czasie 3625 ms ms.
+Warning |05.05.2020 20:54:27| Zuycie ramu większe niż 1000MB.
+Warning |05.05.2020 20:54:27| Zuycie ramu większe niż 1000MB.
+Info |05.05.2020 20:54:58| Prawidlowa inicjalizacja
+Info |05.05.2020 20:54:58| Poprawnie uruchomiono okno MainForm
+Debug |05.05.2020 20:55:00| Rozpoczęcie dzielenia obrazu
+Debug |05.05.2020 20:55:01| Obraz podzielony w czasie 969 ms ms.
+Debug |05.05.2020 20:55:03| Obraz przetworzony w czasie 250 ms ms.
+Debug |05.05.2020 20:55:03| Obraz przetworzony w czasie 250 ms ms.
+Debug |05.05.2020 20:55:03| Obraz polaczony w czasie 312 ms ms.
+Debug |05.05.2020 20:55:08| Wcisnieto przycisk Logi
+Info |05.05.2020 20:55:08| Wlaczono okno LogForm
+Info |05.05.2020 21:05:51| Prawidlowa inicjalizacja
+Info |05.05.2020 21:05:51| Poprawnie uruchomiono okno MainForm
+Info |05.05.2020 21:06:16| Prawidlowa inicjalizacja
+Info |05.05.2020 21:06:16| Poprawnie uruchomiono okno MainForm
+Info |05.05.2020 21:07:44| Prawidlowa inicjalizacja
+Info |05.05.2020 21:07:44| Poprawnie uruchomiono okno MainForm
+Info |05.05.2020 21:08:38| Prawidlowa inicjalizacja
+Info |05.05.2020 21:08:38| Poprawnie uruchomiono okno MainForm
+Info |05.05.2020 21:39:50| Prawidlowa inicjalizacja
+Info |05.05.2020 21:39:50| Poprawnie uruchomiono okno MainForm
+Info |05.05.2020 23:17:54| Prawidlowa inicjalizacja
+Info |05.05.2020 23:17:54| Poprawnie uruchomiono okno MainForm
+Debug |05.05.2020 23:17:59| Rozpoczęcie dzielenia obrazu
+Debug |05.05.2020 23:17:59| Obraz podzielony w czasie 0 ms ms.
+Info |05.05.2020 23:19:38| Prawidlowa inicjalizacja
+Info |05.05.2020 23:19:38| Poprawnie uruchomiono okno MainForm
+Debug |05.05.2020 23:19:41| Rozpoczęcie dzielenia obrazu
+Debug |05.05.2020 23:19:41| Obraz podzielony w czasie 0 ms ms.
+Info |05.05.2020 23:19:53| Prawidlowa inicjalizacja
+Info |05.05.2020 23:19:53| Poprawnie uruchomiono okno MainForm
+Debug |05.05.2020 23:19:55| Rozpoczęcie dzielenia obrazu
+Debug |05.05.2020 23:19:55| Obraz podzielony w czasie 16 ms ms.
+Info |05.05.2020 23:20:47| Prawidlowa inicjalizacja
+Info |05.05.2020 23:20:47| Poprawnie uruchomiono okno MainForm
+Debug |05.05.2020 23:20:49| Rozpoczęcie dzielenia obrazu
+Debug |05.05.2020 23:20:49| Obraz podzielony w czasie 16 ms ms.
+Info |06.05.2020 09:35:15| Prawidlowa inicjalizacja
+Info |06.05.2020 09:35:15| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 09:35:18| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 09:35:18| Obraz podzielony w czasie 16 ms ms.
+Info |06.05.2020 09:35:54| Prawidlowa inicjalizacja
+Info |06.05.2020 09:35:54| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 09:35:57| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 09:35:57| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 09:36:41| Prawidlowa inicjalizacja
+Info |06.05.2020 09:36:41| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 09:36:43| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 09:36:43| Obraz podzielony w czasie 16 ms ms.
+Info |06.05.2020 09:37:02| Prawidlowa inicjalizacja
+Info |06.05.2020 09:37:02| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 09:37:05| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 09:37:05| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 09:44:06| Prawidlowa inicjalizacja
+Info |06.05.2020 09:44:06| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 09:44:09| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 09:44:09| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 09:46:10| Prawidlowa inicjalizacja
+Info |06.05.2020 09:46:10| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 09:46:12| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 09:46:12| Obraz podzielony w czasie 16 ms ms.
+Info |06.05.2020 09:46:28| Prawidlowa inicjalizacja
+Info |06.05.2020 09:46:28| Poprawnie uruchomiono okno MainForm
+Error |06.05.2020 09:46:34| openFileDialog1
+Debug |06.05.2020 09:46:38| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 09:46:38| Obraz podzielony w czasie 15 ms ms.
+Info |06.05.2020 09:46:47| Prawidlowa inicjalizacja
+Info |06.05.2020 09:46:47| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 09:46:51| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 09:46:51| Obraz podzielony w czasie 15 ms ms.
+Info |06.05.2020 11:25:02| Prawidlowa inicjalizacja
+Info |06.05.2020 11:25:02| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 11:25:05| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 11:25:05| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 11:26:08| Prawidlowa inicjalizacja
+Info |06.05.2020 11:26:09| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 11:26:11| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 11:26:11| Obraz podzielony w czasie 16 ms ms.
+Info |06.05.2020 11:26:58| Prawidlowa inicjalizacja
+Info |06.05.2020 11:26:58| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 11:27:00| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 11:27:00| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 11:28:39| Prawidlowa inicjalizacja
+Info |06.05.2020 11:28:39| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 11:28:41| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 11:28:41| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 11:35:57| Prawidlowa inicjalizacja
+Info |06.05.2020 11:35:58| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 11:36:00| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 11:36:00| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 11:41:22| Prawidlowa inicjalizacja
+Info |06.05.2020 11:41:22| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 11:41:24| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 11:41:24| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 11:53:04| Prawidlowa inicjalizacja
+Info |06.05.2020 11:53:04| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 11:53:06| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 11:53:06| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 11:53:33| Prawidlowa inicjalizacja
+Info |06.05.2020 11:53:33| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 11:53:35| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 11:53:35| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 11:54:53| Prawidlowa inicjalizacja
+Info |06.05.2020 11:54:53| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 11:55:11| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 11:55:11| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 11:55:25| Prawidlowa inicjalizacja
+Info |06.05.2020 11:55:25| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 11:55:27| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 11:55:27| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 12:02:47| Prawidlowa inicjalizacja
+Info |06.05.2020 12:02:47| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:02:49| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:02:49| Obraz podzielony w czasie 15 ms ms.
+Info |06.05.2020 12:04:51| Prawidlowa inicjalizacja
+Info |06.05.2020 12:04:51| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:04:53| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:04:53| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 12:05:35| Prawidlowa inicjalizacja
+Info |06.05.2020 12:05:35| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:05:37| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:05:37| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 12:06:35| Prawidlowa inicjalizacja
+Info |06.05.2020 12:06:35| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:06:37| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:06:37| Obraz podzielony w czasie 16 ms ms.
+Info |06.05.2020 12:07:10| Prawidlowa inicjalizacja
+Info |06.05.2020 12:07:10| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:07:13| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:07:13| Obraz podzielony w czasie 16 ms ms.
+Info |06.05.2020 12:07:44| Prawidlowa inicjalizacja
+Info |06.05.2020 12:07:44| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:07:46| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:07:46| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 12:10:36| Prawidlowa inicjalizacja
+Info |06.05.2020 12:10:36| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:10:38| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:10:38| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 12:12:15| Prawidlowa inicjalizacja
+Info |06.05.2020 12:12:15| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:12:18| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:12:18| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 12:13:35| Prawidlowa inicjalizacja
+Info |06.05.2020 12:13:35| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:13:38| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:13:38| Obraz podzielony w czasie 15 ms ms.
+Info |06.05.2020 12:18:09| Prawidlowa inicjalizacja
+Info |06.05.2020 12:18:09| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:18:12| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:18:12| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 12:18:33| Prawidlowa inicjalizacja
+Info |06.05.2020 12:18:33| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:18:36| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:18:36| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 12:20:47| Prawidlowa inicjalizacja
+Info |06.05.2020 12:20:47| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:20:50| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:20:50| Obraz podzielony w czasie 15 ms ms.
+Info |06.05.2020 12:22:24| Prawidlowa inicjalizacja
+Info |06.05.2020 12:22:24| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:22:26| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:22:26| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 12:23:31| Prawidlowa inicjalizacja
+Info |06.05.2020 12:23:31| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:23:33| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:23:33| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 12:23:50| Prawidlowa inicjalizacja
+Info |06.05.2020 12:23:50| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:23:52| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:23:52| Obraz podzielony w czasie 16 ms ms.
+Info |06.05.2020 12:26:08| Prawidlowa inicjalizacja
+Info |06.05.2020 12:26:08| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:26:10| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:26:10| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 12:30:45| Prawidlowa inicjalizacja
+Info |06.05.2020 12:30:45| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:30:47| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:30:47| Obraz podzielony w czasie 16 ms ms.
+Info |06.05.2020 12:31:20| Prawidlowa inicjalizacja
+Info |06.05.2020 12:31:20| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:31:21| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:31:21| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 12:33:30| Prawidlowa inicjalizacja
+Info |06.05.2020 12:33:30| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:33:32| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:33:32| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 12:35:01| Prawidlowa inicjalizacja
+Info |06.05.2020 12:35:01| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:35:03| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:35:03| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 12:39:35| Prawidlowa inicjalizacja
+Info |06.05.2020 12:39:35| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:39:37| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:39:38| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 12:41:06| Prawidlowa inicjalizacja
+Info |06.05.2020 12:41:06| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:41:08| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:41:08| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 12:41:24| Prawidlowa inicjalizacja
+Info |06.05.2020 12:41:24| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:41:26| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:41:26| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 12:53:58| Prawidlowa inicjalizacja
+Info |06.05.2020 12:53:58| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 12:54:00| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 12:54:00| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 13:43:30| Prawidlowa inicjalizacja
+Info |06.05.2020 13:43:30| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 13:43:32| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 13:43:32| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 15:30:54| Prawidlowa inicjalizacja
+Info |06.05.2020 15:30:54| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 15:30:57| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 15:30:57| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 15:40:23| Prawidlowa inicjalizacja
+Info |06.05.2020 15:40:23| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 15:40:26| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 15:40:26| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 15:41:04| Prawidlowa inicjalizacja
+Info |06.05.2020 15:41:04| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 15:41:09| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 15:41:09| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 15:43:29| Prawidlowa inicjalizacja
+Info |06.05.2020 15:43:29| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 15:43:31| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 15:43:31| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 15:46:01| Prawidlowa inicjalizacja
+Info |06.05.2020 15:46:01| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 15:46:03| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 15:46:03| Obraz podzielony w czasie 15 ms ms.
+Info |06.05.2020 15:46:15| Prawidlowa inicjalizacja
+Info |06.05.2020 15:46:15| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 15:46:18| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 15:46:18| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 15:47:03| Prawidlowa inicjalizacja
+Info |06.05.2020 15:47:03| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 15:47:05| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 15:47:05| Obraz podzielony w czasie 0 ms ms.
+Debug |06.05.2020 15:47:06| Utworzono 12 watkow.
+Debug |06.05.2020 15:47:06| Obraz przetworzony w czasie 109 ms ms.
+Debug |06.05.2020 15:47:07| Obraz polaczony w czasie 0 ms ms.
+Info |06.05.2020 19:18:34| Prawidlowa inicjalizacja
+Info |06.05.2020 19:18:34| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 19:20:34| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 19:20:34| Obraz podzielony w czasie 0 ms ms.
+Info |06.05.2020 19:20:47| Prawidlowa inicjalizacja
+Info |06.05.2020 19:20:47| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 19:20:50| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 19:20:50| Obraz podzielony w czasie 16 ms ms.
+Debug |06.05.2020 19:20:52| Utworzono 12 watkow.
+Debug |06.05.2020 19:20:52| Obraz przetworzony w czasie 94 ms ms.
+Debug |06.05.2020 19:20:52| Obraz polaczony w czasie 15 ms ms.
+Debug |06.05.2020 19:20:57| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 19:20:58| Obraz podzielony w czasie 875 ms ms.
+Info |06.05.2020 19:37:16| Prawidlowa inicjalizacja
+Info |06.05.2020 19:37:16| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 20:42:43| Prawidlowa inicjalizacja
+Info |06.05.2020 20:42:43| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 20:42:46| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 20:42:46| Obraz podzielony w czasie 0 ms ms.
+Debug |06.05.2020 20:42:47| Utworzono 12 watkow.
+Debug |06.05.2020 20:42:47| Obraz przetworzony w czasie 109 ms ms.
+Debug |06.05.2020 20:42:47| Obraz polaczony w czasie 0 ms ms.
+Info |06.05.2020 20:46:34| Prawidlowa inicjalizacja
+Info |06.05.2020 20:46:34| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 20:46:38| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 20:46:38| Obraz podzielony w czasie 0 ms ms.
+Debug |06.05.2020 20:46:39| Utworzono 12 watkow.
+Debug |06.05.2020 20:46:39| Obraz przetworzony w czasie 140 ms ms.
+Debug |06.05.2020 20:46:39| Obraz polaczony w czasie 0 ms ms.
+Info |06.05.2020 20:59:19| Prawidlowa inicjalizacja
+Info |06.05.2020 20:59:19| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 20:59:23| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 20:59:23| Obraz podzielony w czasie 0 ms ms.
+Debug |06.05.2020 20:59:23| Utworzono 12 watkow.
+Debug |06.05.2020 20:59:23| Obraz przetworzony w czasie 78 ms ms.
+Debug |06.05.2020 20:59:23| Obraz polaczony w czasie 0 ms ms.
+Info |06.05.2020 21:11:48| Prawidlowa inicjalizacja
+Info |06.05.2020 21:11:48| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 21:14:23| Prawidlowa inicjalizacja
+Info |06.05.2020 21:14:23| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 21:14:26| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 21:14:26| Obraz podzielony w czasie 0 ms ms.
+Debug |06.05.2020 21:14:29| Utworzono 12 watkow.
+Debug |06.05.2020 21:14:29| Obraz przetworzony w czasie 47 ms ms.
+Debug |06.05.2020 21:14:29| Obraz polaczony w czasie 0 ms ms.
+Info |06.05.2020 21:14:44| Prawidlowa inicjalizacja
+Info |06.05.2020 21:14:44| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 21:19:20| Prawidlowa inicjalizacja
+Info |06.05.2020 21:19:20| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 21:21:23| Prawidlowa inicjalizacja
+Info |06.05.2020 21:21:23| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 21:21:56| Prawidlowa inicjalizacja
+Info |06.05.2020 21:21:56| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 21:22:11| Prawidlowa inicjalizacja
+Info |06.05.2020 21:22:11| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 21:22:24| Prawidlowa inicjalizacja
+Info |06.05.2020 21:22:24| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 21:24:11| Prawidlowa inicjalizacja
+Info |06.05.2020 21:24:11| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 21:24:30| Prawidlowa inicjalizacja
+Info |06.05.2020 21:24:30| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 21:24:46| Prawidlowa inicjalizacja
+Info |06.05.2020 21:24:46| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 21:25:10| Prawidlowa inicjalizacja
+Info |06.05.2020 21:25:10| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 21:25:15| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 21:25:15| Obraz podzielony w czasie 16 ms ms.
+Debug |06.05.2020 21:25:16| Utworzono 12 watkow.
+Debug |06.05.2020 21:25:16| Obraz przetworzony w czasie 16 ms ms.
+Debug |06.05.2020 21:25:16| Obraz polaczony w czasie 0 ms ms.
+Debug |06.05.2020 21:25:18| Utworzono 12 watkow.
+Debug |06.05.2020 21:25:18| Obraz przetworzony w czasie 140 ms ms.
+Debug |06.05.2020 21:25:18| Obraz polaczony w czasie 0 ms ms.
+Debug |06.05.2020 21:25:21| Utworzono 12 watkow.
+Debug |06.05.2020 21:25:21| Obraz przetworzony w czasie 156 ms ms.
+Debug |06.05.2020 21:25:21| Obraz polaczony w czasie 0 ms ms.
+Debug |06.05.2020 21:25:22| Utworzono 12 watkow.
+Debug |06.05.2020 21:25:22| Obraz przetworzony w czasie 78 ms ms.
+Debug |06.05.2020 21:25:22| Obraz polaczony w czasie 0 ms ms.
+Debug |06.05.2020 21:25:24| Utworzono 12 watkow.
+Debug |06.05.2020 21:25:24| Obraz przetworzony w czasie 140 ms ms.
+Debug |06.05.2020 21:25:24| Obraz polaczony w czasie 0 ms ms.
+Debug |06.05.2020 21:25:26| Utworzono 12 watkow.
+Debug |06.05.2020 21:25:26| Obraz przetworzony w czasie 63 ms ms.
+Debug |06.05.2020 21:25:26| Obraz polaczony w czasie 15 ms ms.
+Debug |06.05.2020 21:25:29| Utworzono 12 watkow.
+Debug |06.05.2020 21:25:29| Obraz przetworzony w czasie 109 ms ms.
+Debug |06.05.2020 21:25:29| Obraz polaczony w czasie 0 ms ms.
+Info |06.05.2020 21:28:14| Prawidlowa inicjalizacja
+Info |06.05.2020 21:28:14| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 21:28:17| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 21:28:17| Obraz podzielony w czasie 0 ms ms.
+Debug |06.05.2020 21:28:18| Utworzono 12 watkow.
+Debug |06.05.2020 21:28:18| Obraz przetworzony w czasie 78 ms ms.
+Debug |06.05.2020 21:28:18| Obraz polaczony w czasie 0 ms ms.
+Debug |06.05.2020 21:28:19| Utworzono 12 watkow.
+Debug |06.05.2020 21:28:19| Obraz przetworzony w czasie 141 ms ms.
+Debug |06.05.2020 21:28:19| Obraz polaczony w czasie 0 ms ms.
+Info |06.05.2020 21:31:39| Prawidlowa inicjalizacja
+Info |06.05.2020 21:31:39| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 21:33:11| Prawidlowa inicjalizacja
+Info |06.05.2020 21:33:11| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 21:41:43| Prawidlowa inicjalizacja
+Info |06.05.2020 21:41:43| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 21:42:34| Prawidlowa inicjalizacja
+Info |06.05.2020 21:42:34| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 21:43:12| Prawidlowa inicjalizacja
+Info |06.05.2020 21:43:12| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 21:43:28| Prawidlowa inicjalizacja
+Info |06.05.2020 21:43:28| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 21:43:47| Prawidlowa inicjalizacja
+Info |06.05.2020 21:43:47| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 21:46:59| Prawidlowa inicjalizacja
+Info |06.05.2020 21:46:59| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 21:47:25| Prawidlowa inicjalizacja
+Info |06.05.2020 21:47:25| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 21:47:30| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 21:47:30| Obraz podzielony w czasie 0 ms ms.
+Debug |06.05.2020 21:47:31| Utworzono 12 watkow.
+Debug |06.05.2020 21:47:31| Obraz przetworzony w czasie 78 ms ms.
+Debug |06.05.2020 21:47:31| Obraz polaczony w czasie 0 ms ms.
+Info |06.05.2020 21:48:16| Prawidlowa inicjalizacja
+Info |06.05.2020 21:48:16| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 21:48:42| Prawidlowa inicjalizacja
+Info |06.05.2020 21:48:42| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 21:49:20| Prawidlowa inicjalizacja
+Info |06.05.2020 21:49:20| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 21:49:42| Prawidlowa inicjalizacja
+Info |06.05.2020 21:49:42| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 21:50:11| Prawidlowa inicjalizacja
+Info |06.05.2020 21:50:11| Poprawnie uruchomiono okno MainForm
+Info |06.05.2020 21:50:29| Prawidlowa inicjalizacja
+Info |06.05.2020 21:50:29| Poprawnie uruchomiono okno MainForm
+Debug |06.05.2020 21:50:38| Rozpoczęcie dzielenia obrazu
+Debug |06.05.2020 21:50:38| Obraz podzielony w czasie 0 ms ms.
+Debug |06.05.2020 21:50:39| Utworzono 12 watkow.
+Debug |06.05.2020 21:50:39| Obraz przetworzony w czasie 62 ms ms.
+Debug |06.05.2020 21:50:39| Obraz polaczony w czasie 0 ms ms.

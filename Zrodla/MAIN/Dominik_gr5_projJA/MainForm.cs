@@ -53,15 +53,18 @@ namespace ColorToGrayScale
         {
             string[] methodsInDllInterface = typeof(IDll).GetMethods().Where(x => !x.IsSpecialName).Where(x => !x.Name.Contains("Change")).Select(x => x.Name).ToArray();
 
-            int height = (groupBox_methodChoose.Size.Height - 16) / methodsInDllInterface.Count();
+            int numberOfMethods = methodsInDllInterface.Count();
+            int offset = 30;
 
-            for (int i = 0; i < methodsInDllInterface.Count(); i++)
+            int heightOffset = (groupBox_methodChoose.Size.Height - offset) / (numberOfMethods / 2);
+
+            for (int i = 0; i < numberOfMethods; i++)
             {
                 RadioButton temporaryRadioButton = new System.Windows.Forms.RadioButton();
                 temporaryRadioButton.AutoSize = true;
-                temporaryRadioButton.Checked = (i == 0);
+                temporaryRadioButton.Checked = i == 0;
                 temporaryRadioButton.Name = String.Format("{0}_radioButton", methodsInDllInterface[i]);
-                temporaryRadioButton.Size = new System.Drawing.Size(215, 17);
+                temporaryRadioButton.Size = new System.Drawing.Size(groupBox_methodChoose.Size.Width / 2, 17);
                 temporaryRadioButton.TabIndex = 1;
                 temporaryRadioButton.TabStop = true;
                 temporaryRadioButton.Text = methodsInDllInterface[i];
@@ -69,7 +72,13 @@ namespace ColorToGrayScale
 
                 groupBox_methodChoose.Controls.Add(temporaryRadioButton);
 
-                temporaryRadioButton.Location = new System.Drawing.Point(20, 16 + (height * i));
+                int tempWidhtOffset = 30;
+                if (i % 2 != 0)
+                {
+                    tempWidhtOffset += groupBox_methodChoose.Size.Width / 2;
+                }
+
+                temporaryRadioButton.Location = new System.Drawing.Point(tempWidhtOffset, offset + (heightOffset * (i / 2)));
             }
         }
         
