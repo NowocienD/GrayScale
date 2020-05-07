@@ -5,12 +5,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using ColorToGrayScale.helpers;
+using ColorToGrayScale.LoggingService;
 
 namespace ColorToGrayScale
 {
     public class LogerService : ILogerService
     {
         private const string FilePath = "log.txt";
+
+        private readonly LogsForm logForm;
+
+        public LogerService()
+        {
+            this.logForm = new LogsForm(this);
+        }
+
+        public void ShowLogForm()
+        {
+            if (!logForm.IsDisposed)
+            {
+                logForm.Show();
+                Info(String.Format("Wlaczono okno {0}", logForm.GetType().ToString()));
+            }
+            else
+            {
+                Error(String.Format("Okno {0} zorstlo zniszczone.", logForm.GetType().ToString()));
+                System.Windows.Forms.MessageBox.Show(String.Format("Jestem leniwym programista #2 i nie uruchomie wylaczonego okna.{1}{1}Okno {0} zorstlo zniszczone.", logForm.GetType().ToString(), Environment.NewLine));
+            }
+        }
 
         public void Debug(string message)
         {
@@ -32,14 +55,9 @@ namespace ColorToGrayScale
             WriteToLog(String.Format("Error |{0}| {1}{2}", System.DateTime.Now.ToString(), message, Environment.NewLine));
         }
 
-        public string ReadLog(string regexPattern)
+        public string ReadLog(RegexHelper regex)
         {
-            string[] lines = ReadFromFile();
-
-            Regex regex = new Regex(regexPattern);
-
-            var regexMatch = lines.Where<string>(x => regex.IsMatch(x));
-            return string.Join(Environment.NewLine, regexMatch);
+            return regex.SearchString(Environment.NewLine, ReadFromFile());
         }
 
         private void WriteToLog(string message)

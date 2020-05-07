@@ -6,6 +6,8 @@ namespace ColorToGrayScale
 {
     public interface IThreadsService
     {
+        string Time { get; }
+
         int ThreadsCount { set; }
         
         ParameterizedThreadStart ProcessingFunction { set; }

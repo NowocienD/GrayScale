@@ -5,6 +5,7 @@ using SimpleInjector;
 using System.IO;
 using ColorToGrayScale.Exceptions;
 using ColorToGrayScale.LoggingService;
+using ColorToGrayScale.DllManager;
 
 namespace ColorToGrayScale
 {
@@ -24,6 +25,10 @@ namespace ColorToGrayScale
             {
                 throw new DllFileNotExistException("ASM_DLL.dll");
             }
+            if (!Environment.Is64BitProcess)
+            {
+                throw new Notx64bitProcessException();
+            }
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -35,12 +40,11 @@ namespace ColorToGrayScale
         {
             container = new Container();
             container.Register<MainForm>();
-            container.Register<Form, LogForm>();
 
             container.Register<IImageService, ImageService>();
             container.Register<IThreadsService, ThreadService>();
-            container.Register<ITimeCounterService, TimeCounterService>();
             container.RegisterSingleton<ILogerService, LogerService>();
+            container.Register<IDllService, DllService>();
         }
     }
 }

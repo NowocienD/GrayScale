@@ -5,6 +5,7 @@ using System.Text;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
+using System.Security;
 
 namespace ColorToGrayScale
 {

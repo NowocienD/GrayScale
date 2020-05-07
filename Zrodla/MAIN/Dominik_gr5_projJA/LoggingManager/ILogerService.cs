@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ColorToGrayScale.helpers;
 
 namespace ColorToGrayScale
 {
     public interface ILogerService
     {
+        void ShowLogForm();
+
         void Debug(string message);
 
         void Info(string message);
@@ -16,6 +19,6 @@ namespace ColorToGrayScale
         
         void Error(string message);
 
-        string ReadLog(string regexPattern);
+        string ReadLog(RegexHelper regex);
     }
 }

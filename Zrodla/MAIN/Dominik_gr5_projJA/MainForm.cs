@@ -6,6 +6,9 @@ using System.Diagnostics;
 using ColorToGrayScale.Exceptions;
 using System.Collections.Generic;
 using ColorToGrayScale.LoggingService;
+using ColorToGrayScale.DllManager;
+using System.Linq;
+using ColorToGrayScale.helpers;
 
 namespace ColorToGrayScale
 {
@@ -13,35 +16,66 @@ namespace ColorToGrayScale
     {
         private readonly IImageService imageService;
 
+        private readonly IDllService dllManager;
+
         private readonly IThreadsService threadsService;
 
-        private readonly ITimeCounterService timeCounter;
-
         private readonly ILogerService loger;
-
-        private readonly LogForm logForm;
-
+        
         private int processorCount;
 
         public MainForm(
             IImageService _imageService,
             IThreadsService _threadsService,
-            ITimeCounterService _timeCounterService,
             ILogerService logerService,
-            Form logForm)
+            IDllService dllManager)
         {
             InitializeComponent();
+            AddControlsToGroupbox(groupBox_methodChoose);
+
             this.imageService = _imageService;
             this.threadsService = _threadsService;
-            this.timeCounter = _timeCounterService;
             this.loger = logerService;
-            this.logForm = logForm as LogForm;
+            this.dllManager = dllManager;
 
             loger.Info(String.Format("Prawidlowa inicjalizacja"));
         }
 
         public delegate void EndOfThreads();
 
+        private void AddControlsToGroupbox(GroupBox groupBox_methodChoose)
+        {
+            string[] methodsInDllInterface = typeof(IDll).GetMethods().Where(x => !x.IsSpecialName).Where(x => !x.Name.Contains("Change")).Select(x => x.Name).ToArray();
+
+            int numberOfMethods = methodsInDllInterface.Count();
+            int offset = 30;
+
+            int heightOffset = (groupBox_methodChoose.Size.Height - offset) / numberOfMethods * 2;
+
+            for (int i = 0; i < numberOfMethods; i++)
+            {
+                RadioButton temporaryRadioButton = new System.Windows.Forms.RadioButton();
+                temporaryRadioButton.AutoSize = true;
+                temporaryRadioButton.Checked = i == 0;
+                temporaryRadioButton.Name = String.Format("{0}_radioButton", methodsInDllInterface[i]);
+                temporaryRadioButton.Size = new System.Drawing.Size(groupBox_methodChoose.Size.Width / 2, 17);
+                temporaryRadioButton.TabIndex = 1;
+                temporaryRadioButton.TabStop = true;
+                temporaryRadioButton.Text = methodsInDllInterface[i];
+                temporaryRadioButton.UseVisualStyleBackColor = true;
+
+                groupBox_methodChoose.Controls.Add(temporaryRadioButton);
+
+                int tempWidhtOffset = 30;
+                if (i % 2 != 0)
+                {
+                    tempWidhtOffset += groupBox_methodChoose.Size.Width / 2;
+                }
+
+                temporaryRadioButton.Location = new System.Drawing.Point(tempWidhtOffset, offset + (heightOffset * (i / 2)));
+            }
+        }
+        
         private void MainForm_Load(object sender, EventArgs e)
         {
             this.processorCount = Environment.ProcessorCount;
@@ -64,12 +98,12 @@ namespace ColorToGrayScale
             {
                 Bitmap imageToProcess = new Bitmap(Image.FromFile(openFileDialog.FileName));
 
-                loger.Debug("Rozpoczęcie dzielenia obrazu");
-                timeCounter.Start();
+                TimeCounterHelper time = new TimeCounterHelper();
+                time.Start();
                 imageService.ImageDivider(imageToProcess);
-                timeCounter.Stop();
-                time_divide_label.Text = timeCounter.Time;
-                loger.Debug(String.Format("Obraz podzielony w czasie {0} ms.", timeCounter.Time));
+                time.Stop();
+                time_divide_label.Text = time.Time;
+                loger.Debug(String.Format("Obraz podzielony w czasie {0} ms.", time.Time));
 
                 pictureBox_original.Image = imageToProcess;
                 BitmapParts_label.Text = imageService.Length.ToString();
@@ -89,7 +123,6 @@ namespace ColorToGrayScale
             {
                 loger.Error(exception.Message);
 
-                //inne podejscie do wykatkow. Próba implementacji RTTI w języku C# 
                 if (exception is ArgumentException)
                 {
                     MessageBox.Show(exception.GetType().ToString());
@@ -100,125 +133,58 @@ namespace ColorToGrayScale
                 }
                 else
                 {
-                    MessageBox.Show(String.Format("Błąd łądowania zdjęcia.\n\r\n\r{0}", exception.Message));
+                    MessageBox.Show(String.Format("Błąd łądowania zdjęcia.{0}{0}{1}", Environment.NewLine, exception.Message));
                 }
             }
         }
 
         private void UpdateModifiedPhoto()
         {
-            timeCounter.Stop();
-
             if (label_time.InvokeRequired)
             {
                 label_time.Invoke(new EndOfThreads(UpdateModifiedPhoto));
             }
             else
             {
-                label_time.Text = timeCounter.Time;
-                loger.Debug(String.Format("Obraz przetworzony w czasie {0} ms.", timeCounter.Time));
+                label_time.Text = threadsService.Time;
+                loger.Debug(String.Format("Obraz przetworzony w czasie {0} ms.", threadsService.Time));
 
-                timeCounter.Start();
+                TimeCounterHelper time = new TimeCounterHelper();
+                time.Start();
                 pictureBox_modified.Image = imageService.JoinIntoBigOne();
-                timeCounter.Stop();
-                time_join_label.Text = timeCounter.Time;
-                loger.Debug(String.Format("Obraz polaczony w czasie {0} ms.", timeCounter.Time));
+                time.Stop();
+                time_join_label.Text = time.Time;
+                loger.Debug(String.Format("Obraz polaczony w czasie {0} ms.", time.Time));
 
                 StartBTN.Enabled = true;
             }
         }
-
-        private void ChooseFunction(IDll dll)
-        {
-            if (RSCC_radio.Checked)
-            {
-                dll.ProcessingMethod = dll.SingleColorChannel_Red;
-            }
-            else if (GSCC_radio.Checked)
-            {
-                dll.ProcessingMethod = dll.SingleColorChannel_Green;
-            }
-            else if (BSCC_radio.Checked)
-            {
-                dll.ProcessingMethod = dll.SingleColorChannel_Blue;
-            }
-            else if (decomposition_max_radio.Checked)
-            {
-                dll.ProcessingMethod = dll.Decomposition_max;
-            }
-            else if (decomposition_min_radio.Checked)
-            {
-                dll.ProcessingMethod = dll.Decomposition_min;
-            }
-            else if (desaturation_radio.Checked)
-            {
-                dll.ProcessingMethod = dll.Desaturation;
-            }
-            else
-            {
-                throw new Exception();
-            }
-        }
-
-        private IDll ChooseDll()
-        {
-            if (radioButton_ASM.Checked == true)
-            {
-                return new AsmDll();
-            }
-            else if (radioButton_CPP.Checked == true)
-            {
-                return new CppDll();
-            }
-
-            throw new Exception();
-        }
-
+        
         private void StartBTN_Click(object sender, EventArgs e)
         {
             label_time.Text = string.Empty;
             StartBTN.Enabled = false;
 
-            IDll dll = ChooseDll();
-            ChooseFunction(dll);            
+            dllManager.ChooseDll(this.groupBox_dllChose);
+            dllManager.ChooseMethod(this.groupBox_methodChoose);
+            IDll dll = dllManager.Dll;
             dll.Pixels = imageService.CopyOfOryginalImage;
 
             threadsService.ProcessingFunction = dll.ChangeColorToGrayScale;
             threadsService.EndOfThreads = new EndOfThreads(UpdateModifiedPhoto);
             threadsService.ThreadsCount = processorCount;
                         
-            timeCounter.Start();
             threadsService.StartProcessing();
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            const int RamMBUsageWarning = 1000;
-            Process proc = Process.GetCurrentProcess();
-            double memory = Math.Round(proc.PrivateMemorySize64 / 1e+6, 0);
-            proc.Dispose();
-
-            if (memory > RamMBUsageWarning)
-            {
-                loger.Warning(String.Format("Zuycie ramu większe niż {0}MB.", RamMBUsageWarning));
-            }
-
-            RAMUsage_label.Text = memory.ToString();
+            RAMUsage_label.Text = new RamUsageHelper().RamUsage();
         }
 
         private void OpenLogs_Button_Click(object sender, EventArgs e)
         {
-            if (!logForm.IsDisposed)
-            {
-                logForm.Show();
-                loger.Debug(String.Format("Wcisnieto przycisk {0}", (sender as Button).Text));
-                loger.Info(String.Format("Wlaczono okno {0}", (logForm as Form).Text));
-            }
-            else
-            {
-                loger.Warning(String.Format("Okno {0} zorstlo zniszczone.", logForm.GetType().ToString()));
-                MessageBox.Show(String.Format("Jestem leniwym programista #2 i nie uruchomie wylaczonego okna.{1}{1}Okno {0} zorstlo zniszczone.", logForm.GetType().ToString(), Environment.NewLine));
-            }
+            loger.ShowLogForm();
         }
     }
 }

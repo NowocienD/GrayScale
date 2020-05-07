@@ -1,6 +1,6 @@
 ﻿namespace ColorToGrayScale.LoggingService
 {
-    partial class LogForm
+    partial class LogsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,10 +31,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Warning_checkBox = new System.Windows.Forms.CheckBox();
             this.Info_checkBox = new System.Windows.Forms.CheckBox();
-            this.Debug_checkBox = new System.Windows.Forms.CheckBox();
             this.Error_checkBox = new System.Windows.Forms.CheckBox();
+            this.Debug_checkBox = new System.Windows.Forms.CheckBox();
             this.Output_textBox = new System.Windows.Forms.TextBox();
             this.Search_Button = new System.Windows.Forms.Button();
+            this.hide_button = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,16 +72,6 @@
             this.Info_checkBox.Text = "Info";
             this.Info_checkBox.UseVisualStyleBackColor = true;
             // 
-            // Debug_checkBox
-            // 
-            this.Debug_checkBox.AutoSize = true;
-            this.Debug_checkBox.Location = new System.Drawing.Point(6, 19);
-            this.Debug_checkBox.Name = "Debug_checkBox";
-            this.Debug_checkBox.Size = new System.Drawing.Size(58, 17);
-            this.Debug_checkBox.TabIndex = 0;
-            this.Debug_checkBox.Text = "Debug";
-            this.Debug_checkBox.UseVisualStyleBackColor = true;
-            // 
             // Error_checkBox
             // 
             this.Error_checkBox.AutoSize = true;
@@ -90,6 +81,16 @@
             this.Error_checkBox.TabIndex = 3;
             this.Error_checkBox.Text = "Error";
             this.Error_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // Debug_checkBox
+            // 
+            this.Debug_checkBox.AutoSize = true;
+            this.Debug_checkBox.Location = new System.Drawing.Point(6, 19);
+            this.Debug_checkBox.Name = "Debug_checkBox";
+            this.Debug_checkBox.Size = new System.Drawing.Size(58, 17);
+            this.Debug_checkBox.TabIndex = 0;
+            this.Debug_checkBox.Text = "Debug";
+            this.Debug_checkBox.UseVisualStyleBackColor = true;
             // 
             // Output_textBox
             // 
@@ -102,19 +103,30 @@
             // 
             // Search_Button
             // 
-            this.Search_Button.Location = new System.Drawing.Point(12, 415);
+            this.Search_Button.Location = new System.Drawing.Point(12, 336);
             this.Search_Button.Name = "Search_Button";
-            this.Search_Button.Size = new System.Drawing.Size(141, 23);
+            this.Search_Button.Size = new System.Drawing.Size(141, 48);
             this.Search_Button.TabIndex = 5;
             this.Search_Button.Text = "Szukaj";
             this.Search_Button.UseVisualStyleBackColor = true;
             this.Search_Button.Click += new System.EventHandler(this.Search_Button_Click);
+            // 
+            // hide_button
+            // 
+            this.hide_button.Location = new System.Drawing.Point(12, 390);
+            this.hide_button.Name = "hide_button";
+            this.hide_button.Size = new System.Drawing.Size(141, 48);
+            this.hide_button.TabIndex = 6;
+            this.hide_button.Text = "Ukryj";
+            this.hide_button.UseVisualStyleBackColor = true;
+            this.hide_button.Click += new System.EventHandler(this.Hide_button_Click);
             // 
             // LogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.hide_button);
             this.Controls.Add(this.Search_Button);
             this.Controls.Add(this.Output_textBox);
             this.Controls.Add(this.groupBox1);
@@ -136,5 +148,6 @@
         private System.Windows.Forms.CheckBox Error_checkBox;
         private System.Windows.Forms.TextBox Output_textBox;
         private System.Windows.Forms.Button Search_Button;
+        private System.Windows.Forms.Button hide_button;
     }
 }
