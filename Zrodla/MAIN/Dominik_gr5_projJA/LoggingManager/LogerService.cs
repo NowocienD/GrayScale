@@ -69,7 +69,7 @@ namespace ColorToGrayScale
         {
             if (!File.Exists(FilePath))
             {
-                return new string[0];
+                return Array.Empty<string>();
             }
 
             return File.ReadAllLines(FilePath);

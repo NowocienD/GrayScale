@@ -4,7 +4,6 @@ using System.Linq;
 using System.Security;
 using System.Text;
 using System.Threading.Tasks;
-
 using System.Windows.Forms;
 
 namespace ColorToGrayScale.DllManager
@@ -30,7 +29,7 @@ namespace ColorToGrayScale.DllManager
         {
             if (Dll == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(String.Format("In var {0}", groupBox.Name));
             }
 
             // wybor metody na podsawie tekstu z radioButtona

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ColorToGrayScale.Exceptions
 {
+    [Serializable]
     public class NotDivisibleBy16Exception : Exception
     {
         public NotDivisibleBy16Exception()

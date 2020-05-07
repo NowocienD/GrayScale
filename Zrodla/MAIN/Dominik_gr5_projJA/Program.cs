@@ -11,20 +11,20 @@ namespace ColorToGrayScale
 {
     public static class Program
     {
+        private static readonly string[] LibList = { "C_DLL.dll", "ASM_DLL.dll" };
+
         private static Container container;
 
         [STAThread]
         public static void Main()
         {
-            if (!File.Exists("C_DLL.dll"))
+            foreach (string lib in LibList)
             {
-                // tak, mam swiadomosc istnienia DllNotFoundException();
-                throw new DllFileNotExistException("C_DLL.dll");
-            }
-
-            if (!File.Exists("ASM_DLL.dll"))
-            {
-                throw new DllFileNotExistException("ASM_DLL.dll");
+                if (!File.Exists(lib))
+                {
+                    // tak, mam swiadomosc istnienia DllNotFoundException();
+                    throw new DllFileNotExistException(lib);
+                }
             }
 
             if (!Environment.Is64BitProcess)

@@ -1,10 +1,8 @@
 ﻿namespace ColorToGrayScale.Helpers
 {
-    public class RamUsageHelper
+    public static class RamUsageHelper
     {
-        private const int RamMBUsageWarning = 1000; // in MB
-
-        public string RamUsage()
+        public static string RamUsage()
         {
             System.Diagnostics.Process proc = System.Diagnostics.Process.GetCurrentProcess();
             double memory = System.Math.Round(proc.PrivateMemorySize64 / 1e+6, 0);

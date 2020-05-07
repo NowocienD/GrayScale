@@ -47,7 +47,7 @@ namespace ColorToGrayScale
         {
             string[] methodsInDllInterface = typeof(IDll).GetMethods().Where(x => !x.IsSpecialName).Where(x => !x.Name.Contains("Change")).Select(x => x.Name).ToArray();
 
-            int numberOfMethods = methodsInDllInterface.Count();
+            int numberOfMethods = methodsInDllInterface.Length;
             int offset = 30;
 
             int heightOffset = (groupBox_methodChoose.Size.Height - offset) / numberOfMethods * 2;
@@ -180,7 +180,7 @@ namespace ColorToGrayScale
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            RAMUsage_label.Text = new RamUsageHelper().RamUsage();
+            RAMUsage_label.Text = RamUsageHelper.RamUsage();
         }
 
         private void OpenLogs_Button_Click(object sender, EventArgs e)
