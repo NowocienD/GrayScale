@@ -2,7 +2,7 @@
 
 namespace ColorToGrayScale
 {
-    public class TimeCounterService : ITimeCounterService
+    public class TimeCounterHelper
     {
         private int startTime;
 

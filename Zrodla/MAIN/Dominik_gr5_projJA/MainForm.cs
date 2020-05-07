@@ -20,8 +20,6 @@ namespace ColorToGrayScale
 
         private readonly IThreadsService threadsService;
 
-        private readonly ITimeCounterService timeCounter;
-
         private readonly ILogerService loger;
 
         private readonly LogForm logForm;
@@ -31,7 +29,6 @@ namespace ColorToGrayScale
         public MainForm(
             IImageService _imageService,
             IThreadsService _threadsService,
-            ITimeCounterService _timeCounterService,
             ILogerService logerService,
             Form logForm,
             IDllService dllManager)
@@ -41,7 +38,6 @@ namespace ColorToGrayScale
 
             this.imageService = _imageService;
             this.threadsService = _threadsService;
-            this.timeCounter = _timeCounterService;
             this.loger = logerService;
             this.logForm = logForm as LogForm;
             this.dllManager = dllManager;
@@ -106,12 +102,12 @@ namespace ColorToGrayScale
             {
                 Bitmap imageToProcess = new Bitmap(Image.FromFile(openFileDialog.FileName));
 
-                loger.Debug("Rozpoczęcie dzielenia obrazu");
-                timeCounter.Start();
+                TimeCounterHelper time = new TimeCounterHelper();
+                time.Start();
                 imageService.ImageDivider(imageToProcess);
-                timeCounter.Stop();
-                time_divide_label.Text = timeCounter.Time;
-                loger.Debug(String.Format("Obraz podzielony w czasie {0} ms.", timeCounter.Time));
+                time.Stop();
+                time_divide_label.Text = time.Time;
+                loger.Debug(String.Format("Obraz podzielony w czasie {0} ms.", time.Time));
 
                 pictureBox_original.Image = imageToProcess;
                 BitmapParts_label.Text = imageService.Length.ToString();
@@ -141,30 +137,28 @@ namespace ColorToGrayScale
                 }
                 else
                 {
-                    MessageBox.Show(String.Format("Błąd łądowania zdjęcia.\n\r\n\r{0}", exception.Message));
+                    MessageBox.Show(String.Format("Błąd łądowania zdjęcia.{0}{0}{1}", Environment.NewLine, exception.Message));
                 }
             }
         }
 
         private void UpdateModifiedPhoto()
         {
-            timeCounter.Stop();
-
             if (label_time.InvokeRequired)
             {
                 label_time.Invoke(new EndOfThreads(UpdateModifiedPhoto));
             }
             else
             {
-                label_time.Text = timeCounter.Time;
-                loger.Debug(String.Format("Obraz przetworzony w czasie {0} ms.", timeCounter.Time));
+                label_time.Text = threadsService.Time;
+                loger.Debug(String.Format("Obraz przetworzony w czasie {0} ms.", threadsService.Time));
 
-                TimeCounterService time = new TimeCounterService();
+                TimeCounterHelper time = new TimeCounterHelper();
                 time.Start();
                 pictureBox_modified.Image = imageService.JoinIntoBigOne();
                 time.Stop();
                 time_join_label.Text = time.Time;
-                loger.Debug(String.Format("Obraz polaczony w czasie {0} ms.", timeCounter.Time));
+                loger.Debug(String.Format("Obraz polaczony w czasie {0} ms.", time.Time));
 
                 StartBTN.Enabled = true;
             }
@@ -184,7 +178,6 @@ namespace ColorToGrayScale
             threadsService.EndOfThreads = new EndOfThreads(UpdateModifiedPhoto);
             threadsService.ThreadsCount = processorCount;
                         
-            timeCounter.Start();
             threadsService.StartProcessing();
         }
 
