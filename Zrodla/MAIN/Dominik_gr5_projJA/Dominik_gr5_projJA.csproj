@@ -92,6 +92,7 @@
     <Compile Include="DllServices\CppDll.cs" />
     <Compile Include="DllServices\DllService.cs" />
     <Compile Include="DllServices\IDllService.cs" />
+    <Compile Include="Exceptions\Notx64bitProcessException.cs" />
     <Compile Include="Exceptions\DllFileNotExistException.cs" />
     <Compile Include="Exceptions\NotDivisibleBy16Exception.cs" />
     <Compile Include="DllServices\IDll.cs" />

@@ -21,16 +21,13 @@ namespace ColorToGrayScale
         private readonly IThreadsService threadsService;
 
         private readonly ILogerService loger;
-
-        private readonly LogForm logForm;
-
+        
         private int processorCount;
 
         public MainForm(
             IImageService _imageService,
             IThreadsService _threadsService,
             ILogerService logerService,
-            Form logForm,
             IDllService dllManager)
         {
             InitializeComponent();
@@ -39,7 +36,6 @@ namespace ColorToGrayScale
             this.imageService = _imageService;
             this.threadsService = _threadsService;
             this.loger = logerService;
-            this.logForm = logForm as LogForm;
             this.dllManager = dllManager;
 
             loger.Info(String.Format("Prawidlowa inicjalizacja"));
@@ -188,17 +184,7 @@ namespace ColorToGrayScale
 
         private void OpenLogs_Button_Click(object sender, EventArgs e)
         {
-            if (!logForm.IsDisposed)
-            {
-                logForm.Show();
-                loger.Debug(String.Format("Wcisnieto przycisk {0}", (sender as Button).Text));
-                loger.Info(String.Format("Wlaczono okno {0}", (logForm as Form).Text));
-            }
-            else
-            {
-                loger.Warning(String.Format("Okno {0} zorstlo zniszczone.", logForm.GetType().ToString()));
-                MessageBox.Show(String.Format("Jestem leniwym programista #2 i nie uruchomie wylaczonego okna.{1}{1}Okno {0} zorstlo zniszczone.", logForm.GetType().ToString(), Environment.NewLine));
-            }
+            loger.ShowLogForm();
         }
     }
 }
