@@ -8,55 +8,36 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using ColorToGrayScale.helpers;
 
 namespace ColorToGrayScale.LoggingService
 {
     public partial class LogForm : Form
     {
         private readonly ILogerService loger;
-
+        
         public LogForm(ILogerService logerService)
         {
             InitializeComponent();
+            this.ControlBox = false;
             this.loger = logerService;
-        }
-
-        private void AddSeparatorToRegex(ref string regexPattern)
-        {
-            if (regexPattern.Length > 0)
-            {
-                regexPattern += "|";
-            }
         }
 
         private void Search_Button_Click(object sender, EventArgs e)
         {
-            string regexPattern = string.Empty;
-            if (Debug_checkBox.Checked)
-            {
-                AddSeparatorToRegex(ref regexPattern);
-                regexPattern += "(?:Debug)";
-            }
+            RegexHelper regex = new RegexHelper();
 
-            if (Info_checkBox.Checked)
-            {
-                AddSeparatorToRegex(ref regexPattern);
-                regexPattern += "(?:Info)";
-            }
+            regex.AddSearchPattern(Debug_checkBox.Checked, "(?:Debug)");
+            regex.AddSearchPattern(Info_checkBox.Checked, "(?:Info)");
+            regex.AddSearchPattern(Warning_checkBox.Checked, "(?:Warning)");
+            regex.AddSearchPattern(Error_checkBox.Checked, "(?:Error)");
 
-            if (Warning_checkBox.Checked)
-            {
-                AddSeparatorToRegex(ref regexPattern);
-                regexPattern += "(?:Warning)";
-            }
+            Output_textBox.Text = loger.ReadLog(regex);
+        }
 
-            if (Error_checkBox.Checked)
-            {
-                AddSeparatorToRegex(ref regexPattern);
-                regexPattern += "(?:Error)";
-            }
-
-            Output_textBox.Text = loger.ReadLog(regexPattern);
+        private void Hide_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

@@ -5,13 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using ColorToGrayScale.helpers;
 
 namespace ColorToGrayScale
 {
     public class LogerService : ILogerService
     {
         private const string FilePath = "log.txt";
-
+        
         public void Debug(string message)
         {
             WriteToLog(String.Format("Debug |{0}| {1}{2}", System.DateTime.Now.ToString(), message, Environment.NewLine));
@@ -32,14 +33,9 @@ namespace ColorToGrayScale
             WriteToLog(String.Format("Error |{0}| {1}{2}", System.DateTime.Now.ToString(), message, Environment.NewLine));
         }
 
-        public string ReadLog(string regexPattern)
+        public string ReadLog(RegexHelper regex)
         {
-            string[] lines = ReadFromFile();
-
-            Regex regex = new Regex(regexPattern);
-
-            var regexMatch = lines.Where<string>(x => regex.IsMatch(x));
-            return string.Join(Environment.NewLine, regexMatch);
+            return regex.SearchString(Environment.NewLine, ReadFromFile());
         }
 
         private void WriteToLog(string message)
