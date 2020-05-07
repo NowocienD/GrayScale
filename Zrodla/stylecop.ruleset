@@ -2,37 +2,12 @@
 <RuleSet Name="Override Rules" Description="Override Rules for the solution." ToolsVersion="1.1.118">
   <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
 
-    <Rule Id="CS1591" Action="None" />
-    <Rule Id="SA1005" Action="None" />
     <Rule Id="SA1101" Action="None" />
     <Rule Id="SA1121" Action="None" />
-    <Rule Id="SA1123" Action="None" />
-    <Rule Id="SA1124" Action="None" />
-    <Rule Id="SA1310" Action="None" />
-    <Rule Id="SA1502" Action="None" />
-    <Rule Id="SA1503" Action="None" />
-    <Rule Id="SA1512" Action="None" />
-    <Rule Id="SA1513" Action="None" />
+    <Rule Id="SA1200" Action="None" />
     <Rule Id="SA1600" Action="None" />
     <Rule Id="SA1601" Action="None" />
-    <Rule Id="SA1602" Action="None" />
-    <Rule Id="SA1611" Action="None" />
-    <Rule Id="SA1615" Action="None" />
-    <Rule Id="SA1618" Action="None" />
-    <Rule Id="SA1623" Action="None" />
-    <Rule Id="SA1629" Action="None" />
     <Rule Id="SA1633" Action="None" />
-    <Rule Id="SA1642" Action="None" />
-    <Rule Id="SA1652" Action="None" />
-    
-    <Rule Id="SA1200" Action="None" />
-    <Rule Id="SA1309" Action="None" />
-    <Rule Id="SA0001" Action="None" />
-    <Rule Id="SA1300" Action="None" />
-    <Rule Id="SA1208" Action="None" />
-    <Rule Id="SA1210" Action="None" />
-    <Rule Id="SA1028" Action="None" />
-    <Rule Id="SA1313" Action="None" />
    
     <!-- <Rule Id="SA1507" Action="None" /> -->
   </Rules>

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Drawing;
-using System.Windows.Forms;
-using SimpleInjector;
 using System.IO;
+using System.Windows.Forms;
+using ColorToGrayScale.DllManager;
 using ColorToGrayScale.Exceptions;
 using ColorToGrayScale.LoggingService;
-using ColorToGrayScale.DllManager;
+using SimpleInjector;
 
 namespace ColorToGrayScale
 {
@@ -18,13 +18,15 @@ namespace ColorToGrayScale
         {
             if (!File.Exists("C_DLL.dll"))
             {
-                //tak, mam swiadomosc istnienia DllNotFoundException();
+                // tak, mam swiadomosc istnienia DllNotFoundException();
                 throw new DllFileNotExistException("C_DLL.dll");
             }
+
             if (!File.Exists("ASM_DLL.dll"))
             {
                 throw new DllFileNotExistException("ASM_DLL.dll");
             }
+
             if (!Environment.Is64BitProcess)
             {
                 throw new Notx64bitProcessException();
@@ -32,7 +34,7 @@ namespace ColorToGrayScale
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Bootstrap(); 
+            Bootstrap();
             Application.Run(container.GetInstance<MainForm>());
         }
 

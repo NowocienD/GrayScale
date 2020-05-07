@@ -11,21 +11,22 @@ namespace ColorToGrayScale
 
         private static int count = 0;
 
+        private readonly TimeCounterHelper timeCounter;
+
         private readonly ILogerService loger;
 
         private Thread[] threads;
 
-        private TimeCounterHelper timeCounter = new TimeCounterHelper();
-
         public ThreadService(ILogerService logerService)
         {
             this.loger = logerService;
+            this.timeCounter = new TimeCounterHelper();
         }
-        
+
         public string Time { get => timeCounter.Time; }
 
         public int ThreadsCount { internal get; set; }
-                
+
         public EndOfThreads EndOfThreads { internal get; set; }
 
         public ParameterizedThreadStart ProcessingFunction { internal get; set; }
@@ -38,6 +39,7 @@ namespace ColorToGrayScale
                 i = count;
                 count++;
             }
+
             return i;
         }
 
@@ -59,6 +61,7 @@ namespace ColorToGrayScale
                 while (!IsDone())
                 {
                 }
+
                 EndOfThreads();
             });
 
@@ -72,8 +75,9 @@ namespace ColorToGrayScale
                 if (t.ThreadState != ThreadState.Stopped)
                 {
                     return false;
-                } 
+                }
             }
+
             timeCounter.Stop();
             return true;
         }

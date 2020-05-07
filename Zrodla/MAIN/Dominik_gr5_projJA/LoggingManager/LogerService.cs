@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using ColorToGrayScale.helpers;
 using ColorToGrayScale.LoggingService;
 
@@ -18,7 +18,7 @@ namespace ColorToGrayScale
 
         public LogerService()
         {
-            this.logForm = new LogsForm(this);
+            logForm = new LogsForm(this);
         }
 
         public void ShowLogForm()
@@ -71,6 +71,7 @@ namespace ColorToGrayScale
             {
                 return new string[0];
             }
+
             return File.ReadAllLines(FilePath);
         }
     }

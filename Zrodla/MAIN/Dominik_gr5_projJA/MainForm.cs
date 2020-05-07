@@ -1,14 +1,14 @@
 using System;
-using System.Drawing;
-using System.Windows.Forms;
-using System.Runtime.InteropServices;
-using System.Diagnostics;
-using ColorToGrayScale.Exceptions;
 using System.Collections.Generic;
-using ColorToGrayScale.LoggingService;
-using ColorToGrayScale.DllManager;
+using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
+using ColorToGrayScale.DllManager;
+using ColorToGrayScale.Exceptions;
 using ColorToGrayScale.helpers;
+using ColorToGrayScale.LoggingService;
 
 namespace ColorToGrayScale
 {
@@ -21,20 +21,20 @@ namespace ColorToGrayScale
         private readonly IThreadsService threadsService;
 
         private readonly ILogerService loger;
-        
+
         private int processorCount;
 
         public MainForm(
-            IImageService _imageService,
-            IThreadsService _threadsService,
+            IImageService imageService,
+            IThreadsService threadsService,
             ILogerService logerService,
             IDllService dllManager)
         {
             InitializeComponent();
             AddControlsToGroupbox(groupBox_methodChoose);
 
-            this.imageService = _imageService;
-            this.threadsService = _threadsService;
+            this.imageService = imageService;
+            this.threadsService = threadsService;
             this.loger = logerService;
             this.dllManager = dllManager;
 
@@ -54,28 +54,29 @@ namespace ColorToGrayScale
 
             for (int i = 0; i < numberOfMethods; i++)
             {
-                RadioButton temporaryRadioButton = new System.Windows.Forms.RadioButton();
-                temporaryRadioButton.AutoSize = true;
-                temporaryRadioButton.Checked = i == 0;
-                temporaryRadioButton.Name = String.Format("{0}_radioButton", methodsInDllInterface[i]);
-                temporaryRadioButton.Size = new System.Drawing.Size(groupBox_methodChoose.Size.Width / 2, 17);
-                temporaryRadioButton.TabIndex = 1;
-                temporaryRadioButton.TabStop = true;
-                temporaryRadioButton.Text = methodsInDllInterface[i];
-                temporaryRadioButton.UseVisualStyleBackColor = true;
-
-                groupBox_methodChoose.Controls.Add(temporaryRadioButton);
-
                 int tempWidhtOffset = 30;
                 if (i % 2 != 0)
                 {
                     tempWidhtOffset += groupBox_methodChoose.Size.Width / 2;
                 }
 
-                temporaryRadioButton.Location = new System.Drawing.Point(tempWidhtOffset, offset + (heightOffset * (i / 2)));
+                RadioButton temporaryRadioButton = new System.Windows.Forms.RadioButton
+                {
+                    AutoSize = true,
+                    Checked = i == 0,
+                    Name = String.Format("{0}_radioButton", methodsInDllInterface[i]),
+                    Size = new System.Drawing.Size(groupBox_methodChoose.Size.Width / 2, 17),
+                    TabIndex = 1,
+                    TabStop = true,
+                    Text = methodsInDllInterface[i],
+                    UseVisualStyleBackColor = true,
+                    Location = new System.Drawing.Point(tempWidhtOffset, offset + (heightOffset * (i / 2))),
+                };
+
+                groupBox_methodChoose.Controls.Add(temporaryRadioButton);
             }
         }
-        
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             this.processorCount = Environment.ProcessorCount;
@@ -159,7 +160,7 @@ namespace ColorToGrayScale
                 StartBTN.Enabled = true;
             }
         }
-        
+
         private void StartBTN_Click(object sender, EventArgs e)
         {
             label_time.Text = string.Empty;
@@ -173,7 +174,7 @@ namespace ColorToGrayScale
             threadsService.ProcessingFunction = dll.ChangeColorToGrayScale;
             threadsService.EndOfThreads = new EndOfThreads(UpdateModifiedPhoto);
             threadsService.ThreadsCount = processorCount;
-                        
+
             threadsService.StartProcessing();
         }
 
