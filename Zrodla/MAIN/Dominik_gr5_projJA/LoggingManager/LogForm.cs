@@ -12,11 +12,11 @@ using ColorToGrayScale.helpers;
 
 namespace ColorToGrayScale.LoggingService
 {
-    public partial class LogForm : Form
+    public partial class LogsForm : Form
     {
         private readonly ILogerService loger;
         
-        public LogForm(ILogerService logerService)
+        public LogsForm(ILogerService logerService)
         {
             InitializeComponent();
             this.ControlBox = false;

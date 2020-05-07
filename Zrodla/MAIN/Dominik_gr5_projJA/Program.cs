@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
 using SimpleInjector;
@@ -30,7 +30,6 @@ namespace ColorToGrayScale
                 throw new Notx64bitProcessException();
             }
 
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Bootstrap(); 
@@ -41,7 +40,6 @@ namespace ColorToGrayScale
         {
             container = new Container();
             container.Register<MainForm>();
-            container.Register<Form, LogForm>();
 
             container.Register<IImageService, ImageService>();
             container.Register<IThreadsService, ThreadService>();

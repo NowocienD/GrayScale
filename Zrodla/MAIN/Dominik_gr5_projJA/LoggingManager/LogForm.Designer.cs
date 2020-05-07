@@ -1,6 +1,6 @@
 ﻿namespace ColorToGrayScale.LoggingService
 {
-    partial class LogForm
+    partial class LogsForm
     {
         /// <summary>
         /// Required designer variable.
