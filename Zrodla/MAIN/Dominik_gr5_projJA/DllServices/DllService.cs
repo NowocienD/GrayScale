@@ -21,8 +21,13 @@ namespace ColorToGrayScale.DllManager
         public void ChooseDll(GroupBox groupBox)
         {
             // wybor ddl na podsawie tekstu z radioButtona zaznaczonego w wyslanym goupboxie
-            RadioButton checkedRadioButton = groupBox.Controls.Cast<RadioButton>().Where(x => x.Checked).FirstOrDefault();
-            Dll = dllTypes.Where(x => checkedRadioButton.Text.ToUpper().Contains(x.Key)).First().Value;
+            RadioButton checkedRadioButton = groupBox.Controls.Cast<RadioButton>()
+                                                              .Where(x => x.Checked)
+                                                              .FirstOrDefault();
+
+            Dll = dllTypes.Where(x => checkedRadioButton.Text.ToUpper().Contains(x.Key))
+                          .First()
+                          .Value;
         }
 
         public void ChooseMethod(GroupBox groupBox)
@@ -33,9 +38,15 @@ namespace ColorToGrayScale.DllManager
             }
 
             // wybor metody na podsawie tekstu z radioButtona
-            RadioButton checkedRadioButton = groupBox.Controls.Cast<RadioButton>().Where(x => x.Checked).First();
+            RadioButton checkedRadioButton = groupBox.Controls
+                .Cast<RadioButton>()
+                .Where(x => x.Checked)
+                .First();
 
-            var selectedMethod = Dll.GetType().GetMethods().Where(x => checkedRadioButton.Name.ToUpper().Contains(x.Name.ToUpper())).First();
+            var selectedMethod = Dll.GetType()
+                .GetMethods()
+                .Where(x => checkedRadioButton.Name.ToUpper().Contains(x.Name.ToUpper()))
+                .First();
 
             Dll.ProcessingMethod = (ProcessingMethodDelegate)Delegate.CreateDelegate(typeof(ProcessingMethodDelegate), null, selectedMethod);
         }

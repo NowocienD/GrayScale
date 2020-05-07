@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,6 +21,11 @@ namespace ColorToGrayScale.Exceptions
 
         public NotDivisibleBy16Exception(string message, Exception innerException)
             : base(message, innerException)
+        {
+        }
+
+        protected NotDivisibleBy16Exception(SerializationInfo info, StreamingContext context)
+            : base(info, context)
         {
         }
     }

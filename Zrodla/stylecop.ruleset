@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RuleSet Name="Override Rules" Description="Override Rules for the solution." ToolsVersion="1.1.118">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Override Rules" Description="Override Rules for the solution." ToolsVersion="1.1">
   <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
 
     <Rule Id="SA1101" Action="None" />
@@ -8,6 +8,7 @@
     <Rule Id="SA1600" Action="None" />
     <Rule Id="SA1601" Action="None" />
     <Rule Id="SA1633" Action="None" />
+    <Rule Id="CA1044" Action="None" />
    
     <!-- <Rule Id="SA1507" Action="None" /> -->
   </Rules>
