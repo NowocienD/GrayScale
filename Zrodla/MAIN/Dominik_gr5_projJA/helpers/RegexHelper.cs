@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
-namespace ColorToGrayScale.helpers
+namespace ColorToGrayScale.Helpers
 {
     public class RegexHelper
     {
@@ -17,7 +17,7 @@ namespace ColorToGrayScale.helpers
 
             var regexMatch = lines.Where<string>(x => regex.IsMatch(x));
 
-            return String.Join(separator, regexMatch); 
+            return String.Join(separator, regexMatch);
         }
 
         public void AddSearchPattern(bool condition, string partialPattern)

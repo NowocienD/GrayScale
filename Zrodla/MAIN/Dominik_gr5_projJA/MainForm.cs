@@ -1,3 +1,7 @@
+using ColorToGrayScale.DllManager;
+using ColorToGrayScale.Exceptions;
+using ColorToGrayScale.Helpers;
+using ColorToGrayScale.LoggingService;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -5,10 +9,6 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using ColorToGrayScale.DllManager;
-using ColorToGrayScale.Exceptions;
-using ColorToGrayScale.helpers;
-using ColorToGrayScale.LoggingService;
 
 namespace ColorToGrayScale
 {

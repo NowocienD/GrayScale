@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Drawing;
-using System.Threading.Tasks;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ColorToGrayScale
 {
@@ -39,6 +39,7 @@ namespace ColorToGrayScale
                 {
                     ProcessingMethod(Pixels.GetRed(i), Pixels.GetGreen(i), Pixels.GetBlue(i));
                 }
+
                 i = ThreadService.GetI();
             }
         }

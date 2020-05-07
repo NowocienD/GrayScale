@@ -1,8 +1,8 @@
-﻿using System.Drawing;
+﻿using ColorToGrayScale.Exceptions;
+using ColorToGrayScale.Helpers;
+using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using ColorToGrayScale.Exceptions;
-using ColorToGrayScale.helpers;
 
 namespace ColorToGrayScale
 {
@@ -69,6 +69,7 @@ namespace ColorToGrayScale
                     }
                 }
             }
+
             this.copyOfImage = CopyArrayOfBitmap(pixels);
         }
 
@@ -93,6 +94,7 @@ namespace ColorToGrayScale
                     }
                 }
             }
+
             return image;
         }
     }

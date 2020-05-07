@@ -1,11 +1,11 @@
-﻿using System;
-using System.Drawing;
-using System.IO;
-using System.Windows.Forms;
-using ColorToGrayScale.DllManager;
+﻿using ColorToGrayScale.DllManager;
 using ColorToGrayScale.Exceptions;
 using ColorToGrayScale.LoggingService;
 using SimpleInjector;
+using System;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
 
 namespace ColorToGrayScale
 {

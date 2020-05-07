@@ -1,12 +1,12 @@
-﻿using System;
+﻿using ColorToGrayScale.Helpers;
+using ColorToGrayScale.LoggingService;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using ColorToGrayScale.helpers;
-using ColorToGrayScale.LoggingService;
 
 namespace ColorToGrayScale
 {

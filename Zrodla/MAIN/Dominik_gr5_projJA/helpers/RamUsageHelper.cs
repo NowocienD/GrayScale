@@ -1,8 +1,8 @@
-﻿namespace ColorToGrayScale.helpers
+﻿namespace ColorToGrayScale.Helpers
 {
     public class RamUsageHelper
     {
-        private const int RamMBUsageWarning = 1000; //in MB
+        private const int RamMBUsageWarning = 1000; // in MB
 
         public string RamUsage()
         {
