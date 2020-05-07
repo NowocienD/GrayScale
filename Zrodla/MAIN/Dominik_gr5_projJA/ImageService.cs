@@ -2,6 +2,7 @@
 using System.Drawing.Imaging;
 using System.IO;
 using ColorToGrayScale.Exceptions;
+using ColorToGrayScale.helpers;
 
 namespace ColorToGrayScale
 {
@@ -10,12 +11,12 @@ namespace ColorToGrayScale
         private const int Size = 16;
         private int height;
         private int width;
-        private PixelPackage<byte> copyOfImage;
-        private PixelPackage<byte> pixels;
+        private PixelPackageHelper<byte> copyOfImage;
+        private PixelPackageHelper<byte> pixels;
 
         public int Length { get; internal set; }
 
-        public PixelPackage<byte> CopyOfOryginalImage
+        public PixelPackageHelper<byte> CopyOfOryginalImage
         {
             get
             {
@@ -24,9 +25,9 @@ namespace ColorToGrayScale
             }
         }
 
-        public PixelPackage<byte> CopyArrayOfBitmap(PixelPackage<byte> imagePixelsArray)
+        public PixelPackageHelper<byte> CopyArrayOfBitmap(PixelPackageHelper<byte> imagePixelsArray)
         {
-            PixelPackage<byte> copyOfdividedImage = new PixelPackage<byte>(Length);
+            PixelPackageHelper<byte> copyOfdividedImage = new PixelPackageHelper<byte>(Length);
 
             for (int i = 0; i < Length; i++)
             {
@@ -51,7 +52,7 @@ namespace ColorToGrayScale
             this.width = imageToProcess.Width;
             this.height = imageToProcess.Height;
             this.Length = width * height;
-            this.pixels = new PixelPackage<byte>(Length);
+            this.pixels = new PixelPackageHelper<byte>(Length);
 
             int counter = 0;
             for (int x = 0; x < width; x++)

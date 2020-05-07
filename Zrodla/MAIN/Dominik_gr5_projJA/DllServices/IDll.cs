@@ -14,7 +14,7 @@ namespace ColorToGrayScale
     {
         ProcessingMethodDelegate ProcessingMethod { set; }
 
-        PixelPackage<byte> Pixels { get; set; }
+        PixelPackageHelper<byte> Pixels { get; set; }
 
         void ChangeColorToGrayScale(object data);
 

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ColorToGrayScale
 {
-    public class PixelPackage<T>
+    public class PixelPackageHelper<T>
     {
         private const int Size = 16;
 
-        public PixelPackage(int len)
+        public PixelPackageHelper(int len)
         {
             Length = len;
             Red = new T[len][];

@@ -15,7 +15,7 @@ namespace ColorToGrayScale
 
         public ProcessingMethodDelegate ProcessingMethod { internal get; set; }
 
-        public PixelPackage<byte> Pixels { get; set; }
+        public PixelPackageHelper<byte> Pixels { get; set; }
 
         public void SingleColorChannel_Red(byte[] r, byte[] g, byte[] b) => SingleColorChannel_Red_ASM(r, g, b);
 
