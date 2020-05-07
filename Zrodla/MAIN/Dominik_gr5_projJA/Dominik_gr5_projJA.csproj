@@ -95,8 +95,8 @@
     <Compile Include="Exceptions\DllFileNotExistException.cs" />
     <Compile Include="Exceptions\NotDivisibleBy16Exception.cs" />
     <Compile Include="DllServices\IDll.cs" />
-    <Compile Include="helpers\RamUsageHelper.cs" />
-    <Compile Include="helpers\RegexHelper.cs" />
+    <Compile Include="Helpers\RamUsageHelper.cs" />
+    <Compile Include="Helpers\RegexHelper.cs" />
     <Compile Include="LoggingManager\ILogerService.cs" />
     <Compile Include="LoggingManager\LogerService.cs" />
     <Compile Include="LoggingManager\LogForm.cs">
@@ -118,7 +118,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThreadService.cs" />
-    <Compile Include="helpers\TimeCounterHelper.cs" />
+    <Compile Include="Helpers\TimeCounterHelper.cs" />
     <EmbeddedResource Include="LoggingManager\LogForm.resx">
       <DependentUpon>LogForm.cs</DependentUpon>
     </EmbeddedResource>

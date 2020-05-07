@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 using SimpleInjector;
@@ -25,6 +25,11 @@ namespace ColorToGrayScale
             {
                 throw new DllFileNotExistException("ASM_DLL.dll");
             }
+            if (!Environment.Is64BitProcess)
+            {
+                throw new Notx64bitProcessException();
+            }
+
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
