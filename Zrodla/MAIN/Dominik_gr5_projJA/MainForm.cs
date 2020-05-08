@@ -8,6 +8,7 @@ using ColorToGrayScale.DllManager;
 using ColorToGrayScale.Exceptions;
 using ColorToGrayScale.Helpers;
 using ColorToGrayScale.LoggingService;
+using System.Reflection;
 
 namespace ColorToGrayScale
 {
@@ -81,6 +82,7 @@ namespace ColorToGrayScale
             this.processorCount = Environment.ProcessorCount;
             trackBar_Threads.Value = processorCount;
             label_Threads.Text = processorCount.ToString();
+            this.Text = Assembly.GetAssembly(GetType()).GetName().Name;
             loger.Info(String.Format("Poprawnie uruchomiono okno {0}", this.Name));
         }
 
