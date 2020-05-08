@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using ColorToGrayScale.DllManager.DllsLibs;
 
 namespace ColorToGrayScale.DllManager
 {

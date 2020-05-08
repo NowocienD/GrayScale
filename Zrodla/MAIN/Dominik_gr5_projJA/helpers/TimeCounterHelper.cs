@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ColorToGrayScale
+namespace ColorToGrayScale.Helpers
 {
     public class TimeCounterHelper
     {

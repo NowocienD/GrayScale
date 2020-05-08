@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
+using ColorToGrayScale.Helpers;
 
-namespace ColorToGrayScale
+namespace ColorToGrayScale.ImageServices
 {
     public interface IImageService
     {

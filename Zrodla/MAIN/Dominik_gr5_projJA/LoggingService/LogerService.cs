@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using ColorToGrayScale.Helpers;
 using ColorToGrayScale.LoggingService;
 
-namespace ColorToGrayScale
+namespace ColorToGrayScale.LoggingService
 {
     public class LogerService : ILogerService
     {

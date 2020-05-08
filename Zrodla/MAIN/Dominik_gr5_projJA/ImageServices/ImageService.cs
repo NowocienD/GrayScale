@@ -1,10 +1,10 @@
-﻿using ColorToGrayScale.Exceptions;
-using ColorToGrayScale.Helpers;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using ColorToGrayScale.Exceptions;
+using ColorToGrayScale.Helpers;
 
-namespace ColorToGrayScale
+namespace ColorToGrayScale.ImageServices
 {
     public class ImageService : IImageService
     {

@@ -5,6 +5,7 @@ using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ColorToGrayScale.DllManager.DllsLibs;
 
 namespace ColorToGrayScale.DllManager
 {

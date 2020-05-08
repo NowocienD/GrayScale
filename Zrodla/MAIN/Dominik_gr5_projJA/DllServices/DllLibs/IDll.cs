@@ -5,8 +5,9 @@ using System.Linq;
 using System.Security;
 using System.Text;
 using System.Threading.Tasks;
+using ColorToGrayScale.Helpers;
 
-namespace ColorToGrayScale
+namespace ColorToGrayScale.DllManager.DllsLibs
 {
     public delegate void ProcessingMethodDelegate(byte[] r, byte[] g, byte[] b);
 

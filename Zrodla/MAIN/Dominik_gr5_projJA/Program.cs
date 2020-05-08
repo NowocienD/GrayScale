@@ -4,7 +4,9 @@ using System.IO;
 using System.Windows.Forms;
 using ColorToGrayScale.DllManager;
 using ColorToGrayScale.Exceptions;
+using ColorToGrayScale.ImageServices;
 using ColorToGrayScale.LoggingService;
+using ColorToGrayScale.ThreadsServices;
 using SimpleInjector;
 
 namespace ColorToGrayScale

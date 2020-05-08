@@ -85,23 +85,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DllServices\Dlls\AsmDll.cs" />
-    <Compile Include="DllServices\Dlls\CppDll.cs" />
+    <Compile Include="DllServices\DllLibs\AsmDll.cs" />
+    <Compile Include="DllServices\DllLibs\CppDll.cs" />
     <Compile Include="DllServices\DllService.cs" />
     <Compile Include="DllServices\IDllService.cs" />
     <Compile Include="Exceptions\Notx64bitProcessException.cs" />
     <Compile Include="Exceptions\DllFileNotExistException.cs" />
     <Compile Include="Exceptions\NotDivisibleBy16Exception.cs" />
-    <Compile Include="DllServices\Dlls\IDll.cs" />
+    <Compile Include="DllServices\DllLibs\IDll.cs" />
     <Compile Include="Helpers\RamUsageHelper.cs" />
     <Compile Include="Helpers\RegexHelper.cs" />
     <Compile Include="Helpers\LogFileHelper.cs" />
-    <Compile Include="LoggingManager\ILogerService.cs" />
-    <Compile Include="LoggingManager\LogerService.cs" />
-    <Compile Include="LoggingManager\LogForm.cs">
+    <Compile Include="LoggingService\ILogerService.cs" />
+    <Compile Include="LoggingService\LogerService.cs" />
+    <Compile Include="LoggingService\LogForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoggingManager\LogForm.Designer.cs">
+    <Compile Include="LoggingService\LogForm.Designer.cs">
       <DependentUpon>LogForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -110,15 +110,15 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="IImageService.cs" />
-    <Compile Include="ImageService.cs" />
-    <Compile Include="IThreadsService.cs" />
+    <Compile Include="ImageServices\IImageService.cs" />
+    <Compile Include="ImageServices\ImageService.cs" />
+    <Compile Include="ThreadsService\IThreadsService.cs" />
     <Compile Include="Helpers\PixelPackageHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ThreadService.cs" />
+    <Compile Include="ThreadsService\ThreadService.cs" />
     <Compile Include="Helpers\TimeCounterHelper.cs" />
-    <EmbeddedResource Include="LoggingManager\LogForm.resx">
+    <EmbeddedResource Include="LoggingService\LogForm.resx">
       <DependentUpon>LogForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
@@ -137,5 +137,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

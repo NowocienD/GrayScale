@@ -5,8 +5,10 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using ColorToGrayScale.Helpers;
+using ColorToGrayScale.ThreadsServices;
 
-namespace ColorToGrayScale
+namespace ColorToGrayScale.DllManager.DllsLibs
 {
     public class CppDll : IDll
     {

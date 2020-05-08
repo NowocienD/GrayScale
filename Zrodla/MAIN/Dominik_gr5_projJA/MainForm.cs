@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
 using ColorToGrayScale.DllManager;
+using ColorToGrayScale.DllManager.DllsLibs;
 using ColorToGrayScale.Exceptions;
 using ColorToGrayScale.Helpers;
+using ColorToGrayScale.ImageServices;
 using ColorToGrayScale.LoggingService;
-using System.Reflection;
+using ColorToGrayScale.ThreadsServices;
 
 namespace ColorToGrayScale
 {

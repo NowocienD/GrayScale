@@ -2,7 +2,7 @@
 using System.Threading;
 using static ColorToGrayScale.MainForm;
 
-namespace ColorToGrayScale
+namespace ColorToGrayScale.ThreadsServices
 {
     public interface IThreadsService
     {

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Drawing;
 using System.Threading;
+using ColorToGrayScale.Helpers;
+using ColorToGrayScale.LoggingService;
 using static ColorToGrayScale.MainForm;
 
-namespace ColorToGrayScale
+namespace ColorToGrayScale.ThreadsServices
 {
     public class ThreadService : IThreadsService
     {
