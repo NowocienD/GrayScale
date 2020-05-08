@@ -36,11 +36,7 @@ namespace ColorToGrayScale.DllManager.DllsLibs
 
             while (i < Pixels.Length)
             {
-                for (int j = 0; j < 1; j++)
-                {
-                    ProcessingMethod(Pixels.GetRed(i), Pixels.GetGreen(i), Pixels.GetBlue(i));
-                }
-
+                ProcessingMethod(Pixels.GetRed(i), Pixels.GetGreen(i), Pixels.GetBlue(i));
                 i = ThreadService.GetI();
             }
         }
