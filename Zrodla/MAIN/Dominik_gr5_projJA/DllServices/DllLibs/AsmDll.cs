@@ -11,13 +11,9 @@ using ColorToGrayScale.ThreadsServices;
 
 namespace ColorToGrayScale.DllManager.DllsLibs
 {
-    public class AsmDll : IDll
+    public class AsmDll : Dll, IDll
     {
         private const string DllPath = @"ASM_DLL.dll";
-
-        public ProcessingMethodDelegate ProcessingMethod { internal get; set; }
-
-        public PixelPackageHelper<byte> Pixels { get; set; }
 
         public void SingleColorChannel_Red(byte[] r, byte[] g, byte[] b) => SingleColorChannel_Red_ASM(r, g, b);
 
@@ -30,17 +26,6 @@ namespace ColorToGrayScale.DllManager.DllsLibs
         public void Decomposition_min(byte[] r, byte[] g, byte[] b) => Decomposition_min_ASM(r, g, b);
 
         public void Desaturation(byte[] r, byte[] g, byte[] b) => Desaturation_ASM(r, g, b);
-
-        public void ChangeColorToGrayScale()
-        {
-            int i = ThreadService.GetI();
-
-            while (i < Pixels.Length)
-            {
-                ProcessingMethod(Pixels.GetRed(i), Pixels.GetGreen(i), Pixels.GetBlue(i));
-                i = ThreadService.GetI();
-            }
-        }
 
         [DllImport(DllPath)]
         private static extern void SingleColorChannel_Red_ASM(byte[] r, byte[] g, byte[] b);

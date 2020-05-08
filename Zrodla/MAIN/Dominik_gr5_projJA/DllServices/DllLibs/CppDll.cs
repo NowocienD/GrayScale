@@ -10,13 +10,9 @@ using ColorToGrayScale.ThreadsServices;
 
 namespace ColorToGrayScale.DllManager.DllsLibs
 {
-    public class CppDll : IDll
+    public class CppDll : Dll, IDll
     {
         private const string DllPath = @"C_DLL.dll";
-
-        public ProcessingMethodDelegate ProcessingMethod { internal get; set; }
-
-        public PixelPackageHelper<byte> Pixels { get; set; }
 
         public void SingleColorChannel_Red(byte[] r, byte[] g, byte[] b) => SingleColorChannel_Red_CPP(r, g, b);
 
@@ -29,17 +25,6 @@ namespace ColorToGrayScale.DllManager.DllsLibs
         public void Decomposition_min(byte[] r, byte[] g, byte[] b) => Decomposition_min_CPP(r, g, b);
 
         public void Desaturation(byte[] r, byte[] g, byte[] b) => Desaturation_CPP(r, g, b);
-
-        public void ChangeColorToGrayScale()
-        {
-            int i = ThreadService.GetI();
-
-            while (i < Pixels.Length)
-            {
-                ProcessingMethod(Pixels.GetRed(i), Pixels.GetGreen(i), Pixels.GetBlue(i));
-                i = ThreadService.GetI();
-            }
-        }
 
         [DllImport(DllPath)]
         private static extern void SingleColorChannel_Red_CPP(byte[] r, byte[] g, byte[] b);

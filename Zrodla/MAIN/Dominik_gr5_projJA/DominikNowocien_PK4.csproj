@@ -87,6 +87,7 @@
   <ItemGroup>
     <Compile Include="DllServices\DllLibs\AsmDll.cs" />
     <Compile Include="DllServices\DllLibs\CppDll.cs" />
+    <Compile Include="DllServices\DllLibs\Dll.cs" />
     <Compile Include="DllServices\DllService.cs" />
     <Compile Include="DllServices\IDllService.cs" />
     <Compile Include="Exceptions\Notx64bitProcessException.cs" />
