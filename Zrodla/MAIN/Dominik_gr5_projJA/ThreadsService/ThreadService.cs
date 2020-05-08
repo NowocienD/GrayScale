@@ -19,6 +19,8 @@ namespace ColorToGrayScale.ThreadsServices
 
         private Thread[] threads;
 
+        private int threadsReady;
+
         public ThreadService(ILogerService logerService)
         {
             this.loger = logerService;
@@ -31,7 +33,7 @@ namespace ColorToGrayScale.ThreadsServices
 
         public EndOfThreads EndOfThreads { internal get; set; }
 
-        public ParameterizedThreadStart ProcessingFunction { internal get; set; }
+        public ThreadStart ProcessingFunction { internal get; set; }
 
         public static int GetI()
         {
@@ -49,39 +51,29 @@ namespace ColorToGrayScale.ThreadsServices
         {
             timeCounter.Start();
             count = 0;
+            threadsReady = 0;
+
+            ThreadStart ts = ProcessingFunction;
+            ts += ThreadDone;
+
             threads = new Thread[ThreadsCount];
             for (int i = 0; i < ThreadsCount; i++)
             {
-                threads[i] = new Thread(ProcessingFunction);
+                threads[i] = new Thread(ts);
                 threads[i].Start();
             }
 
             loger.Debug(String.Format("Utworzono {0} watkow.", ThreadsCount));
-
-            Thread mainThread = new Thread(t =>
-            {
-                while (!IsDone())
-                {
-                }
-
-                EndOfThreads();
-            });
-
-            mainThread.Start();
         }
 
-        public bool IsDone()
+        private void ThreadDone()
         {
-            foreach (Thread t in threads)
+            threadsReady++;
+            if (threadsReady == ThreadsCount)
             {
-                if (t.ThreadState != ThreadState.Stopped)
-                {
-                    return false;
-                }
+                timeCounter.Stop();
+                EndOfThreads();
             }
-
-            timeCounter.Stop();
-            return true;
         }
     }
 }

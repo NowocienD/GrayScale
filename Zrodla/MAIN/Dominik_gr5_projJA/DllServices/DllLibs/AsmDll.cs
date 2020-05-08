@@ -31,7 +31,7 @@ namespace ColorToGrayScale.DllManager.DllsLibs
 
         public void Desaturation(byte[] r, byte[] g, byte[] b) => Desaturation_ASM(r, g, b);
 
-        public void ChangeColorToGrayScale(object data)
+        public void ChangeColorToGrayScale()
         {
             int i = ThreadService.GetI();
 

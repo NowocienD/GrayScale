@@ -17,7 +17,7 @@ namespace ColorToGrayScale.DllManager.DllsLibs
 
         PixelPackageHelper<byte> Pixels { get; set; }
 
-        void ChangeColorToGrayScale(object data);
+        void ChangeColorToGrayScale();
 
         void SingleColorChannel_Red(byte[] r, byte[] g, byte[] b);
 

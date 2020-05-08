@@ -10,12 +10,10 @@ namespace ColorToGrayScale.ThreadsServices
 
         int ThreadsCount { set; }
 
-        ParameterizedThreadStart ProcessingFunction { set; }
+        ThreadStart ProcessingFunction { set; }
 
         EndOfThreads EndOfThreads { set; }
 
         void StartProcessing();
-
-        bool IsDone();
     }
 }
