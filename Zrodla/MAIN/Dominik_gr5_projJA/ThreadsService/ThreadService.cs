@@ -60,6 +60,7 @@ namespace ColorToGrayScale.ThreadsServices
             for (int i = 0; i < ThreadsCount; i++)
             {
                 threads[i] = new Thread(ts);
+                threads[i].IsBackground = true;
                 threads[i].Start();
             }
 
