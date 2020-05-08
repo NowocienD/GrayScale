@@ -1,19 +1,17 @@
-﻿using ColorToGrayScale.Helpers;
-using ColorToGrayScale.LoggingService;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using ColorToGrayScale.Helpers;
+using ColorToGrayScale.LoggingService;
 
 namespace ColorToGrayScale
 {
     public class LogerService : ILogerService
     {
-        private const string FilePath = "log.txt";
-
         private readonly LogsForm logForm;
 
         public LogerService()
@@ -55,24 +53,14 @@ namespace ColorToGrayScale
             WriteToLog(String.Format("Error |{0}| {1}{2}", System.DateTime.Now.ToString(), message, Environment.NewLine));
         }
 
+        public void WriteToLog(string message)
+        {
+            LogFileHelper.WriteToLogFile(message);
+        }
+
         public string ReadLog(RegexHelper regex)
         {
-            return regex.SearchString(Environment.NewLine, ReadFromFile());
-        }
-
-        private void WriteToLog(string message)
-        {
-            File.AppendAllText(FilePath, message);
-        }
-
-        private string[] ReadFromFile()
-        {
-            if (!File.Exists(FilePath))
-            {
-                return Array.Empty<string>();
-            }
-
-            return File.ReadAllLines(FilePath);
+            return regex.SearchString(Environment.NewLine, LogFileHelper.ReadFromLogFile());
         }
     }
 }
