@@ -19,8 +19,6 @@ namespace ColorToGrayScale
     {
         private readonly IImageService imageService;
 
-        private readonly IDllService dllManager;
-
         private readonly IThreadsService threadsService;
 
         private readonly ILogerService loger;
@@ -30,8 +28,7 @@ namespace ColorToGrayScale
         public MainForm(
             IImageService imageService,
             IThreadsService threadsService,
-            ILogerService logerService,
-            IDllService dllManager)
+            ILogerService logerService)
         {
             InitializeComponent();
             AddControlsToGroupbox(groupBox_methodChoose);
@@ -39,7 +36,6 @@ namespace ColorToGrayScale
             this.imageService = imageService;
             this.threadsService = threadsService;
             this.loger = logerService;
-            this.dllManager = dllManager;
 
             loger.Info(String.Format("Prawidlowa inicjalizacja"));
         }
@@ -170,12 +166,12 @@ namespace ColorToGrayScale
             label_time.Text = string.Empty;
             StartBTN.Enabled = false;
 
-            dllManager.ChooseDll(this.groupBox_dllChose);
-            dllManager.ChooseMethod(this.groupBox_methodChoose);
-            IDll dll = dllManager.Dll;
-            dll.Pixels = imageService.CopyOfOryginalImage;
+            DllService dllService = new DllService();
+            dllService.ChooseDll(this.groupBox_dllChose);
+            dllService.ChooseMethod(this.groupBox_methodChoose);
+            dllService.Dll.Pixels = imageService.CopyOfOryginalImage;
 
-            threadsService.ProcessingFunction = dll.ChangeColorToGrayScale;
+            threadsService.ProcessingFunction = dllService.Dll.ChangeColorToGrayScale;
             threadsService.EndOfThreads = new EndOfThreads(UpdateModifiedPhoto);
             threadsService.ThreadsCount = processorCount;
 
