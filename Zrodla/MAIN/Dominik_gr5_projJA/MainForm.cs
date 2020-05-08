@@ -44,7 +44,12 @@ namespace ColorToGrayScale
 
         private void AddControlsToGroupbox(GroupBox groupBox_methodChoose)
         {
-            string[] methodsInDllInterface = typeof(IDll).GetMethods().Where(x => !x.IsSpecialName).Where(x => !x.Name.Contains("Change")).Select(x => x.Name).ToArray();
+            string[] methodsInDllInterface = typeof(IDll).GetMethods()
+                .Where(x => !x.IsSpecialName)
+                .Where(x => !x.Name
+                .Contains("Change"))
+                .Select(x => x.Name)
+                .ToArray();
 
             int numberOfMethods = methodsInDllInterface.Length;
             int offset = 30;
