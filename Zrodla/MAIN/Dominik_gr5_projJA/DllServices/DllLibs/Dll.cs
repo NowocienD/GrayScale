@@ -6,11 +6,10 @@ using System.Runtime.InteropServices;
 using System.Security;
 using System.Text;
 using System.Threading.Tasks;
-using ColorToGrayScale.DllManager.DllsLibs;
 using ColorToGrayScale.Helpers;
 using ColorToGrayScale.ThreadsServices;
 
-namespace ColorToGrayScale.DllManager.DllsLibs
+namespace ColorToGrayScale.DllServices.DllsLibs
 {
     public class Dll
     {

@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
-using ColorToGrayScale.DllManager.DllsLibs;
+using ColorToGrayScale.DllServices.DllsLibs;
 
-namespace ColorToGrayScale.DllManager
+namespace ColorToGrayScale.DllServices
 {
     public interface IDllService
     {

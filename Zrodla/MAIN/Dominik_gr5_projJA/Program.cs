@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using ColorToGrayScale.DllManager;
+using ColorToGrayScale.DllServices;
 using ColorToGrayScale.Exceptions;
 using ColorToGrayScale.ImageServices;
 using ColorToGrayScale.LoggingService;

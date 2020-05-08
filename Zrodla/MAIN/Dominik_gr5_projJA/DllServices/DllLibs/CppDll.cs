@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using ColorToGrayScale.Helpers;
 using ColorToGrayScale.ThreadsServices;
 
-namespace ColorToGrayScale.DllManager.DllsLibs
+namespace ColorToGrayScale.DllServices.DllsLibs
 {
     public class CppDll : Dll, IDll
     {
