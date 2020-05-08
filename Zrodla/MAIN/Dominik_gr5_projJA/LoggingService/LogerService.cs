@@ -19,6 +19,11 @@ namespace ColorToGrayScale.LoggingService
             logForm = new LogsForm(this);
         }
 
+        ~LogerService()
+        {
+            logForm.Dispose();
+        }
+
         public void ShowLogForm()
         {
             if (!logForm.IsDisposed)
