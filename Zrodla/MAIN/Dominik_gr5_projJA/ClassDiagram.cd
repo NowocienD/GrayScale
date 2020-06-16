@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ColorToGrayScale.MainForm" Collapsed="true">
-    <Position X="8.75" Y="1.5" Width="1.5" />
+    <Position X="7.5" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAEACAEGSAIhBUQACAUAACAAgAAABCAIAIACCQBCA=</HashCode>
       <FileName>MainForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ColorToGrayScale.Program" Collapsed="true">
-    <Position X="8.75" Y="2.5" Width="1.5" />
+    <Position X="7.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAgAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ColorToGrayScale.DllServices.DllsLibs.AsmDll" Collapsed="true">
-    <Position X="0.5" Y="1.75" Width="1.5" />
+    <Position X="0.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAwBAAAAAAAAAYAAAAAAAAAAAgIQAAAAAgABAAAEASA=</HashCode>
       <FileName>DllServices\DllLibs\AsmDll.cs</FileName>
@@ -23,7 +23,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ColorToGrayScale.DllServices.DllsLibs.CppDll" Collapsed="true">
-    <Position X="2.75" Y="1.75" Width="1.5" />
+    <Position X="3" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEBAMAAABACAYAAAAACAAAAAAIAAAAAAgAAAAAEACA=</HashCode>
       <FileName>DllServices\DllLibs\CppDll.cs</FileName>
@@ -31,144 +31,144 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ColorToGrayScale.DllServices.DllsLibs.Dll" Collapsed="true">
-    <Position X="1.75" Y="0.5" Width="1.5" />
+    <Position X="2" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEQAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DllServices\DllLibs\Dll.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ColorToGrayScale.DllServices.DllService" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="7" Y="0.5" Width="1.5" />
+    <Position X="11" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAEAIAAAAA=</HashCode>
       <FileName>DllServices\DllService.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ColorToGrayScale.Exceptions.DllFileNotExistException" Collapsed="true">
-    <Position X="5.25" Y="0.5" Width="1.5" />
+    <Position X="10.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Exceptions\DllFileNotExistException.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ColorToGrayScale.Exceptions.NotDivisibleBy16Exception" Collapsed="true">
-    <Position X="10.5" Y="1.5" Width="1.5" />
+    <Position X="10.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Exceptions\NotDivisibleBy16Exception.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ColorToGrayScale.Exceptions.Notx64bitProcessException" Collapsed="true">
-    <Position X="5.25" Y="2.5" Width="1.5" />
+    <Position X="10.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Exceptions\Notx64bitProcessException.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ColorToGrayScale.Helpers.LogFileHelper" Collapsed="true">
-    <Position X="5.25" Y="1.5" Width="1.5" />
+    <Position X="5.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAAAAIAAAAAAA=</HashCode>
       <FileName>Helpers\LogFileHelper.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ColorToGrayScale.Helpers.PixelPackageHelper&lt;T&gt;" Collapsed="true">
-    <Position X="7" Y="2.5" Width="1.5" />
+    <Position X="5.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAASgAAAAAAAggAAAAAAAABCAAAAAAAAAAAAABAAAAA=</HashCode>
       <FileName>Helpers\PixelPackageHelper.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ColorToGrayScale.Helpers.RamUsageHelper" Collapsed="true">
-    <Position X="10.5" Y="2.5" Width="1.5" />
+    <Position X="5.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Helpers\RamUsageHelper.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ColorToGrayScale.Helpers.RegexHelper" Collapsed="true">
-    <Position X="5.25" Y="3.5" Width="1.5" />
+    <Position X="5.25" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAACAAAAAAAQACAAAAA=</HashCode>
       <FileName>Helpers\RegexHelper.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ColorToGrayScale.Helpers.TimeCounterHelper" Collapsed="true">
-    <Position X="8.75" Y="3.5" Width="1.5" />
+    <Position X="5.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAggAAAAAAAAAAAAIAAAAAAAAQA=</HashCode>
       <FileName>Helpers\TimeCounterHelper.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ColorToGrayScale.ImageServices.ImageService" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="8.75" Y="0.5" Width="1.5" />
+    <Position X="12.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAwQUAQAAAIABABAAQAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ImageServices\ImageService.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ColorToGrayScale.LoggingService.LogerService" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="10.5" Y="0.5" Width="1.5" />
+    <Position X="7.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAYAAAAAAABAAAABAAAEAAAAAAEAAABA=</HashCode>
       <FileName>LoggingService\LogerService.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ColorToGrayScale.LoggingService.LogsForm" Collapsed="true">
-    <Position X="7" Y="1.5" Width="1.5" />
+    <Position X="7.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAEAAAwCAAAIAACACAAAIKAAAAAAACACBAAAABAAA=</HashCode>
       <FileName>LoggingService\LogForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ColorToGrayScale.ThreadsServices.ThreadService" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="7" Y="3.5" Width="1.5" />
+    <Position X="9.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAEAggAAAAAAAABAAIAAAAABBAAAgAAAMgAAAAAQA=</HashCode>
       <FileName>ThreadsService\ThreadService.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Interface Name="ColorToGrayScale.DllServices.DllsLibs.IDll" Collapsed="true">
-    <Position X="5.25" Y="4.75" Width="1.5" />
+    <Position X="2" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAERAAAAAAAAAYAAAAABAAAAAAIAAAAAAAAAAAAEACA=</HashCode>
       <FileName>DllServices\DllLibs\IDll.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="ColorToGrayScale.DllServices.IDllService" Collapsed="true">
-    <Position X="7" Y="4.75" Width="1.5" />
+    <Position X="11" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAIAAAAA=</HashCode>
       <FileName>DllServices\IDllService.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="ColorToGrayScale.ImageServices.IImageService" Collapsed="true">
-    <Position X="8.75" Y="4.75" Width="1.5" />
+    <Position X="12.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAQAAAAAAIABAAAAQAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ImageServices\IImageService.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="ColorToGrayScale.LoggingService.ILogerService" Collapsed="true">
-    <Position X="10.5" Y="4.75" Width="1.5" />
+    <Position X="7.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAYAAAAAAABAAAABAAAEAAAAAAEAAAAA=</HashCode>
       <FileName>LoggingService\ILogerService.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="ColorToGrayScale.ThreadsServices.IThreadsService" Collapsed="true">
-    <Position X="5.25" Y="5.5" Width="1.5" />
+    <Position X="9.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAABAAAgAAAIAAAAAAQA=</HashCode>
       <FileName>ThreadsService\IThreadsService.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Delegate Name="ColorToGrayScale.DllServices.DllsLibs.ProcessingMethodDelegate" Collapsed="true">
-    <Position X="5.25" Y="6.5" Width="1.5" />
+    <Position X="2" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAIEAAAAAAA=</HashCode>
       <FileName>DllServices\DllLibs\IDll.cs</FileName>

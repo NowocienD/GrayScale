@@ -527,3 +527,6 @@ Debug |06.05.2020 21:50:38| Obraz podzielony w czasie 0 ms ms.
 Debug |06.05.2020 21:50:39| Utworzono 12 watkow.
 Debug |06.05.2020 21:50:39| Obraz przetworzony w czasie 62 ms ms.
 Debug |06.05.2020 21:50:39| Obraz polaczony w czasie 0 ms ms.
+Info |15.06.2020 23:23:06| Prawidlowa inicjalizacja
+Info |15.06.2020 23:23:06| Poprawnie uruchomiono okno MainForm
+Error |15.06.2020 23:23:15| Zgłoszono wyjątek typu 'ColorToGrayScale.Exceptions.NotDivisibleBy16Exception'.
